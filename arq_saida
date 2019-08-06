@@ -1,0 +1,4348 @@
+PAGES
+[0]addr:51  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 4[1] 5[0] 6[0] 7[0] 8[1] 
+
+[1]addr:15032  R:4  W:6  M:6  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 1[6] 
+M_freq 1[6] 
+I_freq 
+
+[2]addr:1509  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[2] 3[0] 4[1] 5[0] 6[0] 7[0] 8[0] 9[1] 
+
+[3]addr:15031  R:3  W:5  M:5  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[4]addr:14877  R:16  W:16  M:16  I:0  seq_r:9  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[16] 
+W_freq 1[16] 
+M_freq 1[16] 
+I_freq 
+
+[5]addr:1510  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[1] 
+
+[6]addr:1511  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[3] 3[0] 4[0] 5[0] 6[0] 7[1] 
+
+[7]addr:1512  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[1] 3[0] 4[0] 5[1] 6[0] 7[1] 
+
+[8]addr:1513  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 3[1] 4[0] 5[0] 6[0] 7[1] 
+
+[9]addr:15030  R:0  W:6  M:6  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[6] 
+M_freq 1[6] 
+I_freq 
+
+[10]addr:1496  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[1] 3[1] 
+
+[11]addr:1497  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[3] 3[0] 4[0] 5[0] 6[1] 
+
+[12]addr:15028  R:8  W:7  M:7  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[8] 
+W_freq 1[7] 
+M_freq 1[7] 
+I_freq 
+
+[13]addr:1502  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[3] 3[1] 4[1] 
+
+[14]addr:14815  R:3  W:2  M:2  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 1[2] 
+M_freq 1[2] 
+I_freq 
+
+[15]addr:1498  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[3] 3[1] 4[1] 
+
+[16]addr:14876  R:15  W:3  M:3  I:0  seq_r:12  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[15] 
+W_freq 1[3] 
+M_freq 1[3] 
+I_freq 
+
+[17]addr:14718  R:6  W:6  M:6  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[6] 
+W_freq 1[6] 
+M_freq 1[6] 
+I_freq 
+
+[18]addr:15033  R:15  W:0  M:0  I:0  seq_r:15  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[15] 
+W_freq 
+M_freq 
+I_freq 
+
+[19]addr:15027  R:69  W:80  M:80  I:0  seq_r:12  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[69] 
+W_freq 1[80] 
+M_freq 1[80] 
+I_freq 
+
+[20]addr:5802  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[3] 3[2] 
+
+[21]addr:14923  R:5  W:7  M:7  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5] 
+W_freq 1[7] 
+M_freq 1[7] 
+I_freq 
+
+[22]addr:5803  R:0  W:0  M:0  I:24  seq_r:0  seq_w:0  seq_m:0  seq_i:24
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[2] 3[5] 
+
+[23]addr:14793  R:7  W:3  M:3  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[7] 
+W_freq 1[3] 
+M_freq 1[3] 
+I_freq 
+
+[24]addr:15026  R:4739  W:441  M:441  I:0  seq_r:13  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4739] 
+W_freq 1[441] 
+M_freq 1[441] 
+I_freq 
+
+[25]addr:5804  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[7] 
+
+[26]addr:14792  R:2  W:1  M:1  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[27]addr:14924  R:9  W:6  M:6  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[9] 
+W_freq 1[6] 
+M_freq 1[6] 
+I_freq 
+
+[28]addr:14925  R:8  W:5  M:5  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[8] 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[29]addr:5805  R:0  W:0  M:0  I:22  seq_r:0  seq_w:0  seq_m:0  seq_i:22
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[4] 3[3] 
+
+[30]addr:5806  R:0  W:0  M:0  I:188  seq_r:0  seq_w:0  seq_m:0  seq_i:188
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[18] 3[0] 4[1] 5[2] 6[0] 7[0] 8[17] 
+
+[31]addr:12211  R:2  W:0  M:0  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 
+M_freq 
+I_freq 
+
+[32]addr:12209  R:3  W:0  M:0  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[33]addr:5812  R:0  W:0  M:0  I:10  seq_r:0  seq_w:0  seq_m:0  seq_i:10
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[1] 3[1] 
+
+[34]addr:5813  R:0  W:0  M:0  I:13  seq_r:0  seq_w:0  seq_m:0  seq_i:13
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[0] 3[3] 
+
+[35]addr:15034  R:7  W:0  M:0  I:0  seq_r:7  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[7] 
+W_freq 
+M_freq 
+I_freq 
+
+[36]addr:12207  R:4  W:0  M:0  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 
+M_freq 
+I_freq 
+
+[37]addr:5815  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[8] 2[0] 3[1] 4[0] 5[0] 6[0] 7[1] 
+
+[38]addr:5814  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[0] 3[4] 
+
+[39]addr:15035  R:5  W:0  M:0  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5] 
+W_freq 
+M_freq 
+I_freq 
+
+[40]addr:12208  R:7  W:0  M:0  I:0  seq_r:7  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[7] 
+W_freq 
+M_freq 
+I_freq 
+
+[41]addr:15036  R:8  W:0  M:0  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[8] 
+W_freq 
+M_freq 
+I_freq 
+
+[42]addr:15037  R:7  W:0  M:0  I:0  seq_r:7  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[7] 
+W_freq 
+M_freq 
+I_freq 
+
+[43]addr:12210  R:2  W:0  M:0  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 
+M_freq 
+I_freq 
+
+[44]addr:5811  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 2[3] 3[1] 
+
+[45]addr:15038  R:6  W:0  M:0  I:0  seq_r:6  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 2[1] 
+W_freq 
+M_freq 
+I_freq 
+
+[46]addr:5807  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 3[0] 4[4] 
+
+[47]addr:5808  R:0  W:0  M:0  I:12  seq_r:0  seq_w:0  seq_m:0  seq_i:12
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[1] 3[2] 
+
+[48]addr:5809  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[5] 3[2] 
+
+[49]addr:5810  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[7] 
+
+[50]addr:1500  R:0  W:0  M:0  I:50  seq_r:0  seq_w:0  seq_m:0  seq_i:50
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[12] 2[13] 3[1] 4[1] 5[1] 
+
+[51]addr:1501  R:0  W:0  M:0  I:92  seq_r:0  seq_w:0  seq_m:0  seq_i:92
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[34] 2[1] 3[1] 4[12] 5[1] 
+
+[52]addr:5882  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[1] 
+
+[53]addr:5883  R:0  W:0  M:0  I:47  seq_r:0  seq_w:0  seq_m:0  seq_i:47
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[0] 3[0] 4[0] 5[3] 6[0] 7[3] 8[1] 
+
+[54]addr:15020  R:22  W:10  M:10  I:0  seq_r:17  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[22] 
+W_freq 1[10] 
+M_freq 1[10] 
+I_freq 
+
+[55]addr:8332  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[1] 
+
+[56]addr:15023  R:28  W:91  M:91  I:0  seq_r:6  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[28] 
+W_freq 1[91] 
+M_freq 1[91] 
+I_freq 
+
+[57]addr:5884  R:0  W:0  M:0  I:38  seq_r:0  seq_w:0  seq_m:0  seq_i:38
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[2] 12[0] 13[0] 14[1] 
+
+[58]addr:7  R:5  W:0  M:0  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5] 
+W_freq 
+M_freq 
+I_freq 
+
+[59]addr:3631  R:0  W:0  M:0  I:26  seq_r:0  seq_w:0  seq_m:0  seq_i:26
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[2] 4[1] 5[0] 6[0] 7[2] 
+
+[60]addr:14878  R:11  W:0  M:0  I:0  seq_r:11  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[11] 
+W_freq 
+M_freq 
+I_freq 
+
+[61]addr:14721  R:1487  W:7  M:7  I:0  seq_r:1487  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1487] 
+W_freq 1[7] 
+M_freq 1[7] 
+I_freq 
+
+[62]addr:8  R:8  W:0  M:0  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[8] 
+W_freq 
+M_freq 
+I_freq 
+
+[63]addr:10821  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 
+
+[64]addr:10822  R:0  W:0  M:0  I:12  seq_r:0  seq_w:0  seq_m:0  seq_i:12
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[1] 5[1] 
+
+[65]addr:3640  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[2] 
+
+[66]addr:3641  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[1] 
+
+[67]addr:3966  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[2] 4[0] 5[1] 
+
+[68]addr:3967  R:0  W:0  M:0  I:3  seq_r:0  seq_w:0  seq_m:0  seq_i:3
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 
+
+[69]addr:9  R:8  W:0  M:0  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[8] 
+W_freq 
+M_freq 
+I_freq 
+
+[70]addr:3994  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[1] 5[2] 
+
+[71]addr:3943  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[1] 
+
+[72]addr:297  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[0] 6[1] 7[0] 8[1] 
+
+[73]addr:298  R:0  W:0  M:0  I:2  seq_r:0  seq_w:0  seq_m:0  seq_i:2
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 
+
+[74]addr:10  R:8  W:0  M:0  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[8] 
+W_freq 
+M_freq 
+I_freq 
+
+[75]addr:3929  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 
+
+[76]addr:3930  R:0  W:0  M:0  I:3  seq_r:0  seq_w:0  seq_m:0  seq_i:3
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 
+
+[77]addr:14720  R:1392  W:5  M:5  I:0  seq_r:1392  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1392] 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[78]addr:296  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[1] 
+
+[79]addr:11  R:7  W:0  M:0  I:2  seq_r:7  seq_w:0  seq_m:0  seq_i:2
+R_freq 1[7] 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 
+
+[80]addr:3989  R:0  W:0  M:0  I:3  seq_r:0  seq_w:0  seq_m:0  seq_i:3
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 
+
+[81]addr:3990  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[0] 4[0] 5[1] 
+
+[82]addr:3965  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[0] 5[1] 
+
+[83]addr:3777  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[1] 5[1] 
+
+[84]addr:1542  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[2] 3[1] 4[1] 5[0] 6[1] 
+
+[85]addr:1531  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 2[1] 
+
+[86]addr:1532  R:0  W:0  M:0  I:35  seq_r:0  seq_w:0  seq_m:0  seq_i:35
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[0] 4[1] 5[0] 6[3] 7[0] 8[0] 9[1] 
+
+[87]addr:1  R:4  W:0  M:0  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 
+M_freq 
+I_freq 
+
+[88]addr:2  R:2  W:0  M:0  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 
+M_freq 
+I_freq 
+
+[89]addr:3  R:3  W:0  M:0  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[90]addr:1533  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[1] 3[0] 4[0] 5[1] 6[0] 7[1] 
+
+[91]addr:4  R:5  W:0  M:0  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5] 
+W_freq 
+M_freq 
+I_freq 
+
+[92]addr:14722  R:3  W:1  M:1  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[93]addr:1534  R:0  W:0  M:0  I:23  seq_r:0  seq_w:0  seq_m:0  seq_i:23
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[0] 5[1] 6[0] 7[1] 8[1] 
+
+[94]addr:5593  R:0  W:0  M:0  I:62  seq_r:0  seq_w:0  seq_m:0  seq_i:62
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 2[1] 3[0] 4[5] 5[0] 6[0] 7[0] 8[0] 9[0] 10[1] 11[0] 12[2] 
+
+[95]addr:14888  R:4  W:5  M:5  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[96]addr:5594  R:0  W:0  M:0  I:24  seq_r:0  seq_w:0  seq_m:0  seq_i:24
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[7] 
+
+[97]addr:8341  R:0  W:0  M:0  I:48  seq_r:0  seq_w:0  seq_m:0  seq_i:48
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[4] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[4] 
+
+[98]addr:8342  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[4] 
+
+[99]addr:5595  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 2[0] 3[3] 
+
+[100]addr:14905  R:0  W:3  M:3  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[3] 
+M_freq 1[3] 
+I_freq 
+
+[101]addr:14794  R:5  W:1  M:1  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5] 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[102]addr:1535  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[2] 3[1] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 
+
+[103]addr:14813  R:0  W:5  M:5  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[104]addr:4333  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[1] 5[0] 6[0] 7[1] 
+
+[105]addr:4335  R:0  W:0  M:0  I:9  seq_r:0  seq_w:0  seq_m:0  seq_i:9
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[2] 
+
+[106]addr:4336  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[1] 
+
+[107]addr:4337  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[3] 3[1] 
+
+[108]addr:14714  R:1  W:0  M:0  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 
+M_freq 
+I_freq 
+
+[109]addr:14715  R:6  W:0  M:0  I:0  seq_r:6  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[6] 
+W_freq 
+M_freq 
+I_freq 
+
+[110]addr:15136  R:3  W:2  M:2  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 1[2] 
+M_freq 1[2] 
+I_freq 
+
+[111]addr:15137  R:11  W:6  M:6  I:0  seq_r:6  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[11] 
+W_freq 1[6] 
+M_freq 1[6] 
+I_freq 
+
+[112]addr:4338  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 
+
+[113]addr:1536  R:0  W:0  M:0  I:12  seq_r:0  seq_w:0  seq_m:0  seq_i:12
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[1] 4[0] 5[0] 6[1] 
+
+[114]addr:15138  R:4  W:5  M:5  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[115]addr:1537  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[2] 3[2] 
+
+[116]addr:14834  R:0  W:2  M:2  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[2] 
+M_freq 1[2] 
+I_freq 
+
+[117]addr:14904  R:1  W:4  M:4  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[4] 
+M_freq 1[4] 
+I_freq 
+
+[118]addr:14921  R:5807  W:3  M:3  I:0  seq_r:5795  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5807] 
+W_freq 1[3] 
+M_freq 1[3] 
+I_freq 
+
+[119]addr:14812  R:0  W:1  M:1  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[120]addr:1538  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[3] 3[2] 
+
+[121]addr:1540  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[1] 
+
+[122]addr:1539  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 2[3] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 
+
+[123]addr:1503  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[1] 3[0] 4[1] 5[0] 6[0] 7[0] 8[1] 
+
+[124]addr:5887  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[3] 3[1] 4[1] 
+
+[125]addr:5888  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[8] 2[1] 3[1] 4[1] 
+
+[126]addr:14829  R:1  W:0  M:0  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 
+M_freq 
+I_freq 
+
+[127]addr:14926  R:0  W:1  M:1  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[128]addr:5881  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 
+
+[129]addr:8955  R:0  W:0  M:0  I:12  seq_r:0  seq_w:0  seq_m:0  seq_i:12
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1] 
+
+[130]addr:8956  R:0  W:0  M:0  I:28  seq_r:0  seq_w:0  seq_m:0  seq_i:28
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[3] 4[0] 5[1] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[1] 
+
+[131]addr:15282  R:10  W:0  M:0  I:0  seq_r:10  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[10] 
+W_freq 
+M_freq 
+I_freq 
+
+[132]addr:8957  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[1] 3[0] 4[2] 
+
+[133]addr:8960  R:0  W:0  M:0  I:22  seq_r:0  seq_w:0  seq_m:0  seq_i:22
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[0] 3[0] 4[2] 5[0] 6[0] 7[0] 8[0] 9[0] 10[1] 
+
+[134]addr:15281  R:15  W:14  M:14  I:0  seq_r:7  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[15] 
+W_freq 1[14] 
+M_freq 1[14] 
+I_freq 
+
+[135]addr:3413  R:0  W:0  M:0  I:97  seq_r:0  seq_w:0  seq_m:0  seq_i:97
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[20] 2[1] 3[10] 4[0] 5[9] 
+
+[136]addr:14753  R:18  W:1  M:1  I:0  seq_r:17  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[18] 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[137]addr:3418  R:0  W:0  M:0  I:2  seq_r:0  seq_w:0  seq_m:0  seq_i:2
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 
+
+[138]addr:3419  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 
+
+[139]addr:3502  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[0] 3[0] 4[1] 
+
+[140]addr:14752  R:1  W:2  M:2  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[2] 
+M_freq 1[2] 
+I_freq 
+
+[141]addr:3503  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[4] 
+
+[142]addr:3508  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[1] 
+
+[143]addr:3489  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[0] 3[2] 4[2] 
+
+[144]addr:15280  R:4  W:4  M:4  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 1[4] 
+M_freq 1[4] 
+I_freq 
+
+[145]addr:3490  R:0  W:0  M:0  I:3  seq_r:0  seq_w:0  seq_m:0  seq_i:3
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 
+
+[146]addr:3492  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[0] 3[1] 4[2] 
+
+[147]addr:14874  R:3  W:0  M:0  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[148]addr:14755  R:50  W:23  M:23  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[50] 
+W_freq 1[23] 
+M_freq 1[23] 
+I_freq 
+
+[149]addr:3506  R:0  W:0  M:0  I:12  seq_r:0  seq_w:0  seq_m:0  seq_i:12
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[2] 3[2] 
+
+[150]addr:3504  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[1] 4[0] 5[1] 
+
+[151]addr:3266  R:0  W:0  M:0  I:220  seq_r:0  seq_w:0  seq_m:0  seq_i:220
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[22] 2[33] 3[0] 4[0] 5[11] 6[0] 7[11] 
+
+[152]addr:3267  R:0  W:0  M:0  I:150  seq_r:0  seq_w:0  seq_m:0  seq_i:150
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[7] 2[0] 3[11] 4[0] 5[4] 6[15] 
+
+[153]addr:15278  R:4  W:6  M:6  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 1[6] 
+M_freq 1[6] 
+I_freq 
+
+[154]addr:14875  R:24  W:1  M:1  I:0  seq_r:22  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[24] 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[155]addr:3269  R:0  W:0  M:0  I:119  seq_r:0  seq_w:0  seq_m:0  seq_i:119
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[5] 4[5] 5[0] 6[7] 7[6] 
+
+[156]addr:14757  R:5  W:8  M:8  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[157]addr:3271  R:0  W:0  M:0  I:124  seq_r:0  seq_w:0  seq_m:0  seq_i:124
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[5] 3[1] 4[0] 5[0] 6[0] 7[10] 8[5] 
+
+[158]addr:3046  R:0  W:0  M:0  I:2  seq_r:0  seq_w:0  seq_m:0  seq_i:2
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 
+
+[159]addr:3074  R:0  W:0  M:0  I:3  seq_r:0  seq_w:0  seq_m:0  seq_i:3
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 
+
+[160]addr:3075  R:0  W:0  M:0  I:771  seq_r:0  seq_w:0  seq_m:0  seq_i:771
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[129] 2[0] 3[2] 4[0] 5[126] 6[1] 
+
+[161]addr:14756  R:26  W:12  M:12  I:0  seq_r:10  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[26] 
+W_freq 1[12] 
+M_freq 1[12] 
+I_freq 
+
+[162]addr:14758  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[163]addr:14759  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[164]addr:14760  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[165]addr:14761  R:1  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[166]addr:14762  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[167]addr:14763  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[168]addr:14764  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[169]addr:14765  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[170]addr:14766  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[171]addr:14767  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[172]addr:14768  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[173]addr:14769  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[174]addr:14770  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[175]addr:14771  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[176]addr:14772  R:1  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[177]addr:14773  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[178]addr:14774  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[179]addr:14775  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[180]addr:14776  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[181]addr:14777  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[182]addr:14778  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[183]addr:14779  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[184]addr:14780  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[185]addr:14781  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[186]addr:14782  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[187]addr:14783  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[188]addr:14784  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[189]addr:14785  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[190]addr:14786  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[191]addr:14787  R:4  W:8  M:8  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[192]addr:14788  R:30  W:3  M:3  I:0  seq_r:30  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[30] 
+W_freq 1[3] 
+M_freq 1[3] 
+I_freq 
+
+[193]addr:3085  R:0  W:0  M:0  I:1  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 
+
+[194]addr:3086  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 
+
+[195]addr:3272  R:0  W:0  M:0  I:231  seq_r:0  seq_w:0  seq_m:0  seq_i:231
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[44] 2[22] 3[11] 4[0] 5[22] 
+
+[196]addr:15279  R:0  W:11  M:11  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[11] 
+M_freq 1[11] 
+I_freq 
+
+[197]addr:3273  R:0  W:0  M:0  I:187  seq_r:0  seq_w:0  seq_m:0  seq_i:187
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[11] 3[22] 4[11] 5[11] 
+
+[198]addr:3274  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[11] 
+
+[199]addr:3275  R:0  W:0  M:0  I:44  seq_r:0  seq_w:0  seq_m:0  seq_i:44
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[11] 2[0] 3[11] 
+
+[200]addr:3289  R:0  W:0  M:0  I:154  seq_r:0  seq_w:0  seq_m:0  seq_i:154
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[16] 2[0] 3[5] 4[6] 5[0] 6[0] 7[0] 8[0] 9[11] 
+
+[201]addr:3290  R:0  W:0  M:0  I:33  seq_r:0  seq_w:0  seq_m:0  seq_i:33
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[11] 
+
+[202]addr:3291  R:0  W:0  M:0  I:155  seq_r:0  seq_w:0  seq_m:0  seq_i:155
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[4] 5[6] 6[7] 7[1] 8[0] 9[0] 10[6] 
+
+[203]addr:3292  R:0  W:0  M:0  I:133  seq_r:0  seq_w:0  seq_m:0  seq_i:133
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[16] 2[0] 3[11] 4[6] 5[6] 6[5] 
+
+[204]addr:3312  R:0  W:0  M:0  I:71  seq_r:0  seq_w:0  seq_m:0  seq_i:71
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[5] 4[5] 5[0] 6[6] 
+
+[205]addr:3230  R:0  W:0  M:0  I:95  seq_r:0  seq_w:0  seq_m:0  seq_i:95
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[30] 2[0] 3[9] 4[2] 5[0] 6[5] 
+
+[206]addr:15277  R:5  W:5  M:5  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5] 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[207]addr:15276  R:8  W:10  M:10  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[8] 
+W_freq 1[10] 
+M_freq 1[10] 
+I_freq 
+
+[208]addr:3231  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 3[0] 4[0] 5[1] 6[2] 
+
+[209]addr:3232  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1] 
+
+[210]addr:3244  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[9] 2[1] 3[0] 4[0] 5[1] 
+
+[211]addr:3249  R:0  W:0  M:0  I:13  seq_r:0  seq_w:0  seq_m:0  seq_i:13
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[0] 5[2] 
+
+[212]addr:3250  R:0  W:0  M:0  I:1  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 
+
+[213]addr:3245  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[3] 3[1] 4[0] 5[1] 
+
+[214]addr:14789  R:5  W:3  M:3  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5] 
+W_freq 1[3] 
+M_freq 1[3] 
+I_freq 
+
+[215]addr:15275  R:10  W:10  M:10  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[10] 
+W_freq 1[10] 
+M_freq 1[10] 
+I_freq 
+
+[216]addr:3246  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[3] 4[0] 5[0] 6[0] 7[1] 
+
+[217]addr:14754  R:33  W:17  M:17  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[33] 
+W_freq 1[17] 
+M_freq 1[17] 
+I_freq 
+
+[218]addr:3258  R:0  W:0  M:0  I:3  seq_r:0  seq_w:0  seq_m:0  seq_i:3
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 
+
+[219]addr:3247  R:0  W:0  M:0  I:1  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 
+
+[220]addr:3252  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[0] 6[0] 7[1] 
+
+[221]addr:3253  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[1] 4[1] 
+
+[222]addr:3259  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 
+
+[223]addr:3254  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 3[0] 4[1] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[1] 
+
+[224]addr:3255  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 3[1] 4[0] 5[0] 6[2] 
+
+[225]addr:15175  R:6  W:10  M:10  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[6] 
+W_freq 1[10] 
+M_freq 1[10] 
+I_freq 
+
+[226]addr:3234  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[4] 
+
+[227]addr:3235  R:0  W:0  M:0  I:31  seq_r:0  seq_w:0  seq_m:0  seq_i:31
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[6] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[1] 
+
+[228]addr:3236  R:0  W:0  M:0  I:45  seq_r:0  seq_w:0  seq_m:0  seq_i:45
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[25] 2[10] 
+
+[229]addr:3300  R:0  W:0  M:0  I:30  seq_r:0  seq_w:0  seq_m:0  seq_i:30
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[5] 3[0] 4[5] 
+
+[230]addr:3278  R:0  W:0  M:0  I:110  seq_r:0  seq_w:0  seq_m:0  seq_i:110
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[66] 2[0] 3[0] 4[11] 
+
+[231]addr:3505  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[1] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[1] 
+
+[232]addr:3972  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 
+
+[233]addr:3974  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 
+
+[234]addr:3975  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[2] 3[1] 4[0] 5[0] 6[0] 7[0] 8[1] 
+
+[235]addr:3976  R:0  W:0  M:0  I:3  seq_r:0  seq_w:0  seq_m:0  seq_i:3
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 
+
+[236]addr:3973  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[0] 6[0] 7[1] 
+
+[237]addr:5816  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[4] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1] 
+
+[238]addr:14809  R:0  W:1  M:1  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[239]addr:14807  R:0  W:2  M:2  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[2] 
+M_freq 1[2] 
+I_freq 
+
+[240]addr:2385  R:0  W:0  M:0  I:154  seq_r:0  seq_w:0  seq_m:0  seq_i:154
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[49] 2[7] 3[0] 4[14] 5[7] 
+
+[241]addr:15025  R:23163  W:26035  M:26035  I:0  seq_r:7  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[23163] 
+W_freq 1[26035] 
+M_freq 1[26035] 
+I_freq 
+
+[242]addr:3782  R:0  W:0  M:0  I:72  seq_r:0  seq_w:0  seq_m:0  seq_i:72
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[8] 
+
+[243]addr:3783  R:0  W:0  M:0  I:114  seq_r:0  seq_w:0  seq_m:0  seq_i:114
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[0] 3[0] 4[8] 5[0] 6[0] 7[2] 8[8] 
+
+[244]addr:12225  R:5  W:0  M:0  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 2[1] 
+W_freq 
+M_freq 
+I_freq 
+
+[245]addr:2387  R:0  W:0  M:0  I:49  seq_r:0  seq_w:0  seq_m:0  seq_i:49
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[7] 2[7] 3[0] 4[7] 
+
+[246]addr:2386  R:0  W:0  M:0  I:77  seq_r:0  seq_w:0  seq_m:0  seq_i:77
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[35] 2[7] 3[0] 4[7] 
+
+[247]addr:5817  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 4[0] 5[1] 6[0] 7[0] 8[0] 9[0] 10[0] 11[1] 
+
+[248]addr:13339  R:8  W:0  M:0  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[6] 2[1] 
+W_freq 
+M_freq 
+I_freq 
+
+[249]addr:5818  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 3[2] 4[1] 5[0] 6[1] 
+
+[250]addr:8728  R:0  W:0  M:0  I:25  seq_r:0  seq_w:0  seq_m:0  seq_i:25
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[2] 3[2] 4[0] 5[1] 6[1] 
+
+[251]addr:15024  R:1651  W:1651  M:1651  I:0  seq_r:7  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1651] 
+W_freq 1[1651] 
+M_freq 1[1651] 
+I_freq 
+
+[252]addr:8729  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[2] 4[1] 5[0] 6[1] 
+
+[253]addr:3460  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[1] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 
+
+[254]addr:3461  R:0  W:0  M:0  I:13  seq_r:0  seq_w:0  seq_m:0  seq_i:13
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[2] 4[0] 5[0] 6[1] 
+
+[255]addr:3465  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[2] 
+
+[256]addr:3466  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[1] 
+
+[257]addr:3462  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[0] 4[1] 
+
+[258]addr:3469  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[1] 
+
+[259]addr:15021  R:40  W:54  M:54  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[40] 
+W_freq 1[54] 
+M_freq 1[54] 
+I_freq 
+
+[260]addr:3270  R:0  W:0  M:0  I:25  seq_r:0  seq_w:0  seq_m:0  seq_i:25
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[5] 
+
+[261]addr:3299  R:0  W:0  M:0  I:3  seq_r:0  seq_w:0  seq_m:0  seq_i:3
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 
+
+[262]addr:15022  R:24  W:59  M:59  I:0  seq_r:6  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[24] 
+W_freq 1[59] 
+M_freq 1[59] 
+I_freq 
+
+[263]addr:3295  R:0  W:0  M:0  I:25  seq_r:0  seq_w:0  seq_m:0  seq_i:25
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[0] 3[0] 4[5] 
+
+[264]addr:3296  R:0  W:0  M:0  I:35  seq_r:0  seq_w:0  seq_m:0  seq_i:35
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[0] 3[0] 4[0] 5[0] 6[5] 
+
+[265]addr:3313  R:0  W:0  M:0  I:96  seq_r:0  seq_w:0  seq_m:0  seq_i:96
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 2[12] 3[6] 4[0] 5[0] 6[0] 7[0] 8[6] 
+
+[266]addr:15194  R:4  W:11  M:11  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 1[11] 
+M_freq 1[11] 
+I_freq 
+
+[267]addr:3463  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[1] 
+
+[268]addr:3464  R:0  W:0  M:0  I:10  seq_r:0  seq_w:0  seq_m:0  seq_i:10
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 4[0] 5[1] 
+
+[269]addr:3467  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[1] 
+
+[270]addr:3470  R:0  W:0  M:0  I:2  seq_r:0  seq_w:0  seq_m:0  seq_i:2
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 
+
+[271]addr:3471  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[1] 
+
+[272]addr:14  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 
+
+[273]addr:3968  R:0  W:0  M:0  I:53  seq_r:0  seq_w:0  seq_m:0  seq_i:53
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 10[0] 11[4] 
+
+[274]addr:3969  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[2] 
+
+[275]addr:15176  R:2  W:15  M:15  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 1[15] 
+M_freq 1[15] 
+I_freq 
+
+[276]addr:3970  R:0  W:0  M:0  I:101  seq_r:0  seq_w:0  seq_m:0  seq_i:101
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[54] 2[20] 3[0] 4[0] 5[0] 6[0] 7[1] 
+
+[277]addr:15193  R:0  W:15  M:15  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[15] 
+M_freq 1[15] 
+I_freq 
+
+[278]addr:15177  R:7  W:8  M:8  I:0  seq_r:7  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[7] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[279]addr:3971  R:0  W:0  M:0  I:126  seq_r:0  seq_w:0  seq_m:0  seq_i:126
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[21] 2[4] 3[0] 4[16] 5[1] 6[0] 7[4] 
+
+[280]addr:15178  R:1  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[281]addr:15179  R:2  W:8  M:8  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[282]addr:15180  R:2  W:8  M:8  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[283]addr:15181  R:1  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[284]addr:15182  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[285]addr:15183  R:1  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[286]addr:15184  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[287]addr:15185  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[288]addr:15186  R:4  W:11  M:11  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 1[11] 
+M_freq 1[11] 
+I_freq 
+
+[289]addr:15187  R:0  W:11  M:11  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[11] 
+M_freq 1[11] 
+I_freq 
+
+[290]addr:15188  R:2  W:10  M:10  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 1[10] 
+M_freq 1[10] 
+I_freq 
+
+[291]addr:15189  R:2  W:14  M:14  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 1[14] 
+M_freq 1[14] 
+I_freq 
+
+[292]addr:15190  R:1  W:10  M:10  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[10] 
+M_freq 1[10] 
+I_freq 
+
+[293]addr:15191  R:0  W:10  M:10  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[10] 
+M_freq 1[10] 
+I_freq 
+
+[294]addr:15192  R:0  W:8  M:8  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[8] 
+M_freq 1[8] 
+I_freq 
+
+[295]addr:8730  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[4] 3[1] 4[0] 5[0] 6[0] 7[0] 8[1] 
+
+[296]addr:4334  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 
+
+[297]addr:14922  R:4  W:6  M:6  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 1[6] 
+M_freq 1[6] 
+I_freq 
+
+[298]addr:8731  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[6] 3[0] 4[1] 
+
+[299]addr:8736  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[7] 2[1] 3[2] 
+
+[300]addr:8732  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1] 
+
+[301]addr:8739  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[0] 5[1] 
+
+[302]addr:8737  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[1] 
+
+[303]addr:8733  R:0  W:0  M:0  I:10  seq_r:0  seq_w:0  seq_m:0  seq_i:10
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[1] 4[1] 
+
+[304]addr:8734  R:0  W:0  M:0  I:1  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 
+
+[305]addr:15040  R:4  W:0  M:0  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 
+M_freq 
+I_freq 
+
+[306]addr:5820  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[3] 3[3] 
+
+[307]addr:5821  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[1] 
+
+[308]addr:5822  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[2] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[1] 
+
+[309]addr:5847  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[1] 
+
+[310]addr:5848  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[1] 
+
+[311]addr:5823  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[1] 
+
+[312]addr:5859  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1] 9[0] 10[0] 11[1] 
+
+[313]addr:5824  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 
+
+[314]addr:5858  R:0  W:0  M:0  I:25  seq_r:0  seq_w:0  seq_m:0  seq_i:25
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[1] 5[0] 6[1] 7[2] 
+
+[315]addr:5825  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 
+
+[316]addr:5826  R:0  W:0  M:0  I:9  seq_r:0  seq_w:0  seq_m:0  seq_i:9
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[3] 3[1] 
+
+[317]addr:5827  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[1] 
+
+[318]addr:5828  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 
+
+[319]addr:5857  R:0  W:0  M:0  I:2  seq_r:0  seq_w:0  seq_m:0  seq_i:2
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 
+
+[320]addr:5829  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 
+
+[321]addr:5830  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[1] 
+
+[322]addr:5831  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 
+
+[323]addr:5832  R:0  W:0  M:0  I:13  seq_r:0  seq_w:0  seq_m:0  seq_i:13
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 3[0] 4[2] 
+
+[324]addr:8722  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 
+
+[325]addr:8724  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[1] 
+
+[326]addr:5833  R:0  W:0  M:0  I:9  seq_r:0  seq_w:0  seq_m:0  seq_i:9
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[2] 3[1] 
+
+[327]addr:5834  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[0] 4[1] 
+
+[328]addr:8725  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[1] 
+
+[329]addr:8726  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[4] 3[0] 4[2] 
+
+[330]addr:14796  R:1  W:1  M:1  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[331]addr:8727  R:0  W:0  M:0  I:9  seq_r:0  seq_w:0  seq_m:0  seq_i:9
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[0] 3[0] 4[0] 5[0] 6[1] 
+
+[332]addr:5835  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[3] 3[1] 4[1] 5[1] 
+
+[333]addr:12226  R:15  W:0  M:0  I:0  seq_r:15  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[9] 2[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[334]addr:8548  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[1] 
+
+[335]addr:8549  R:0  W:0  M:0  I:22  seq_r:0  seq_w:0  seq_m:0  seq_i:22
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[4] 3[3] 
+
+[336]addr:8843  R:0  W:0  M:0  I:24  seq_r:0  seq_w:0  seq_m:0  seq_i:24
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 2[5] 3[0] 4[2] 
+
+[337]addr:8844  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[1] 
+
+[338]addr:8845  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[2] 
+
+[339]addr:8853  R:0  W:0  M:0  I:1  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 
+
+[340]addr:8854  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[3] 3[1] 4[0] 5[1] 6[1] 
+
+[341]addr:8336  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[1] 
+
+[342]addr:3414  R:0  W:0  M:0  I:162  seq_r:0  seq_w:0  seq_m:0  seq_i:162
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[9] 2[0] 3[9] 4[9] 5[18] 
+
+[343]addr:3416  R:0  W:0  M:0  I:119  seq_r:0  seq_w:0  seq_m:0  seq_i:119
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[18] 2[9] 3[9] 4[4] 5[0] 6[0] 7[0] 8[5] 
+
+[344]addr:3417  R:0  W:0  M:0  I:27  seq_r:0  seq_w:0  seq_m:0  seq_i:27
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[9] 2[9] 
+
+[345]addr:15018  R:1  W:3  M:3  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[3] 
+M_freq 1[3] 
+I_freq 
+
+[346]addr:15019  R:28  W:39  M:39  I:0  seq_r:7  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[28] 
+W_freq 1[39] 
+M_freq 1[39] 
+I_freq 
+
+[347]addr:3415  R:0  W:0  M:0  I:114  seq_r:0  seq_w:0  seq_m:0  seq_i:114
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[9] 2[13] 3[0] 4[0] 5[5] 6[9] 
+
+[348]addr:8855  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 
+
+[349]addr:14719  R:2  W:2  M:2  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 1[2] 
+M_freq 1[2] 
+I_freq 
+
+[350]addr:15195  R:2  W:9  M:9  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 1[9] 
+M_freq 1[9] 
+I_freq 
+
+[351]addr:8550  R:0  W:0  M:0  I:22  seq_r:0  seq_w:0  seq_m:0  seq_i:22
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 4[2] 5[0] 6[0] 7[0] 8[0] 9[0] 10[1] 
+
+[352]addr:15200  R:6  W:5  M:5  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[6] 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[353]addr:8551  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[4] 3[1] 4[0] 5[0] 6[0] 7[1] 
+
+[354]addr:15196  R:0  W:5  M:5  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[355]addr:8552  R:0  W:0  M:0  I:40  seq_r:0  seq_w:0  seq_m:0  seq_i:40
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[3] 3[3] 4[5] 
+
+[356]addr:8553  R:0  W:0  M:0  I:68  seq_r:0  seq_w:0  seq_m:0  seq_i:68
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[12] 2[7] 3[0] 4[3] 5[6] 
+
+[357]addr:13252  R:3  W:0  M:0  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[358]addr:15197  R:0  W:7  M:7  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[7] 
+M_freq 1[7] 
+I_freq 
+
+[359]addr:8554  R:0  W:0  M:0  I:37  seq_r:0  seq_w:0  seq_m:0  seq_i:37
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[8] 2[1] 3[0] 4[3] 5[3] 
+
+[360]addr:13253  R:3  W:0  M:0  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[361]addr:15198  R:0  W:7  M:7  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[7] 
+M_freq 1[7] 
+I_freq 
+
+[362]addr:15199  R:0  W:4  M:4  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[4] 
+M_freq 1[4] 
+I_freq 
+
+[363]addr:8555  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[7] 2[3] 3[0] 4[1] 
+
+[364]addr:5836  R:0  W:0  M:0  I:22  seq_r:0  seq_w:0  seq_m:0  seq_i:22
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 3[0] 4[3] 5[1] 
+
+[365]addr:12227  R:15  W:0  M:0  I:0  seq_r:15  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[7] 2[4] 
+W_freq 
+M_freq 
+I_freq 
+
+[366]addr:5837  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 3[1] 4[1] 5[0] 6[0] 7[0] 8[1] 
+
+[367]addr:12228  R:13  W:0  M:0  I:0  seq_r:13  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 2[5] 
+W_freq 
+M_freq 
+I_freq 
+
+[368]addr:3784  R:0  W:0  M:0  I:32  seq_r:0  seq_w:0  seq_m:0  seq_i:32
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[2] 
+
+[369]addr:5838  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[2] 4[2] 5[1] 
+
+[370]addr:5839  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[1] 
+
+[371]addr:5840  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[1] 6[0] 7[0] 8[1] 
+
+[372]addr:5841  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[2] 3[0] 4[0] 5[0] 6[0] 7[2] 
+
+[373]addr:5842  R:0  W:0  M:0  I:10  seq_r:0  seq_w:0  seq_m:0  seq_i:10
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[1] 4[1] 
+
+[374]addr:5843  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[1] 
+
+[375]addr:5844  R:0  W:0  M:0  I:33  seq_r:0  seq_w:0  seq_m:0  seq_i:33
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[0] 3[1] 4[5] 5[1] 
+
+[376]addr:5845  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 4[3] 
+
+[377]addr:5852  R:0  W:0  M:0  I:10  seq_r:0  seq_w:0  seq_m:0  seq_i:10
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[3] 
+
+[378]addr:5760  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[2] 
+
+[379]addr:5761  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[0] 3[1] 4[0] 5[0] 6[1] 7[0] 8[1] 
+
+[380]addr:8000  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[1] 
+
+[381]addr:15039  R:15  W:0  M:0  I:0  seq_r:15  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[9] 2[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[382]addr:8001  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[1] 
+
+[383]addr:8002  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[1] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[1] 
+
+[384]addr:8003  R:0  W:0  M:0  I:22  seq_r:0  seq_w:0  seq_m:0  seq_i:22
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[0] 21[0] 22[1] 
+
+[385]addr:14790  R:0  W:2  M:2  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[2] 
+M_freq 1[2] 
+I_freq 
+
+[386]addr:6603  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[2] 3[1] 4[1] 5[1] 
+
+[387]addr:14826  R:3  W:0  M:0  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[388]addr:12333  R:3  W:0  M:0  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[389]addr:6604  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[2] 
+
+[390]addr:2401  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[2] 3[0] 4[0] 5[0] 6[2] 
+
+[391]addr:2393  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[0] 5[1] 
+
+[392]addr:2394  R:0  W:0  M:0  I:9  seq_r:0  seq_w:0  seq_m:0  seq_i:9
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 3[0] 4[1] 
+
+[393]addr:14872  R:5784  W:5784  M:5784  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5784] 
+W_freq 1[5784] 
+M_freq 1[5784] 
+I_freq 
+
+[394]addr:2395  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[0] 5[1] 
+
+[395]addr:14856  R:2  W:5  M:5  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[396]addr:2396  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[1] 
+
+[397]addr:2399  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 
+
+[398]addr:2397  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[3] 
+
+[399]addr:2398  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[0] 3[0] 4[0] 5[1] 
+
+[400]addr:14857  R:0  W:2  M:2  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[2] 
+M_freq 1[2] 
+I_freq 
+
+[401]addr:2402  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5] 2[1] 3[1] 4[0] 5[0] 6[0] 7[1] 
+
+[402]addr:1504  R:0  W:0  M:0  I:22  seq_r:0  seq_w:0  seq_m:0  seq_i:22
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[1] 3[1] 4[2] 5[0] 6[1] 
+
+[403]addr:1543  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[0] 5[0] 6[2] 
+
+[404]addr:12  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[1] 
+
+[405]addr:1544  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[7] 2[0] 3[0] 4[1] 5[1] 
+
+[406]addr:54  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 
+
+[407]addr:11620  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[1] 
+
+[408]addr:13828  R:1  W:0  M:0  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 
+M_freq 
+I_freq 
+
+[409]addr:11616  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[3] 3[1] 
+
+[410]addr:14833  R:0  W:7  M:7  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[7] 
+M_freq 1[7] 
+I_freq 
+
+[411]addr:11617  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 
+
+[412]addr:11618  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 
+
+[413]addr:55  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 
+
+[414]addr:52  R:0  W:0  M:0  I:5  seq_r:0  seq_w:0  seq_m:0  seq_i:5
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 
+
+[415]addr:53  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[1] 
+
+[416]addr:40  R:0  W:0  M:0  I:13  seq_r:0  seq_w:0  seq_m:0  seq_i:13
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[7] 2[0] 3[0] 4[0] 5[0] 6[1] 
+
+[417]addr:5801  R:0  W:0  M:0  I:12  seq_r:0  seq_w:0  seq_m:0  seq_i:12
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[2] 4[1] 
+
+[418]addr:2335  R:0  W:0  M:0  I:2  seq_r:0  seq_w:0  seq_m:0  seq_i:2
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 
+
+[419]addr:6605  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[2] 3[3] 4[1] 
+
+[420]addr:15029  R:0  W:7  M:7  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[7] 
+M_freq 1[7] 
+I_freq 
+
+[421]addr:6606  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[3] 4[1] 
+
+[422]addr:6607  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 
+
+[423]addr:15150  R:1  W:1  M:1  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[424]addr:1505  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3] 2[5] 3[1] 
+
+[425]addr:15149  R:1  W:0  M:0  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 
+M_freq 
+I_freq 
+
+[426]addr:25  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1] 
+
+[427]addr:26  R:0  W:0  M:0  I:23  seq_r:0  seq_w:0  seq_m:0  seq_i:23
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[0] 3[2] 4[0] 5[1] 6[0] 7[0] 8[1] 
+
+[428]addr:2430  R:0  W:0  M:0  I:12  seq_r:0  seq_w:0  seq_m:0  seq_i:12
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[0] 4[2] 
+
+[429]addr:2431  R:0  W:0  M:0  I:24  seq_r:0  seq_w:0  seq_m:0  seq_i:24
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[8] 2[2] 3[4] 
+
+[430]addr:2432  R:0  W:0  M:0  I:32  seq_r:0  seq_w:0  seq_m:0  seq_i:32
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[4] 4[0] 5[0] 6[0] 7[0] 8[0] 9[2] 
+
+[431]addr:14827  R:2  W:0  M:0  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 
+M_freq 
+I_freq 
+
+[432]addr:12439  R:2  W:0  M:0  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 
+M_freq 
+I_freq 
+
+[433]addr:2433  R:0  W:0  M:0  I:28  seq_r:0  seq_w:0  seq_m:0  seq_i:28
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[2] 6[0] 7[0] 8[0] 9[2] 
+
+[434]addr:2434  R:0  W:0  M:0  I:12  seq_r:0  seq_w:0  seq_m:0  seq_i:12
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[2] 3[2] 
+
+[435]addr:2437  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[2] 
+
+[436]addr:2449  R:0  W:0  M:0  I:10  seq_r:0  seq_w:0  seq_m:0  seq_i:10
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[2] 
+
+[437]addr:2450  R:0  W:0  M:0  I:2  seq_r:0  seq_w:0  seq_m:0  seq_i:2
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 
+
+[438]addr:2438  R:0  W:0  M:0  I:42  seq_r:0  seq_w:0  seq_m:0  seq_i:42
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[4] 3[2] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[2] 
+
+[439]addr:13088  R:4  W:0  M:0  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4] 
+W_freq 
+M_freq 
+I_freq 
+
+[440]addr:2439  R:0  W:0  M:0  I:32  seq_r:0  seq_w:0  seq_m:0  seq_i:32
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[0] 4[4] 5[0] 6[2] 
+
+[441]addr:2442  R:0  W:0  M:0  I:93  seq_r:0  seq_w:0  seq_m:0  seq_i:93
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[9] 8[0] 9[0] 10[3] 
+
+[442]addr:2443  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[6] 
+
+[443]addr:2440  R:0  W:0  M:0  I:58  seq_r:0  seq_w:0  seq_m:0  seq_i:58
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[6] 3[0] 4[0] 5[4] 6[2] 7[2] 
+
+[444]addr:2441  R:0  W:0  M:0  I:10  seq_r:0  seq_w:0  seq_m:0  seq_i:10
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[2] 
+
+[445]addr:2446  R:0  W:0  M:0  I:8  seq_r:0  seq_w:0  seq_m:0  seq_i:8
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[2] 
+
+[446]addr:2447  R:0  W:0  M:0  I:2  seq_r:0  seq_w:0  seq_m:0  seq_i:2
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 
+
+[447]addr:2448  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[2] 
+
+[448]addr:2435  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[12] 2[2] 
+
+[449]addr:27  R:0  W:0  M:0  I:23  seq_r:0  seq_w:0  seq_m:0  seq_i:23
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[2] 3[3] 4[2] 
+
+[450]addr:2403  R:0  W:0  M:0  I:10  seq_r:0  seq_w:0  seq_m:0  seq_i:10
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 3[0] 4[0] 5[0] 6[1] 
+
+[451]addr:2412  R:0  W:0  M:0  I:11566  seq_r:0  seq_w:0  seq_m:0  seq_i:11566
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2890] 2[1] 3[2890] 4[1] 
+
+[452]addr:14723  R:15694  W:6402  M:6402  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[15694] 
+W_freq 1[6402] 
+M_freq 1[6402] 
+I_freq 
+
+[453]addr:2413  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[2] 4[0] 5[1] 6[0] 7[0] 8[0] 9[1] 
+
+[454]addr:14724  R:3104  W:1567  M:1567  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3104] 
+W_freq 1[1567] 
+M_freq 1[1567] 
+I_freq 
+
+[455]addr:2414  R:0  W:0  M:0  I:781  seq_r:0  seq_w:0  seq_m:0  seq_i:781
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[1] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[0] 21[0] 22[1] 23[0] 24[0] 25[0] 26[29] 
+
+[456]addr:14725  R:3296  W:1664  M:1664  I:0  seq_r:4  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3296] 
+W_freq 1[1664] 
+M_freq 1[1664] 
+I_freq 
+
+[457]addr:2415  R:0  W:0  M:0  I:4061  seq_r:0  seq_w:0  seq_m:0  seq_i:4061
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[930] 2[620] 3[611] 4[2] 5[10] 
+
+[458]addr:2416  R:0  W:0  M:0  I:3062  seq_r:0  seq_w:0  seq_m:0  seq_i:3062
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[309] 2[310] 3[11] 4[0] 5[0] 6[0] 7[300] 
+
+[459]addr:2404  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[1] 
+
+[460]addr:3301  R:0  W:0  M:0  I:36  seq_r:0  seq_w:0  seq_m:0  seq_i:36
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[4] 
+
+[461]addr:3310  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[4] 
+
+[462]addr:3311  R:0  W:0  M:0  I:24  seq_r:0  seq_w:0  seq_m:0  seq_i:24
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[4] 3[0] 4[4] 
+
+[463]addr:3237  R:0  W:0  M:0  I:52  seq_r:0  seq_w:0  seq_m:0  seq_i:52
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[4] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[4] 
+
+[464]addr:3264  R:0  W:0  M:0  I:52  seq_r:0  seq_w:0  seq_m:0  seq_i:52
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[4] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[4] 
+
+[465]addr:5597  R:0  W:0  M:0  I:104  seq_r:0  seq_w:0  seq_m:0  seq_i:104
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[8] 2[16] 3[4] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[4] 
+
+[466]addr:5598  R:0  W:0  M:0  I:40  seq_r:0  seq_w:0  seq_m:0  seq_i:40
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[24] 2[8] 
+
+[467]addr:3242  R:0  W:0  M:0  I:48  seq_r:0  seq_w:0  seq_m:0  seq_i:48
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[4] 4[0] 5[0] 6[0] 7[0] 8[0] 9[4] 
+
+[468]addr:17408  R:97  W:109  M:109  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[97] 
+W_freq 1[109] 
+M_freq 1[109] 
+I_freq 
+
+[469]addr:3243  R:0  W:0  M:0  I:72  seq_r:0  seq_w:0  seq_m:0  seq_i:72
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[0] 3[12] 4[8] 
+
+[470]addr:21568  R:1  W:97  M:97  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[97] 
+M_freq 1[97] 
+I_freq 
+
+[471]addr:25728  R:1  W:1  M:1  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[472]addr:28  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 3[1] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[1] 
+
+[473]addr:29888  R:1  W:1  M:1  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1] 
+W_freq 1[1] 
+M_freq 1[1] 
+I_freq 
+
+[474]addr:15201  R:4314  W:14  M:14  I:0  seq_r:4312  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[4314] 
+W_freq 1[14] 
+M_freq 1[14] 
+I_freq 
+
+[475]addr:15202  R:1795  W:5  M:5  I:0  seq_r:1795  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1795] 
+W_freq 1[5] 
+M_freq 1[5] 
+I_freq 
+
+[476]addr:29  R:0  W:0  M:0  I:200  seq_r:0  seq_w:0  seq_m:0  seq_i:200
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[16] 2[0] 3[0] 4[0] 5[0] 6[0] 7[8] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[8] 
+
+[477]addr:2429  R:0  W:0  M:0  I:14453  seq_r:0  seq_w:0  seq_m:0  seq_i:14453
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2890] 3[2891] 
+
+[478]addr:2410  R:0  W:0  M:0  I:28906  seq_r:0  seq_w:0  seq_m:0  seq_i:28906
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[5780] 3[0] 4[0] 5[0] 6[2891] 
+
+[479]addr:2411  R:0  W:0  M:0  I:28900  seq_r:0  seq_w:0  seq_m:0  seq_i:28900
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2890] 2[2890] 3[2890] 4[2890] 
+
+[480]addr:2427  R:0  W:0  M:0  I:52020  seq_r:0  seq_w:0  seq_m:0  seq_i:52020
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[11560] 2[8670] 3[2890] 4[0] 5[2890] 
+
+[481]addr:2428  R:0  W:0  M:0  I:28807  seq_r:0  seq_w:0  seq_m:0  seq_i:28807
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5687] 2[186] 3[0] 4[5687] 
+
+[482]addr:30  R:0  W:0  M:0  I:80  seq_r:0  seq_w:0  seq_m:0  seq_i:80
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[0] 4[8] 5[9] 
+
+[483]addr:31  R:0  W:0  M:0  I:8590  seq_r:0  seq_w:0  seq_m:0  seq_i:8590
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4627] 2[360] 3[361] 4[0] 5[0] 6[360] 
+
+[484]addr:32  R:0  W:0  M:0  I:60355  seq_r:0  seq_w:0  seq_m:0  seq_i:60355
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[3593] 2[5389] 3[2874] 4[5748] 5[2874] 
+
+[485]addr:33  R:0  W:0  M:0  I:19173  seq_r:0  seq_w:0  seq_m:0  seq_i:19173
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[5074] 2[359] 3[1392] 4[0] 5[1841] 
+
+[486]addr:13  R:0  W:0  M:0  I:2874  seq_r:0  seq_w:0  seq_m:0  seq_i:2874
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2874] 
+
+[487]addr:218  R:0  W:0  M:0  I:25194  seq_r:0  seq_w:0  seq_m:0  seq_i:25194
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4446] 2[0] 3[0] 4[1482] 5[2964] 
+
+[488]addr:219  R:0  W:0  M:0  I:17824  seq_r:0  seq_w:0  seq_m:0  seq_i:17824
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[5] 3[0] 4[5] 5[1482] 6[0] 7[1477] 8[0] 9[5] 
+
+[489]addr:11823  R:2958  W:0  M:0  I:0  seq_r:2958  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2958] 
+W_freq 
+M_freq 
+I_freq 
+
+[490]addr:228  R:0  W:0  M:0  I:4446  seq_r:0  seq_w:0  seq_m:0  seq_i:4446
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1482] 
+
+[491]addr:220  R:0  W:0  M:0  I:10359  seq_r:0  seq_w:0  seq_m:0  seq_i:10359
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2964] 2[1482] 3[1477] 
+
+[492]addr:156  R:0  W:0  M:0  I:32016  seq_r:0  seq_w:0  seq_m:0  seq_i:32016
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4176] 2[0] 3[0] 4[2784] 5[1392] 6[0] 7[1392] 
+
+[493]addr:11821  R:8482  W:0  M:0  I:0  seq_r:8482  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[8482] 
+W_freq 
+M_freq 
+I_freq 
+
+[494]addr:157  R:0  W:0  M:0  I:12522  seq_r:0  seq_w:0  seq_m:0  seq_i:12522
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4173] 2[0] 3[2778] 4[0] 5[3] 
+
+[495]addr:223  R:0  W:0  M:0  I:4431  seq_r:0  seq_w:0  seq_m:0  seq_i:4431
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1477] 
+
+[496]addr:237  R:0  W:0  M:0  I:5908  seq_r:0  seq_w:0  seq_m:0  seq_i:5908
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1477] 2[0] 3[1477] 
+
+[497]addr:244  R:0  W:0  M:0  I:5908  seq_r:0  seq_w:0  seq_m:0  seq_i:5908
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2954] 2[1477] 
+
+[498]addr:11819  R:11546  W:0  M:0  I:0  seq_r:11546  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[11546] 
+W_freq 
+M_freq 
+I_freq 
+
+[499]addr:245  R:0  W:0  M:0  I:31017  seq_r:0  seq_w:0  seq_m:0  seq_i:31017
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1477] 2[0] 3[1477] 4[0] 5[1477] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[1477] 
+
+[500]addr:11822  R:8598  W:0  M:0  I:0  seq_r:8598  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[8598] 
+W_freq 
+M_freq 
+I_freq 
+
+[501]addr:246  R:0  W:0  M:0  I:27027  seq_r:0  seq_w:0  seq_m:0  seq_i:27027
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[365] 2[365] 3[1477] 4[0] 5[351] 6[0] 7[0] 8[396] 9[1842] 
+
+[502]addr:247  R:0  W:0  M:0  I:6454  seq_r:0  seq_w:0  seq_m:0  seq_i:6454
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[112] 3[842] 4[618] 5[112] 6[112] 
+
+[503]addr:11818  R:1177  W:0  M:0  I:0  seq_r:1177  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[1177] 
+W_freq 
+M_freq 
+I_freq 
+
+[504]addr:11820  R:11214  W:0  M:0  I:0  seq_r:11214  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[11214] 
+W_freq 
+M_freq 
+I_freq 
+
+[505]addr:248  R:0  W:0  M:0  I:2464  seq_r:0  seq_w:0  seq_m:0  seq_i:2464
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[112] 2[0] 3[112] 4[112] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[112] 
+
+[506]addr:249  R:0  W:0  M:0  I:1344  seq_r:0  seq_w:0  seq_m:0  seq_i:1344
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[113] 2[171] 3[0] 4[0] 5[0] 6[58] 7[0] 8[0] 9[0] 10[53] 11[1] 
+
+[507]addr:236  R:0  W:0  M:0  I:2954  seq_r:0  seq_w:0  seq_m:0  seq_i:2954
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1477] 
+
+[508]addr:271  R:0  W:0  M:0  I:11912  seq_r:0  seq_w:0  seq_m:0  seq_i:11912
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1058] 3[0] 4[618] 5[0] 6[9] 7[0] 8[0] 9[158] 10[7] 11[144] 12[0] 13[153] 14[0] 15[147] 
+
+[509]addr:272  R:0  W:0  M:0  I:14940  seq_r:0  seq_w:0  seq_m:0  seq_i:14940
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[370] 2[370] 3[1124] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[747] 
+
+[510]addr:291  R:0  W:0  M:0  I:3964  seq_r:0  seq_w:0  seq_m:0  seq_i:3964
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[57] 2[429] 3[358] 4[0] 5[395] 
+
+[511]addr:11815  R:3302  W:0  M:0  I:0  seq_r:3302  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3302] 
+W_freq 
+M_freq 
+I_freq 
+
+[512]addr:273  R:0  W:0  M:0  I:13446  seq_r:0  seq_w:0  seq_m:0  seq_i:13446
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[747] 4[747] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[747] 
+
+[513]addr:11912  R:224  W:0  M:0  I:0  seq_r:224  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[224] 
+W_freq 
+M_freq 
+I_freq 
+
+[514]addr:274  R:0  W:0  M:0  I:12699  seq_r:0  seq_w:0  seq_m:0  seq_i:12699
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1494] 2[747] 3[747] 4[747] 5[0] 6[747] 
+
+[515]addr:275  R:0  W:0  M:0  I:15329  seq_r:0  seq_w:0  seq_m:0  seq_i:15329
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[358] 3[1136] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[747] 
+
+[516]addr:276  R:0  W:0  M:0  I:9179  seq_r:0  seq_w:0  seq_m:0  seq_i:9179
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[365] 2[0] 3[365] 4[0] 5[0] 6[13] 7[12] 8[0] 9[176] 10[205] 11[169] 12[172] 
+
+[517]addr:259  R:0  W:0  M:0  I:3160  seq_r:0  seq_w:0  seq_m:0  seq_i:3160
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[632] 3[632] 
+
+[518]addr:11890  R:224  W:0  M:0  I:0  seq_r:224  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[224] 
+W_freq 
+M_freq 
+I_freq 
+
+[519]addr:158  R:0  W:0  M:0  I:9723  seq_r:0  seq_w:0  seq_m:0  seq_i:9723
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1389] 3[0] 4[0] 5[1389] 
+
+[520]addr:162  R:0  W:0  M:0  I:9723  seq_r:0  seq_w:0  seq_m:0  seq_i:9723
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1389] 4[1389] 
+
+[521]addr:163  R:0  W:0  M:0  I:29169  seq_r:0  seq_w:0  seq_m:0  seq_i:29169
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1389] 2[1389] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1389] 9[0] 10[1389] 
+
+[522]addr:164  R:0  W:0  M:0  I:27780  seq_r:0  seq_w:0  seq_m:0  seq_i:27780
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1389] 2[0] 3[4167] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[1389] 
+
+[523]addr:165  R:0  W:0  M:0  I:11560  seq_r:0  seq_w:0  seq_m:0  seq_i:11560
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[454] 2[0] 3[0] 4[1280] 5[106] 6[351] 7[0] 8[0] 9[0] 10[335] 
+
+[524]addr:199  R:0  W:0  M:0  I:3847  seq_r:0  seq_w:0  seq_m:0  seq_i:3847
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[348] 2[21] 3[348] 4[556] 5[0] 6[0] 7[0] 8[0] 9[21] 
+
+[525]addr:194  R:0  W:0  M:0  I:5193  seq_r:0  seq_w:0  seq_m:0  seq_i:5193
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[577] 2[285] 3[0] 4[0] 5[0] 6[285] 7[0] 8[292] 
+
+[526]addr:213  R:0  W:0  M:0  I:5505  seq_r:0  seq_w:0  seq_m:0  seq_i:5505
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[18] 2[285] 3[0] 4[403] 5[319] 6[285] 
+
+[527]addr:195  R:0  W:0  M:0  I:12117  seq_r:0  seq_w:0  seq_m:0  seq_i:12117
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[577] 3[0] 4[0] 5[577] 6[577] 7[0] 8[577] 
+
+[528]addr:11885  R:232  W:0  M:0  I:0  seq_r:232  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[232] 
+W_freq 
+M_freq 
+I_freq 
+
+[529]addr:196  R:0  W:0  M:0  I:10963  seq_r:0  seq_w:0  seq_m:0  seq_i:10963
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[577] 2[577] 3[0] 4[0] 5[577] 6[0] 7[0] 8[0] 9[0] 10[0] 11[577] 
+
+[530]addr:197  R:0  W:0  M:0  I:11540  seq_r:0  seq_w:0  seq_m:0  seq_i:11540
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[577] 2[0] 3[0] 4[577] 5[0] 6[0] 7[577] 8[577] 
+
+[531]addr:198  R:0  W:0  M:0  I:10902  seq_r:0  seq_w:0  seq_m:0  seq_i:10902
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[319] 2[319] 3[0] 4[0] 5[258] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[577] 
+
+[532]addr:186  R:0  W:0  M:0  I:3531  seq_r:0  seq_w:0  seq_m:0  seq_i:3531
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[621] 2[346] 3[281] 4[0] 5[275] 
+
+[533]addr:187  R:0  W:0  M:0  I:2654  seq_r:0  seq_w:0  seq_m:0  seq_i:2654
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1327] 
+
+[534]addr:188  R:0  W:0  M:0  I:12708  seq_r:0  seq_w:0  seq_m:0  seq_i:12708
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[343] 2[1049] 3[363] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[706] 
+
+[535]addr:189  R:0  W:0  M:0  I:13414  seq_r:0  seq_w:0  seq_m:0  seq_i:13414
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[706] 3[0] 4[706] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[706] 
+
+[536]addr:11864  R:128  W:0  M:0  I:0  seq_r:128  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[128] 
+W_freq 
+M_freq 
+I_freq 
+
+[537]addr:190  R:0  W:0  M:0  I:13414  seq_r:0  seq_w:0  seq_m:0  seq_i:13414
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[706] 2[1412] 3[706] 4[706] 5[0] 6[0] 7[706] 
+
+[538]addr:191  R:0  W:0  M:0  I:14470  seq_r:0  seq_w:0  seq_m:0  seq_i:14470
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1062] 2[356] 3[0] 4[350] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[706] 
+
+[539]addr:192  R:0  W:0  M:0  I:6646  seq_r:0  seq_w:0  seq_m:0  seq_i:6646
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[18] 7[0] 8[0] 9[342] 10[346] 
+
+[540]addr:11882  R:232  W:0  M:0  I:0  seq_r:232  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[232] 
+W_freq 
+M_freq 
+I_freq 
+
+[541]addr:214  R:0  W:0  M:0  I:1372  seq_r:0  seq_w:0  seq_m:0  seq_i:1372
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[343] 2[0] 3[343] 
+
+[542]addr:11907  R:248  W:0  M:0  I:0  seq_r:248  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[248] 
+W_freq 
+M_freq 
+I_freq 
+
+[543]addr:266  R:0  W:0  M:0  I:2472  seq_r:0  seq_w:0  seq_m:0  seq_i:2472
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[618] 
+
+[544]addr:267  R:0  W:0  M:0  I:11742  seq_r:0  seq_w:0  seq_m:0  seq_i:11742
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[300] 2[300] 3[318] 4[0] 5[0] 6[0] 7[618] 8[0] 9[618] 
+
+[545]addr:268  R:0  W:0  M:0  I:11124  seq_r:0  seq_w:0  seq_m:0  seq_i:11124
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[618] 2[618] 3[618] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[618] 
+
+[546]addr:269  R:0  W:0  M:0  I:12360  seq_r:0  seq_w:0  seq_m:0  seq_i:12360
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[618] 2[0] 3[0] 4[0] 5[0] 6[1236] 7[618] 
+
+[547]addr:270  R:0  W:0  M:0  I:11742  seq_r:0  seq_w:0  seq_m:0  seq_i:11742
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[618] 3[0] 4[0] 5[618] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[618] 
+
+[548]addr:292  R:0  W:0  M:0  I:4073  seq_r:0  seq_w:0  seq_m:0  seq_i:4073
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[359] 3[0] 4[0] 5[311] 6[300] 
+
+[549]addr:11872  R:236  W:0  M:0  I:0  seq_r:236  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[236] 
+W_freq 
+M_freq 
+I_freq 
+
+[550]addr:11909  R:236  W:0  M:0  I:0  seq_r:236  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[236] 
+W_freq 
+M_freq 
+I_freq 
+
+[551]addr:11906  R:244  W:0  M:0  I:0  seq_r:244  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[244] 
+W_freq 
+M_freq 
+I_freq 
+
+[552]addr:11866  R:124  W:0  M:0  I:0  seq_r:124  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[124] 
+W_freq 
+M_freq 
+I_freq 
+
+[553]addr:11901  R:248  W:0  M:0  I:0  seq_r:248  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[248] 
+W_freq 
+M_freq 
+I_freq 
+
+[554]addr:11875  R:232  W:0  M:0  I:0  seq_r:232  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[232] 
+W_freq 
+M_freq 
+I_freq 
+
+[555]addr:11865  R:104  W:0  M:0  I:0  seq_r:104  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[104] 
+W_freq 
+M_freq 
+I_freq 
+
+[556]addr:11876  R:228  W:0  M:0  I:0  seq_r:228  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[228] 
+W_freq 
+M_freq 
+I_freq 
+
+[557]addr:11911  R:260  W:0  M:0  I:0  seq_r:260  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[260] 
+W_freq 
+M_freq 
+I_freq 
+
+[558]addr:11883  R:252  W:0  M:0  I:0  seq_r:252  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[252] 
+W_freq 
+M_freq 
+I_freq 
+
+[559]addr:11898  R:252  W:0  M:0  I:0  seq_r:252  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[252] 
+W_freq 
+M_freq 
+I_freq 
+
+[560]addr:11895  R:228  W:0  M:0  I:0  seq_r:228  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[228] 
+W_freq 
+M_freq 
+I_freq 
+
+[561]addr:11910  R:224  W:0  M:0  I:0  seq_r:224  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[224] 
+W_freq 
+M_freq 
+I_freq 
+
+[562]addr:11881  R:244  W:0  M:0  I:0  seq_r:244  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[244] 
+W_freq 
+M_freq 
+I_freq 
+
+[563]addr:166  R:0  W:0  M:0  I:1484  seq_r:0  seq_w:0  seq_m:0  seq_i:1484
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[106] 3[424] 
+
+[564]addr:167  R:0  W:0  M:0  I:1602  seq_r:0  seq_w:0  seq_m:0  seq_i:1602
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[153] 2[0] 3[0] 4[0] 5[47] 6[0] 7[106] 8[59] 
+
+[565]addr:168  R:0  W:0  M:0  I:106  seq_r:0  seq_w:0  seq_m:0  seq_i:106
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[106] 
+
+[566]addr:11870  R:108  W:0  M:0  I:0  seq_r:108  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[108] 
+W_freq 
+M_freq 
+I_freq 
+
+[567]addr:11887  R:240  W:0  M:0  I:0  seq_r:240  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[240] 
+W_freq 
+M_freq 
+I_freq 
+
+[568]addr:11867  R:128  W:0  M:0  I:0  seq_r:128  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[128] 
+W_freq 
+M_freq 
+I_freq 
+
+[569]addr:11897  R:248  W:0  M:0  I:0  seq_r:248  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[248] 
+W_freq 
+M_freq 
+I_freq 
+
+[570]addr:11871  R:204  W:0  M:0  I:0  seq_r:204  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[204] 
+W_freq 
+M_freq 
+I_freq 
+
+[571]addr:11868  R:112  W:0  M:0  I:0  seq_r:112  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[112] 
+W_freq 
+M_freq 
+I_freq 
+
+[572]addr:11908  R:228  W:0  M:0  I:0  seq_r:228  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[228] 
+W_freq 
+M_freq 
+I_freq 
+
+[573]addr:11902  R:224  W:0  M:0  I:0  seq_r:224  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[224] 
+W_freq 
+M_freq 
+I_freq 
+
+[574]addr:11893  R:220  W:0  M:0  I:0  seq_r:220  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[220] 
+W_freq 
+M_freq 
+I_freq 
+
+[575]addr:11873  R:236  W:0  M:0  I:0  seq_r:236  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[236] 
+W_freq 
+M_freq 
+I_freq 
+
+[576]addr:115  R:0  W:0  M:0  I:407  seq_r:0  seq_w:0  seq_m:0  seq_i:407
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[111] 2[37] 3[0] 4[0] 5[0] 6[37] 
+
+[577]addr:116  R:0  W:0  M:0  I:703  seq_r:0  seq_w:0  seq_m:0  seq_i:703
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[37] 3[37] 4[37] 5[0] 6[0] 7[0] 8[0] 9[0] 10[37] 
+
+[578]addr:117  R:0  W:0  M:0  I:629  seq_r:0  seq_w:0  seq_m:0  seq_i:629
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[74] 2[0] 3[37] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[37] 
+
+[579]addr:118  R:0  W:0  M:0  I:592  seq_r:0  seq_w:0  seq_m:0  seq_i:592
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[37] 3[0] 4[37] 5[74] 
+
+[580]addr:119  R:0  W:0  M:0  I:740  seq_r:0  seq_w:0  seq_m:0  seq_i:740
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[37] 2[0] 3[0] 4[0] 5[0] 6[37] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[37] 
+
+[581]addr:120  R:0  W:0  M:0  I:703  seq_r:0  seq_w:0  seq_m:0  seq_i:703
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[37] 
+
+[582]addr:121  R:0  W:0  M:0  I:792  seq_r:0  seq_w:0  seq_m:0  seq_i:792
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[22] 2[0] 3[0] 4[0] 5[22] 6[0] 7[15] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[37] 
+
+[583]addr:122  R:0  W:0  M:0  I:319  seq_r:0  seq_w:0  seq_m:0  seq_i:319
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[36] 2[22] 3[0] 4[0] 5[19] 6[0] 7[0] 8[18] 
+
+[584]addr:11899  R:212  W:0  M:0  I:0  seq_r:212  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[212] 
+W_freq 
+M_freq 
+I_freq 
+
+[585]addr:11877  R:240  W:0  M:0  I:0  seq_r:240  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[240] 
+W_freq 
+M_freq 
+I_freq 
+
+[586]addr:290  R:0  W:0  M:0  I:64  seq_r:0  seq_w:0  seq_m:0  seq_i:64
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[16] 
+
+[587]addr:124  R:0  W:0  M:0  I:133  seq_r:0  seq_w:0  seq_m:0  seq_i:133
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[38] 2[19] 3[19] 
+
+[588]addr:11889  R:220  W:0  M:0  I:0  seq_r:220  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[220] 
+W_freq 
+M_freq 
+I_freq 
+
+[589]addr:11904  R:248  W:0  M:0  I:0  seq_r:248  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[248] 
+W_freq 
+M_freq 
+I_freq 
+
+[590]addr:11878  R:232  W:0  M:0  I:0  seq_r:232  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[232] 
+W_freq 
+M_freq 
+I_freq 
+
+[591]addr:11880  R:208  W:0  M:0  I:0  seq_r:208  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[208] 
+W_freq 
+M_freq 
+I_freq 
+
+[592]addr:11874  R:228  W:0  M:0  I:0  seq_r:228  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[228] 
+W_freq 
+M_freq 
+I_freq 
+
+[593]addr:11913  R:132  W:0  M:0  I:0  seq_r:132  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[132] 
+W_freq 
+M_freq 
+I_freq 
+
+[594]addr:17409  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[595]addr:11905  R:220  W:0  M:0  I:0  seq_r:220  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[220] 
+W_freq 
+M_freq 
+I_freq 
+
+[596]addr:11879  R:240  W:0  M:0  I:0  seq_r:240  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[240] 
+W_freq 
+M_freq 
+I_freq 
+
+[597]addr:21569  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[598]addr:11884  R:224  W:0  M:0  I:0  seq_r:224  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[224] 
+W_freq 
+M_freq 
+I_freq 
+
+[599]addr:11903  R:240  W:0  M:0  I:0  seq_r:240  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[240] 
+W_freq 
+M_freq 
+I_freq 
+
+[600]addr:11892  R:232  W:0  M:0  I:0  seq_r:232  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[232] 
+W_freq 
+M_freq 
+I_freq 
+
+[601]addr:11900  R:228  W:0  M:0  I:0  seq_r:228  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[228] 
+W_freq 
+M_freq 
+I_freq 
+
+[602]addr:11888  R:248  W:0  M:0  I:0  seq_r:248  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[248] 
+W_freq 
+M_freq 
+I_freq 
+
+[603]addr:11891  R:244  W:0  M:0  I:0  seq_r:244  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[244] 
+W_freq 
+M_freq 
+I_freq 
+
+[604]addr:11886  R:232  W:0  M:0  I:0  seq_r:232  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[232] 
+W_freq 
+M_freq 
+I_freq 
+
+[605]addr:11894  R:240  W:0  M:0  I:0  seq_r:240  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[240] 
+W_freq 
+M_freq 
+I_freq 
+
+[606]addr:11896  R:232  W:0  M:0  I:0  seq_r:232  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[232] 
+W_freq 
+M_freq 
+I_freq 
+
+[607]addr:17410  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[608]addr:21570  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[609]addr:146  R:0  W:0  M:0  I:645  seq_r:0  seq_w:0  seq_m:0  seq_i:645
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[43] 2[86] 3[0] 4[43] 5[0] 6[43] 
+
+[610]addr:147  R:0  W:0  M:0  I:817  seq_r:0  seq_w:0  seq_m:0  seq_i:817
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[43] 4[0] 5[86] 6[43] 
+
+[611]addr:148  R:0  W:0  M:0  I:903  seq_r:0  seq_w:0  seq_m:0  seq_i:903
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[43] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[43] 
+
+[612]addr:149  R:0  W:0  M:0  I:817  seq_r:0  seq_w:0  seq_m:0  seq_i:817
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[43] 3[0] 4[43] 5[0] 6[43] 7[43] 
+
+[613]addr:150  R:0  W:0  M:0  I:774  seq_r:0  seq_w:0  seq_m:0  seq_i:774
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[43] 2[0] 3[0] 4[0] 5[43] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[43] 
+
+[614]addr:151  R:0  W:0  M:0  I:946  seq_r:0  seq_w:0  seq_m:0  seq_i:946
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[43] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[0] 21[43] 
+
+[615]addr:152  R:0  W:0  M:0  I:889  seq_r:0  seq_w:0  seq_m:0  seq_i:889
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[43] 2[25] 3[1] 4[62] 5[0] 6[1] 7[0] 8[0] 9[0] 10[0] 11[11] 12[13] 13[0] 14[8] 15[10] 
+
+[616]addr:212  R:0  W:0  M:0  I:72  seq_r:0  seq_w:0  seq_m:0  seq_i:72
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[18] 2[0] 3[18] 
+
+[617]addr:153  R:0  W:0  M:0  I:64  seq_r:0  seq_w:0  seq_m:0  seq_i:64
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[29] 3[0] 4[1] 
+
+[618]addr:11869  R:160  W:0  M:0  I:0  seq_r:160  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[160] 
+W_freq 
+M_freq 
+I_freq 
+
+[619]addr:17411  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[620]addr:21571  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[621]addr:11863  R:108  W:0  M:0  I:0  seq_r:108  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[108] 
+W_freq 
+M_freq 
+I_freq 
+
+[622]addr:17412  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[623]addr:21572  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[624]addr:17413  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[625]addr:21573  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[626]addr:17414  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[627]addr:21574  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[628]addr:17415  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[629]addr:21575  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[630]addr:17416  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[631]addr:21576  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[632]addr:17417  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[633]addr:21577  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[634]addr:17418  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[635]addr:21578  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[636]addr:17419  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[637]addr:21579  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[638]addr:17420  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[639]addr:21580  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[640]addr:17421  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[641]addr:21581  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[642]addr:17422  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[643]addr:21582  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[644]addr:17423  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[645]addr:21583  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[646]addr:17424  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[647]addr:21584  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[648]addr:17425  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[649]addr:21585  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[650]addr:17426  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[651]addr:21586  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[652]addr:617  R:0  W:0  M:0  I:15  seq_r:0  seq_w:0  seq_m:0  seq_i:15
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[0] 5[1] 6[0] 7[0] 8[1] 
+
+[653]addr:621  R:0  W:0  M:0  I:9  seq_r:0  seq_w:0  seq_m:0  seq_i:9
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[4] 2[1] 3[1] 
+
+[654]addr:571  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[1] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[1] 
+
+[655]addr:11836  R:5  W:0  M:0  I:0  seq_r:5  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[5] 
+W_freq 
+M_freq 
+I_freq 
+
+[656]addr:11834  R:3  W:0  M:0  I:0  seq_r:3  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[3] 
+W_freq 
+M_freq 
+I_freq 
+
+[657]addr:572  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 10[0] 11[0] 12[1] 
+
+[658]addr:573  R:0  W:0  M:0  I:22  seq_r:0  seq_w:0  seq_m:0  seq_i:22
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[0] 21[0] 22[1] 
+
+[659]addr:574  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[2] 3[1] 4[0] 5[1] 6[0] 7[0] 8[0] 9[1] 
+
+[660]addr:575  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[3] 3[2] 4[1] 
+
+[661]addr:11835  R:12  W:0  M:0  I:0  seq_r:12  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[12] 
+W_freq 
+M_freq 
+I_freq 
+
+[662]addr:576  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[0] 21[1] 
+
+[663]addr:577  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[0] 5[1] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[1] 
+
+[664]addr:578  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[0] 4[0] 5[1] 6[0] 7[0] 8[0] 9[1] 
+
+[665]addr:579  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[0] 5[0] 6[1] 7[0] 8[1] 
+
+[666]addr:580  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[1] 
+
+[667]addr:581  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[0] 5[0] 6[1] 7[0] 8[1] 
+
+[668]addr:582  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[3] 3[2] 4[1] 
+
+[669]addr:583  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[1] 4[0] 5[1] 6[0] 7[1] 
+
+[670]addr:584  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[1] 5[0] 6[0] 7[0] 8[2] 
+
+[671]addr:585  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[1] 4[0] 5[0] 6[0] 7[1] 
+
+[672]addr:612  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[2] 4[0] 5[1] 
+
+[673]addr:586  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[1] 
+
+[674]addr:587  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[1] 
+
+[675]addr:588  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1] 9[0] 10[1] 
+
+[676]addr:589  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[1] 
+
+[677]addr:615  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[3] 3[0] 4[0] 5[0] 6[1] 
+
+[678]addr:616  R:0  W:0  M:0  I:16  seq_r:0  seq_w:0  seq_m:0  seq_i:16
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 3[0] 4[0] 5[0] 6[2] 
+
+[679]addr:590  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 10[0] 11[1] 
+
+[680]addr:591  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[1] 
+
+[681]addr:592  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[1] 
+
+[682]addr:593  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[1] 
+
+[683]addr:594  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 4[1] 5[1] 
+
+[684]addr:595  R:0  W:0  M:0  I:7  seq_r:0  seq_w:0  seq_m:0  seq_i:7
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[0] 5[1] 
+
+[685]addr:614  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[3] 3[0] 4[0] 5[0] 6[1] 
+
+[686]addr:596  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[1] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[1] 
+
+[687]addr:597  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[1] 
+
+[688]addr:598  R:0  W:0  M:0  I:17  seq_r:0  seq_w:0  seq_m:0  seq_i:17
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[1] 
+
+[689]addr:599  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[1] 
+
+[690]addr:600  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1] 9[0] 10[0] 11[1] 
+
+[691]addr:601  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[1] 
+
+[692]addr:602  R:0  W:0  M:0  I:9  seq_r:0  seq_w:0  seq_m:0  seq_i:9
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[1] 4[1] 
+
+[693]addr:613  R:0  W:0  M:0  I:9  seq_r:0  seq_w:0  seq_m:0  seq_i:9
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[0] 4[0] 5[0] 6[1] 
+
+[694]addr:603  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[1] 
+
+[695]addr:604  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[1] 7[0] 8[0] 9[0] 10[0] 11[0] 12[1] 
+
+[696]addr:605  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 3[0] 4[1] 5[1] 6[0] 7[0] 8[1] 
+
+[697]addr:606  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[1] 
+
+[698]addr:607  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[1] 4[1] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[1] 
+
+[699]addr:608  R:0  W:0  M:0  I:22  seq_r:0  seq_w:0  seq_m:0  seq_i:22
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[0] 21[0] 22[1] 
+
+[700]addr:609  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[0] 21[1] 
+
+[701]addr:610  R:0  W:0  M:0  I:20  seq_r:0  seq_w:0  seq_m:0  seq_i:20
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[1] 9[0] 10[0] 11[0] 12[1] 
+
+[702]addr:611  R:0  W:0  M:0  I:10  seq_r:0  seq_w:0  seq_m:0  seq_i:10
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[1] 5[1] 
+
+[703]addr:622  R:0  W:0  M:0  I:2  seq_r:0  seq_w:0  seq_m:0  seq_i:2
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[1] 
+
+[704]addr:154  R:0  W:0  M:0  I:11  seq_r:0  seq_w:0  seq_m:0  seq_i:11
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 3[1] 4[1] 
+
+[705]addr:155  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[2] 
+
+[706]addr:17427  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[707]addr:21587  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[708]addr:17428  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[709]addr:21588  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[710]addr:17429  R:136  W:144  M:144  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[136] 
+W_freq 1[144] 
+M_freq 1[144] 
+I_freq 
+
+[711]addr:21589  R:0  W:128  M:128  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[128] 
+M_freq 1[128] 
+I_freq 
+
+[712]addr:17430  R:98  W:102  M:102  I:0  seq_r:8  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[98] 
+W_freq 1[102] 
+M_freq 1[102] 
+I_freq 
+
+[713]addr:21590  R:0  W:90  M:90  I:0  seq_r:0  seq_w:0  seq_m:0  seq_i:0
+R_freq 
+W_freq 1[90] 
+M_freq 1[90] 
+I_freq 
+
+[714]addr:83  R:0  W:0  M:0  I:6  seq_r:0  seq_w:0  seq_m:0  seq_i:6
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[1] 3[1] 
+
+[715]addr:84  R:0  W:0  M:0  I:19  seq_r:0  seq_w:0  seq_m:0  seq_i:19
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[2] 3[0] 4[0] 5[0] 6[1] 7[0] 8[1] 
+
+[716]addr:11817  R:2  W:0  M:0  I:0  seq_r:2  seq_w:0  seq_m:0  seq_i:0
+R_freq 1[2] 
+W_freq 
+M_freq 
+I_freq 
+
+[717]addr:85  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 4[0] 5[0] 6[1] 7[0] 8[0] 9[1] 
+
+[718]addr:86  R:0  W:0  M:0  I:18  seq_r:0  seq_w:0  seq_m:0  seq_i:18
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[1] 2[0] 3[0] 4[1] 5[1] 6[0] 7[0] 8[1] 
+
+[719]addr:87  R:0  W:0  M:0  I:21  seq_r:0  seq_w:0  seq_m:0  seq_i:21
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[0] 4[0] 5[0] 6[0] 7[0] 8[0] 9[0] 10[0] 11[0] 12[0] 13[0] 14[0] 15[0] 16[0] 17[0] 18[0] 19[0] 20[0] 21[1] 
+
+[720]addr:88  R:0  W:0  M:0  I:14  seq_r:0  seq_w:0  seq_m:0  seq_i:14
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[0] 3[0] 4[0] 5[1] 6[0] 7[1] 
+
+[721]addr:96  R:0  W:0  M:0  I:3  seq_r:0  seq_w:0  seq_m:0  seq_i:3
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[0] 2[0] 3[1] 
+
+[722]addr:91  R:0  W:0  M:0  I:4  seq_r:0  seq_w:0  seq_m:0  seq_i:4
+R_freq 
+W_freq 
+M_freq 
+I_freq 1[2] 2[1] 
+
+
+
+DIAGNOSTICO
+Páginas únicas: 723
+R_count: 134366
+W_count: 50775
+M_count: 50775
+I_count: 831645
+Error: 0
