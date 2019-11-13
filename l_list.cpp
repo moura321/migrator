@@ -12,6 +12,7 @@ class Page
    unsigned long addr=0;
    int reads=0;
    int writes=0;
+   int mem=0;
    int ifetch=0;
    char m_type;
 
@@ -30,11 +31,12 @@ class Page
    vector <int> comprimentos_i;
    
    public:
-   void set_all(unsigned long a, int r, int w, int i, char t)
+   void set_all(unsigned long a, int r, int w, int m, int i, char t)
    {
      addr=a;
      reads=r;
      writes=w;
+     mem=m;
      ifetch=i;
      m_type = t;
    } 
@@ -108,8 +110,9 @@ int main(int argc, char *argv[])
   string min_hexa_address;
   
   Page page;
-  vector <Page> pages;
-  
+  list <Page> pages;
+  list <Page> i;
+
   unsigned long R_count=0;
   unsigned long W_count=0;
   unsigned long M_count=0;
@@ -135,7 +138,7 @@ int main(int argc, char *argv[])
   max_hexa_address = min_hexa_address = getHexaAddress(l);
   min_page = max_page = getPage(address,DESLOC);
 
-  page.set_all(getPage(address,DESLOC),0,0,0,'V');
+  page.set_all(getPage(address,DESLOC),0,0,0,0,'X');
   pages.push_back(page);  
 
 
@@ -146,25 +149,15 @@ int main(int argc, char *argv[])
       address=getAddress(l); //endereço em (unsigned long)
       op = Linha[0]; //operação: R, W, M ou I
 
-      page.set_all(getPage(address,DESLOC),0,0,0,'V');; //inicializa pagina temporaria
+      page.set_all(getPage(address,DESLOC),0,0,0,0,'X');; //inicializa pagina temporaria
       
 
-      i=pages.size()-1;
-      std::cout <<"while: "<< i<<"\n";
-      while (pages[i].addr != page.addr && i > 0) //procura pagina atual (page) na lista de paginas (pages)
-       {
-        i--;
-        std::cout << i<<"\n";
-       }
-      if(i==0)
+      i=0;
+      while (pages[i].addr != page.addr && i < pages.size()) //procura pagina atual (page) na lista de paginas (pages)
+        i++;
+      if(i==pages.size())
         pages.push_back(page);
-      else
-      {
-        pages.push_back(pages[i]);
-        pages.erase(pages.begin()+i);
-        //i=pages.size()-1;
-      }
-      
+
       //i = posicao da pagina no vector pages
 
   //---------------------------------------------------
@@ -172,19 +165,24 @@ int main(int argc, char *argv[])
   //---------------------------------------------------
       switch (op)
       {
-      case 'R':
-        pages[i].reads++;
-        R_count++;
-        break;
-
       case 'I':
         pages[i].ifetch++;
         I_count++;
         break;
 
+      case 'R':
+        pages[i].reads++;
+        R_count++;
+        break;
+
       case 'W':
         pages[i].writes++;
         W_count++;
+        break;
+
+      case 'M':
+        pages[i].mem++;
+        M_count++;
         break;
 
       default:
@@ -290,12 +288,12 @@ int main(int argc, char *argv[])
   for (i=0; i<pages.size(); i++)
   {
     std::cout << "[" << i << "]"
-    <<"addr:" << pages[i].addr << "\t"
-    <<"R:" <<  pages[i].reads + pages[i].ifetch << "\t"
-    <<"W:" <<  pages[i].writes << "\t"
-    //<<"M:" <<  pages[i].mem << "\t"
-    //<<"I:" <<  pages[i].ifetch << "\t"
-    <<"T:" <<  pages[i].m_type << "  ";
+    <<"addr:" << pages[i].addr << "  "
+    <<"R:" <<  pages[i].reads << "  "
+    <<"W:" <<  pages[i].writes << "  "
+    <<"M:" <<  pages[i].mem << "  "
+    <<"I:" <<  pages[i].ifetch << "  "
+    <<"Ty:" <<  pages[i].m_type << "  ";
     /*
     <<"seq_r:" << pages[i].seq_r << "  "
     <<"seq_w:" << pages[i].seq_w << "  "
@@ -332,15 +330,15 @@ int main(int argc, char *argv[])
 
   std::cout << "\n\nDIAGNOSTICO " << '\n';
 
-  std::cout << "Páginas:\t" << pages.size() <<'\n';
+  std::cout << "Páginas únicas: " << pages.size() <<'\n';
 
 
   //std::cout << "Maior: int- "  << max_address << "  hexa- "<< max_hexa_address << "  page- " << max_page << '\n';
   //std::cout << "Menor: int- "  << min_address << "  hexa- "<< min_hexa_address <<  "  page- " << min_page  << '\n';
-  std::cout << "R_count:\t"  << R_count+I_count << '\n';
-  std::cout << "W_count:\t"  << W_count << '\n';
-  //std::cout << "M_count: "  << M_count << '\n';
- // std::cout << "I_count: "  << I_count << '\n';
-  std::cout << "Error:\t\t"  << error_count << '\n';
+  std::cout << "R_count: "  << R_count << '\n';
+  std::cout << "W_count: "  << W_count << '\n';
+  std::cout << "M_count: "  << M_count << '\n';
+  std::cout << "I_count: "  << I_count << '\n';
+  std::cout << "Error1: "  << error_count << '\n';
 
 }
