@@ -149,14 +149,14 @@ int main(int argc, char *argv[])
       page.set_all(getPage(address,DESLOC),0,0,0,'V');; //inicializa pagina temporaria
       
 
-      i=pages.size()-1;
-      std::cout <<"while: "<< i<<"\n";
-      while (pages[i].addr != page.addr && i > 0) //procura pagina atual (page) na lista de paginas (pages)
+      i=0;
+      //std::cout <<"while: "<< i<<"\n";
+      while (pages[i].addr != page.addr && i < pages.size()) //procura pagina atual (page) na lista de paginas (pages)
        {
-        i--;
-        std::cout << i<<"\n";
+        i++;
+        //std::cout << i<<"\n";
        }
-      if(i==0)
+      if(i==pages.size())
         pages.push_back(page);
       else
       {
