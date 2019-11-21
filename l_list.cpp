@@ -283,10 +283,11 @@ int main(int argc, char *argv[])
 
 
   //-------------prints
-
+  r_count=1;
   std::cout << "PAGES\n";
   for (i=0; i<pages.size(); i++)
   {
+    r_count+=pages[i].reads;
     std::cout << "[" << i << "]"
     <<"addr:" << pages[i].addr << "  "
     <<"R:" <<  pages[i].reads << "  "
