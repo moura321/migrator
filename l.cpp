@@ -73,7 +73,7 @@ unsigned long getPage(unsigned long address, int DESLOC)
   return address >> DESLOC;
 }
 
-void diagnostico (int tamanho, unsigned long R_count, unsigned long W_count, unsigned long I_count, unsigned long min_page, unsigned long max_page)
+void print_diagnostico (int tamanho, unsigned long R_count, unsigned long W_count, unsigned long I_count, unsigned long min_page, unsigned long max_page)
 {
   std::cout << "\n\nDIAGNOSTICO " << '\n';
   std::cout << "Páginas:\t" << tamanho <<'\n';
@@ -96,6 +96,19 @@ void print_pages(vector <Page> *pages)
     <<"W:" <<  pages->operator[](i).writes << "\t"
     <<"T:" <<  pages->operator[](i).m_type << "  ";
     std::cout << "\n";
+  }
+}
+
+void write_buffer(vector <Page> *pages)
+{
+  int i;
+  std::cout << "PAGES\n";
+  for (i=0; i<pages->size(); i++)
+  {
+    std::cout  << i << ";"
+    << pages->operator[](i).addr << ";"
+    << pages->operator[](i).reads + pages->operator[](i).ifetch << ";"
+    << pages->operator[](i).writes << "\n";
   }
 }
 
@@ -238,7 +251,8 @@ int main(int argc, char *argv[])
 
 
   //-------------prints
-  print_pages(&pages);
-  diagnostico(pages.size(),R_count, W_count, I_count,min_page,max_page);
+  //print_pages(&pages);
+  write_buffer(&pages);
+  //print_diagnostico(pages.size(),R_count, W_count, I_count,min_page,max_page);
 }
 
