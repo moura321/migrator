@@ -73,14 +73,17 @@ unsigned long getPage(unsigned long address, int DESLOC)
   return address >> DESLOC;
 }
 
-void print_diagnostico (int tamanho, unsigned long R_count, unsigned long W_count, unsigned long I_count, unsigned long min_page, unsigned long max_page)
+void print_diagnostico (int tamanho, unsigned long R_count, unsigned long W_count, unsigned long I_count, unsigned long min_page, unsigned long max_page, unsigned long max_read, unsigned long max_write)
 {
   std::cout << "\n\nDIAGNOSTICO " << '\n';
   std::cout << "Páginas:\t" << tamanho <<'\n';
   std::cout << "Maior pagina:\t" << max_page << '\n';
   std::cout << "Menor pagina:\t" << min_page  << '\n';
   std::cout << "R_count:\t"  << R_count+I_count << '\n';
-  std::cout << "W_count:\t"  << W_count << '\n'; 
+  std::cout << "W_count:\t"  << W_count << '\n';
+  std::cout << "Max read:\t"  << max_read << '\n';
+  std::cout << "Max write:\t"  << max_write << '\n';
+
 }
 
 
@@ -99,7 +102,7 @@ void print_pages(vector <Page> *pages)
   }
 }
 
-void write_buffer(vector <Page> *pages)
+void print_buffer(vector <Page> *pages)
 {
   int i;
   std::cout << "PAGES\n";
@@ -115,8 +118,11 @@ void write_buffer(vector <Page> *pages)
 int main(int argc, char *argv[])
 {
   const int DESLOC = 6;
-  const int probability = 50;
-
+  const int PROB = 50;
+  const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 1;
+  const int BUFFER = (argc>3) ? atoi(argv[3]): 5;
+  
+  
   FILE *arq;
   char Linha[16];
   string l;
@@ -134,6 +140,7 @@ int main(int argc, char *argv[])
   string max_hexa_address;
   string min_hexa_address;
   
+
   Page page;
   vector <Page> pages;
   
@@ -141,6 +148,8 @@ int main(int argc, char *argv[])
   unsigned long W_count=0;
   unsigned long M_count=0;
   unsigned long I_count=0;
+  unsigned long max_reads=0;
+  unsigned long max_writes=0;
 
   int error_count=0;
   bool error=0;
@@ -180,14 +189,18 @@ int main(int argc, char *argv[])
         i++;
 
       if(i==pages.size())
+      {
         pages.push_back(page);
+        if(LIMITED)
+          if(pages.size()>BUFFER)
+            pages.erase(pages.begin());
+      }
       else
       {
         pages.push_back(pages[i]);
         pages.erase(pages.begin()+i);
       }
-      
-      //i = posicao da pagina no vector pages
+      i=pages.size()-1; //i = posicao da pagina no vector pages
 
   //---------------------------------------------------
   //--------------- Contadores ------------------------
@@ -228,6 +241,12 @@ int main(int argc, char *argv[])
         min_page = page.addr;
       }
 
+      if(pages[i].reads+pages[i].ifetch > max_reads)
+        max_reads=pages[i].reads+pages[i].ifetch;
+      if(pages[i].writes > max_writes)
+        max_writes=pages[i].writes;
+
+
   //------------------------------------------------------------
   //---------- Fim Contadores ----------------------------------
   //------------------------------------------------------------
@@ -252,7 +271,7 @@ int main(int argc, char *argv[])
 
   //-------------prints
   //print_pages(&pages);
-  write_buffer(&pages);
-  //print_diagnostico(pages.size(),R_count, W_count, I_count,min_page,max_page);
+  print_buffer(&pages);
+  print_diagnostico(pages.size(),R_count, W_count, I_count,min_page,max_page, max_reads, max_writes);
 }
 
