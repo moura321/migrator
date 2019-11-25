@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <set>
 
 using namespace std;
 
@@ -26,6 +27,27 @@ class Page
      ifetch=i;
      m_type = t;
    } 
+ };
+
+ class Hybrid_Memory
+ {
+  public:
+  set <Page> mm; //Main Memory
+  char type[2]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
+  int size[2]={0,0}; //number of pages. Value 0 = unlimited
+
+  public:
+  bool insert_page(Page page)
+  {
+    return true;
+  }
+  bool search_page(Page page)
+  {
+    return true;
+  }
+
+
+
  };
 
 void update_consecutivos(vector <int> *comprimentos, int *consecutivos)
