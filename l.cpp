@@ -34,7 +34,8 @@ class Page
   public:
   set <Page> mm; //Main Memory
   char type[2]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
-  int size[2]={0,0}; //number of pages. Value 0 = unlimited
+  int max_size[2]={0,0}; //number of pages. Value 0 = unlimited
+  int used[2]={0,0}; //pages on each memory module
 
   public:
   bool insert_page(Page page)
@@ -46,9 +47,13 @@ class Page
     return true;
   }
 
-
-
+  bool move(Page page, char new_type)
+  {
+    return true;
+  }
  };
+
+
 
 void update_consecutivos(vector <int> *comprimentos, int *consecutivos)
 {
