@@ -31,25 +31,42 @@ class Page
 
  class Hybrid_Memory
  {
-  public:
+  private:
   set <Page> mm; //Main Memory
   char type[2]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
   int max_size[2]={0,0}; //number of pages. Value 0 = unlimited
   int used[2]={0,0}; //pages on each memory module
 
-  public:
+  private:
   bool insert_page(Page page)
   {
+    mm.insert(page);
     return true;
   }
-  bool search_page(Page page)
+  bool erase_page(Page page)
   {
+    mm.erase(page);
     return true;
+  }
+  
+  public:
+  set<int>::iterator search_page(Page page)
+  {
+    return mm.find(page);
   }
 
-  bool move(Page page, char new_type)
+  void move(Page page, char new_type)
   {
-    return true;
+    Page temp_page;
+    set<int>::iterator it;
+    
+    it = search_page(page);
+    temp_page = *it;
+    
+    temp_page.mtype = new_type;
+    
+    erase_page (it);
+    insert_page(temp_page);
   }
  };
 
