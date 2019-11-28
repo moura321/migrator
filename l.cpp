@@ -33,14 +33,17 @@ class Page
  {
   private:
   set <Page> mm; //Main Memory
-  char type[2]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
-  int max_size[2]={0,0}; //number of pages. Value 0 = unlimited
-  int used[2]={0,0}; //pages on each memory module
+  char type[]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
+  int max_size[]={0,0}; //number of pages. Value 0 = unlimited
+  int used[]={0,0}; //pages on each memory module
 
   private:
   bool insert_page(Page page)
   {
     mm.insert(page);
+    for(int i=0; type[i]!=\0;i++)
+      if(page.m_type==type[i])
+        used[i]++; 
     return true;
   }
   bool erase_page(Page page)
