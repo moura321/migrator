@@ -19,6 +19,12 @@ class Page
    char last_op='N';//null
 
    public:
+
+  bool operator <(const Page & PgObj) const
+    {
+    return addr < PgObj.addr;
+    }
+
    void set_all(unsigned long a, int r, int w, int i, char t)
    {
      addr=a;
@@ -33,27 +39,29 @@ class Page
  {
   private:
   set <Page> mm; //Main Memory
-  char type[]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
-  int max_size[]={0,0}; //number of pages. Value 0 = unlimited
-  int used[]={0,0}; //pages on each memory module
+  char type[2]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
+  int max_size[2]={0,0}; //number of pages. Value 0 = unlimited
+  int used[2]={0,0}; //pages on each memory module
 
-  private:
+  public:
+
+
   bool insert_page(Page page)
   {
     mm.insert(page);
-    for(int i=0; type[i]!=\0;i++)
+    for(int i=0; type[i]!=0;i++)
       if(page.m_type==type[i])
         used[i]++; 
     return true;
   }
+
   bool erase_page(Page page)
   {
     mm.erase(page);
     return true;
   }
   
-  public:
-  set<int>::iterator search_page(Page page)
+  set<Page>::iterator search_page(Page page)
   {
     return mm.find(page);
   }
@@ -61,14 +69,14 @@ class Page
   void move(Page page, char new_type)
   {
     Page temp_page;
-    set<int>::iterator it;
+    set<Page>::iterator it;
     
     it = search_page(page);
     temp_page = *it;
     
-    temp_page.mtype = new_type;
+    temp_page.m_type = new_type;
     
-    erase_page (it);
+    erase_page (*it);
     insert_page(temp_page);
   }
  };
@@ -162,6 +170,31 @@ void print_buffer(vector <Page> *pages)
   }
 }
 
+
+int main()
+{
+  Page page;
+  Hybrid_Memory mm;
+
+  page.set_all(1000, 0, 1, 2, 'N');
+
+  mm.insert_page(page);
+  cout << (*mm.search_page(page)).m_type << '\n';
+  mm.move(page, 'V');
+  cout << (*mm.search_page(page)).m_type << '\n';
+  cout  << "show\n";
+
+
+
+
+
+
+
+}
+
+
+
+/*
 int main(int argc, char *argv[])
 {
   const int DESLOC = 6;
@@ -312,6 +345,7 @@ int main(int argc, char *argv[])
     //Lê próxima linha (inclusive com o '\n')
     fgets(Linha, 16, arq);
   }
+  
   fclose(arq);
 
 
@@ -320,5 +354,8 @@ int main(int argc, char *argv[])
   //print_pages(&pages);
   print_buffer(&pages);
   print_diagnostico(pages.size(),R_count, W_count, I_count,min_page,max_page, max_reads, max_writes);
+
+  
 }
 
+*/
