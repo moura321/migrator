@@ -18,12 +18,9 @@ class Page
 
    char last_op='N';//null
 
-   public:
 
-  bool operator <(const Page & PgObj) const
-    {
-    return addr < PgObj.addr;
-    }
+   bool operator <(const Page & PgObj) const
+    {return addr < PgObj.addr;}
 
    void set_all(unsigned long a, int r, int w, int i, char t)
    {
@@ -31,41 +28,48 @@ class Page
      reads=r;
      writes=w;
      ifetch=i;
-     m_type = t;
+     m_type=t;
    } 
  };
 
  class Hybrid_Memory
  {
-  private:
+  public:
   set <Page> mm; //Main Memory
   char type[2]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
   int max_size[2]={0,0}; //number of pages. Value 0 = unlimited
   int used[2]={0,0}; //pages on each memory module
 
   public:
-
-
   bool insert_page(Page page)
   {
     mm.insert(page);
-    for(int i=0; type[i]!=0;i++)
+    for(int i=0; i < sizeof(type); i++)
       if(page.m_type==type[i])
-        used[i]++; 
+      {
+        used[i]++;
+        break;
+      } 
     return true;
   }
 
   bool erase_page(Page page)
   {
     mm.erase(page);
+    for(int i=0; i < sizeof(type); i++)
+      if(page.m_type==type[i])
+      {
+        used[i]--;
+        break;
+      } 
     return true;
   }
   
   set<Page>::iterator search_page(Page page)
-  {
-    return mm.find(page);
-  }
-
+    {
+      return mm.find(page);
+    }
+  
   void move(Page page, char new_type)
   {
     Page temp_page;
@@ -81,37 +85,6 @@ class Page
   }
  };
 
-
-
-void update_consecutivos(vector <int> *comprimentos, int *consecutivos)
-{
-  comprimentos->operator[](*consecutivos)--;
-  (*consecutivos)++;
-  if(*consecutivos == comprimentos->size())
-    comprimentos->push_back(1);
-  else
-    comprimentos->operator[](*consecutivos)++;
-}
-
-void nova_sequencia(vector <int> *comprimentos, int *consecutivos)
-{
-  *consecutivos=0;
-  if(!comprimentos->size())
-    comprimentos->push_back(1);
-  else
-    comprimentos->operator[](0)++;
-}
-
-void always_migrate(Page *pagina)
-{
-  pagina->m_type='N';
-}
-
-void coin_migrator(Page *pagina, int prob)
-{
-  if(rand() % 100<=prob)
-      pagina->m_type=='N' ? pagina->m_type='V' : pagina->m_type='N';
-}
 
 unsigned long getAddress(string l)
 {
@@ -157,52 +130,65 @@ void print_pages(vector <Page> *pages)
   }
 }
 
-void print_buffer(vector <Page> *pages)
+void print_buffer(vector <Page> *buffer)
 {
-  int i;
   std::cout << "PAGES\n";
-  for (i=0; i<pages->size(); i++)
+  for (int i=0; i<buffer->size(); i++)
   {
     std::cout  << i << ";"
-    << pages->operator[](i).addr << ";"
-    << pages->operator[](i).reads + pages->operator[](i).ifetch << ";"
-    << pages->operator[](i).writes << "\n";
+    << buffer->operator[](i).addr << ";"
+    << buffer->operator[](i).reads + buffer->operator[](i).ifetch << ";"
+    << buffer->operator[](i).writes << "\n";
   }
 }
 
 
-int main()
-{
-  Page page;
-  Hybrid_Memory mm;
 
-  page.set_all(1000, 0, 1, 2, 'N');
+class buffer {
 
-  mm.insert_page(page);
-  cout << (*mm.search_page(page)).m_type << '\n';
-  mm.move(page, 'V');
-  cout << (*mm.search_page(page)).m_type << '\n';
-  cout  << "show\n";
+  vector <Page> buffer;
 
+  void print()
+  {
+    std::cout << "PAGES\n";
+    for (int i=0; i<buffer.size(); i++)
+    {
+      std::cout  << i << ";"
+      << buffer[i].addr << ";"
+      << buffer[i].reads + buffer[i].ifetch << ";"
+      << buffer[i].writes << "\n";
+    }
+  }
 
-
-
-
-
-
-}
+};
 
 
+/*  int main()
+ {
+   Page page;
+   Hybrid_Memory mm;
 
-/*
+   page.set_all(1000, 0, 1, 2, 'V');
+
+   mm.insert_page(page);
+   cout << (*mm.search_page(page)).m_type << '\n';
+   mm.move(page, 'D');
+   cout << (*mm.search_page(page)).m_type << '\n';
+   cout << (mm.used[0]) << '\n';
+   cout << (mm.used[0]) << '\n';
+
+     cout  << "show\n";
+ } */
+
+
+
 int main(int argc, char *argv[])
 {
   const int DESLOC = 6;
   const int PROB = 50;
   const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 1;
   const int BUFFER = (argc>3) ? atoi(argv[3]): 5;
-  
-  
+    
   FILE *arq;
   char Linha[16];
   string l;
@@ -222,7 +208,7 @@ int main(int argc, char *argv[])
   
 
   Page page;
-  vector <Page> pages;
+  vector <Page> buffer;
   
   unsigned long R_count=0;
   unsigned long W_count=0;
@@ -242,7 +228,6 @@ int main(int argc, char *argv[])
   if (arq == NULL)  // Se houve erro na abertura
      printf("Problemas na abertura do arquivo\n");
 
-
   // Lê primeira linha e inicializa contadores e variaveis
   fgets(Linha, 16, arq);
   l=Linha;
@@ -252,8 +237,7 @@ int main(int argc, char *argv[])
   min_page = max_page = getPage(address,DESLOC);
 
   page.set_all(getPage(address,DESLOC),0,0,0,'V');
-  pages.push_back(page);  
-
+  buffer.push_back(page);  
 
   while (!feof(arq))
   {
@@ -265,22 +249,24 @@ int main(int argc, char *argv[])
       page.set_all(getPage(address,DESLOC),0,0,0,'V');; //inicializa pagina temporaria
 
       i=0;
-      while (pages[i].addr != page.addr && i < pages.size()) //procura pagina atual (page) na lista de paginas (pages)
+      while (buffer[i].addr != page.addr && i < buffer.size()) //procura pagina atual (page) no buffer (buffer)
         i++;
 
-      if(i==pages.size())
+      if(i==buffer.size())
       {
-        pages.push_back(page);
+        buffer.push_back(page);
         if(LIMITED)
-          if(pages.size()>BUFFER)
-            pages.erase(pages.begin());
+          if(buffer.size()>BUFFER)
+            buffer.erase(buffer.begin());
       }
       else
       {
-        pages.push_back(pages[i]);
-        pages.erase(pages.begin()+i);
+        buffer.push_back(buffer[i]);
+        buffer.erase(buffer.begin()+i);
       }
-      i=pages.size()-1; //i = posicao da pagina no vector pages
+      i=buffer.size()-1; //i = posicao da pagina no vector pages
+      //TODO colocar um pontteiro pro buffer
+
 
   //---------------------------------------------------
   //--------------- Contadores ------------------------
@@ -288,17 +274,17 @@ int main(int argc, char *argv[])
       switch (op)
       {
       case 'R':
-        pages[i].reads++;
+        buffer[i].reads++;
         R_count++;
         break;
 
       case 'I':
-        pages[i].ifetch++;
+        buffer[i].ifetch++;
         I_count++;
         break;
 
       case 'W':
-        pages[i].writes++;
+        buffer[i].writes++;
         W_count++;
         break;
 
@@ -321,41 +307,34 @@ int main(int argc, char *argv[])
         min_page = page.addr;
       }
 
-      if(pages[i].reads+pages[i].ifetch > max_reads)
-        max_reads=pages[i].reads+pages[i].ifetch;
-      if(pages[i].writes > max_writes)
-        max_writes=pages[i].writes;
+      if(buffer[i].reads+buffer[i].ifetch > max_reads)
+        max_reads=buffer[i].reads+buffer[i].ifetch;
+      if(buffer[i].writes > max_writes)
+        max_writes=buffer[i].writes;
 
-
-  //------------------------------------------------------------
-  //---------- Fim Contadores ----------------------------------
-  //------------------------------------------------------------
-
-
-
-  //------------------------------------------------------------
-  //---------- Migração ----------------------------------------
-  //------------------------------------------------------------
-    //always_migrate(&pages[i]);
-    //coin_migrator(&pages[i], probability);
-
-
-    pages[i].last_op = op;
-    last_page = i;
-    //Lê próxima linha (inclusive com o '\n')
-    fgets(Linha, 16, arq);
+      buffer[i].last_op = op;
+      last_page = i;
+      //Lê próxima linha (inclusive com o '\n')
+      fgets(Linha, 16, arq);
   }
   
   fclose(arq);
 
-
-
   //-------------prints
-  //print_pages(&pages);
-  print_buffer(&pages);
-  print_diagnostico(pages.size(),R_count, W_count, I_count,min_page,max_page, max_reads, max_writes);
-
-  
+  print_buffer(&buffer);
+  print_diagnostico(buffer.size(),R_count, W_count, I_count,min_page,max_page, max_reads, max_writes);
+ 
 }
 
-*/
+
+
+void always_migrate(Page *pagina)
+{
+  pagina->m_type='N';
+}
+
+void coin_migrator(Page *pagina, int prob)
+{
+  if(rand() % 100<=prob)
+      pagina->m_type=='N' ? pagina->m_type='V' : pagina->m_type='N';
+}
