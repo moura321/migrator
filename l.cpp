@@ -16,9 +16,6 @@ class Page
    int ifetch=0;
    char m_type;
 
-   char last_op='N';//null
-
-
    bool operator <(const Page & PgObj) const
     {return addr < PgObj.addr;}
 
@@ -138,7 +135,8 @@ void print_buffer(vector <Page> *buffer)
     std::cout  << i << ";"
     << buffer->operator[](i).addr << ";"
     << buffer->operator[](i).reads + buffer->operator[](i).ifetch << ";"
-    << buffer->operator[](i).writes << "\n";
+    << buffer->operator[](i).writes << ";"
+    << buffer->operator[](i).m_type << "\n";
   }
 }
 
@@ -168,16 +166,22 @@ class buffer {
    Page page;
    Hybrid_Memory mm;
 
-   page.set_all(1000, 0, 1, 2, 'V');
-
+   page.set_all(2000, 8, 1, 2, 'V');
    mm.insert_page(page);
-   cout << (*mm.search_page(page)).m_type << '\n';
-   mm.move(page, 'D');
-   cout << (*mm.search_page(page)).m_type << '\n';
-   cout << (mm.used[0]) << '\n';
-   cout << (mm.used[0]) << '\n';
 
-     cout  << "show\n";
+   page.set_all(2000, 1, 1, 2, 'D');
+   mm.insert_page(page);
+
+page.set_all(2000, 0, 1, 2, 'D');
+   mm.insert_page(page);
+
+   //cout << (*mm.search_page(page)).m_type << '\n';
+   //mm.move(page, 'D');
+   //cout << (*mm.search_page(page)).m_type << '\n';
+   //cout << (mm.used[0]) << '\n';
+   cout << mm.mm.size() << '\n';
+
+   cout  << "show\n";
  } */
 
 
@@ -196,7 +200,6 @@ int main(int argc, char *argv[])
   char *result;
   unsigned long address;
   char op;
-  int last_page=-1;
   int i=0;
 
   unsigned long max_address;
@@ -206,7 +209,7 @@ int main(int argc, char *argv[])
   string max_hexa_address;
   string min_hexa_address;
   
-
+  Hybrid_Memory mem;
   Page page;
   vector <Page> buffer;
   
@@ -236,8 +239,9 @@ int main(int argc, char *argv[])
   max_hexa_address = min_hexa_address = getHexaAddress(l);
   min_page = max_page = getPage(address,DESLOC);
 
-  page.set_all(getPage(address,DESLOC),0,0,0,'V');
-  buffer.push_back(page);  
+  page.set_all(getPage(address,DESLOC),0,0,0,'D');
+  buffer.push_back(page);
+  mem.insert_page(page);  
 
   while (!feof(arq))
   {
@@ -246,13 +250,13 @@ int main(int argc, char *argv[])
       address=getAddress(l); //endereço em (unsigned long)
       op = Linha[0]; //operação: R, W, M ou I
 
-      page.set_all(getPage(address,DESLOC),0,0,0,'V');; //inicializa pagina temporaria
+      page.set_all(getPage(address,DESLOC),0,0,0,'D');; //inicializa pagina temporaria
 
       i=0;
       while (buffer[i].addr != page.addr && i < buffer.size()) //procura pagina atual (page) no buffer (buffer)
         i++;
 
-      if(i==buffer.size())
+      if(i==buffer.size())//se nao encontrou a pagina no buffer
       {
         buffer.push_back(page);
         if(LIMITED)
@@ -265,6 +269,7 @@ int main(int argc, char *argv[])
         buffer.erase(buffer.begin()+i);
       }
       i=buffer.size()-1; //i = posicao da pagina no vector pages
+      mem.insert_page(buffer[i]);
       //TODO colocar um pontteiro pro buffer
 
 
@@ -312,8 +317,6 @@ int main(int argc, char *argv[])
       if(buffer[i].writes > max_writes)
         max_writes=buffer[i].writes;
 
-      buffer[i].last_op = op;
-      last_page = i;
       //Lê próxima linha (inclusive com o '\n')
       fgets(Linha, 16, arq);
   }
@@ -321,9 +324,9 @@ int main(int argc, char *argv[])
   fclose(arq);
 
   //-------------prints
+  //print_memory();
   print_buffer(&buffer);
-  print_diagnostico(buffer.size(),R_count, W_count, I_count,min_page,max_page, max_reads, max_writes);
- 
+  print_diagnostico(buffer.size(), R_count, W_count, I_count, min_page, max_page, max_reads, max_writes);
 }
 
 
