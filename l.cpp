@@ -19,7 +19,7 @@ class Page
    bool operator <(const Page & PgObj) const
     {return addr < PgObj.addr;}
 
-   void set_all(unsigned long a, int r, int w, int i, char t)
+   void set(unsigned long a, int r, int w, int i, char t)
    {
      addr=a;
      reads=r;
@@ -29,16 +29,19 @@ class Page
    } 
  };
 
+
+
  class Hybrid_Memory
  {
   public:
   set <Page> mm; //Main Memory
+  
   char type[2]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
-  int max_size[2]={0,0}; //number of pages. Value 0 = unlimited
+  int size[2]={0,0}; //number of pages. Value 0 = unlimited
   int used[2]={0,0}; //pages on each memory module
 
   public:
-  bool insert_page(Page page)
+  void insert_page(Page page)
   {
     mm.insert(page);
     for(int i=0; i < sizeof(type); i++)
@@ -46,20 +49,19 @@ class Page
       {
         used[i]++;
         break;
-      } 
-    return true;
+      }
   }
 
   bool erase_page(Page page)
   {
-    mm.erase(page);
+    
     for(int i=0; i < sizeof(type); i++)
       if(page.m_type==type[i])
       {
         used[i]--;
         break;
       } 
-    return true;
+    return mm.erase(page);
   }
   
   set<Page>::iterator search_page(Page page)
@@ -112,7 +114,7 @@ void print_diagnostico (int tamanho, unsigned long R_count, unsigned long W_coun
 }
 
 
-void print_pages(vector <Page> *pages)
+void print_buffer_v(vector <Page> *pages)//verbose
 {
   int i;
   std::cout << "PAGES\n";
@@ -166,13 +168,13 @@ class buffer {
    Page page;
    Hybrid_Memory mm;
 
-   page.set_all(2000, 8, 1, 2, 'V');
+   page.set(2000, 8, 1, 2, 'V');
    mm.insert_page(page);
 
-   page.set_all(2000, 1, 1, 2, 'D');
+   page.set(2000, 1, 1, 2, 'D');
    mm.insert_page(page);
 
-page.set_all(2000, 0, 1, 2, 'D');
+page.set(2000, 0, 1, 2, 'D');
    mm.insert_page(page);
 
    //cout << (*mm.search_page(page)).m_type << '\n';
@@ -188,16 +190,15 @@ page.set_all(2000, 0, 1, 2, 'D');
 
 int main(int argc, char *argv[])
 {
-  const int DESLOC = 6;
-  const int PROB = 50;
-  const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 1;
-  const int BUFFER = (argc>3) ? atoi(argv[3]): 5;
+  const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
+  const int PROB = 50;//probabilidade de migrar TODO tirar
+  const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 0;//buffer tem limite? Por default, nao. 
+  const int BUFFER = (argc>2) ? atoi(argv[2]): 0;//limite do buffer. Por default, ilimitado
     
   FILE *arq;
   char Linha[16];
   string l;
 
-  char *result;
   unsigned long address;
   char op;
   int i=0;
@@ -236,10 +237,10 @@ int main(int argc, char *argv[])
   l=Linha;
   
   address = max_address = min_address = getAddress(l); 
-  max_hexa_address = min_hexa_address = getHexaAddress(l);
+  //max_hexa_address = min_hexa_address = getHexaAddress(l); //bom para debug
   min_page = max_page = getPage(address,DESLOC);
 
-  page.set_all(getPage(address,DESLOC),0,0,0,'D');
+  page.set(getPage(address,DESLOC),0,0,0,'D');
   buffer.push_back(page);
   mem.insert_page(page);  
 
@@ -250,7 +251,7 @@ int main(int argc, char *argv[])
       address=getAddress(l); //endereço em (unsigned long)
       op = Linha[0]; //operação: R, W, M ou I
 
-      page.set_all(getPage(address,DESLOC),0,0,0,'D');; //inicializa pagina temporaria
+      page.set(getPage(address,DESLOC),0,0,0,'D');; //inicializa pagina temporaria
 
       i=0;
       while (buffer[i].addr != page.addr && i < buffer.size()) //procura pagina atual (page) no buffer (buffer)
@@ -319,14 +320,20 @@ int main(int argc, char *argv[])
 
       //Lê próxima linha (inclusive com o '\n')
       fgets(Linha, 16, arq);
+
+      //TODO
+      // if (criterio para disparar migracao)
+      // funcao migracao(buffer, memoria)
+
+
   }
   
   fclose(arq);
 
   //-------------prints
   //print_memory();
-  print_buffer(&buffer);
-  print_diagnostico(buffer.size(), R_count, W_count, I_count, min_page, max_page, max_reads, max_writes);
+  //print_buffer_v(&buffer);
+  //print_diagnostico(buffer.size(), R_count, W_count, I_count, min_page, max_page, max_reads, max_writes);
 }
 
 
