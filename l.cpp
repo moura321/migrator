@@ -198,6 +198,7 @@ int main(int argc, char *argv[])
   FILE *arq;
   char Linha[16];
   string l;
+  int memory_accesses=0;
 
   unsigned long address;
   char op;
@@ -242,7 +243,8 @@ int main(int argc, char *argv[])
 
   page.set(getPage(address,DESLOC),0,0,0,'D');
   buffer.push_back(page);
-  mem.insert_page(page);  
+  //mem.insert_page(page);  
+  
 
   while (!feof(arq))
   {
@@ -251,7 +253,7 @@ int main(int argc, char *argv[])
       address=getAddress(l); //endereço em (unsigned long)
       op = Linha[0]; //operação: R, W, M ou I
 
-      page.set(getPage(address,DESLOC),0,0,0,'D');; //inicializa pagina temporaria
+      page.set(getPage(address,DESLOC),0,0,0,'D'); //inicializa pagina temporaria
 
       i=0;
       while (buffer[i].addr != page.addr && i < buffer.size()) //procura pagina atual (page) no buffer (buffer)
@@ -269,8 +271,11 @@ int main(int argc, char *argv[])
         buffer.push_back(buffer[i]);
         buffer.erase(buffer.begin()+i);
       }
+      
       i=buffer.size()-1; //i = posicao da pagina no vector pages
+
       mem.insert_page(buffer[i]);
+      memory_accesses++;
       //TODO colocar um pontteiro pro buffer
 
 
@@ -322,7 +327,7 @@ int main(int argc, char *argv[])
       fgets(Linha, 16, arq);
 
       //TODO
-      // if (criterio para disparar migracao)
+       //if (buffer.size==)
       // funcao migracao(buffer, memoria)
 
 
@@ -332,7 +337,7 @@ int main(int argc, char *argv[])
 
   //-------------prints
   //print_memory();
-  //print_buffer_v(&buffer);
+  print_buffer_v(&buffer);
   //print_diagnostico(buffer.size(), R_count, W_count, I_count, min_page, max_page, max_reads, max_writes);
 }
 
