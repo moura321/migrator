@@ -81,7 +81,7 @@ class Page
     
     erase_page (*it);
     insert_page(temp_page);
-    cout << "\tmovi\n";//TODO retirar
+    //cout << "\tmovi\n";//TODO retirar
   }
 
   void print()
@@ -102,7 +102,62 @@ class Page
   
 };
 
+class Migration {
+  public:
+  bool coin_migrator(int prob=10)
+  {
+      return (rand()%100 <= prob) ? true : false;
+  }
 
+  bool always_migrate()
+  {
+    return true;
+  }
+
+  vector <Page> migration_recommendation(vector <Page> *buffer)
+  {
+    vector <Page> recommendation;
+    Page temp;
+    for (int i=0; i<buffer->size(); i++)
+    {
+      if(coin_migrator())
+      {
+        temp = buffer->operator[](i);
+        temp.m_type='P';
+        recommendation.push_back(temp);
+      }
+    }
+    return recommendation;
+  }
+
+  vector <Page> fuzzy_recommendation(vector <Page> *buffer)//TODO implementar
+  {
+    vector <Page> recommendation;
+    Page temp;
+    temp = buffer->operator[](0);
+    recommendation.push_back(temp);
+    return recommendation;
+  }
+
+  void migrate_mem(vector <Page> pages2migrate, Hybrid_Memory *mem)
+  {
+    for (int i=0; i<pages2migrate.size(); i++)
+      mem->move(pages2migrate[i], pages2migrate[i].m_type);
+  }
+
+  void migrate_buffer(vector <Page> pages2migrate, vector <Page> *buffer)
+  {
+    for (int i=0; i<pages2migrate.size(); i++)
+      for (int j=0; j<buffer->size(); j++)
+        if(buffer->operator[](j).addr==pages2migrate[i].addr)
+          buffer->operator[](j).m_type=pages2migrate[i].m_type;
+  }
+};
+
+
+
+
+//-------------------------------------------------------------------
 unsigned long getAddress(string l)
 {
   return (unsigned long)strtol(l.substr(3).c_str(), NULL, 16);
@@ -130,7 +185,6 @@ void print_diagnostico (int tamanho, unsigned long R_count, unsigned long W_coun
   std::cout << "Max write:\t"  << max_write << '\n';
 
 }
-
 
 void print_buffer_v(vector <Page> *pages)//verbose
 {
@@ -163,23 +217,7 @@ void print_buffer(vector <Page> *buffer)
 
 
 
-class buffer {
 
-  vector <Page> buffer;
-
-  void print()
-  {
-    std::cout << "PAGES\n";
-    for (int i=0; i<buffer.size(); i++)
-    {
-      std::cout  << i << ";"
-      << buffer[i].addr << ";"
-      << buffer[i].reads + buffer[i].ifetch << ";"
-      << buffer[i].writes << "\n";
-    }
-  }
-
-};
 
 
 /*  int main()
@@ -207,61 +245,6 @@ page.set(2000, 0, 1, 2, 'D');
 
 
 
-bool coin_migrator(int prob=10)
-{
-    return (rand()%100 <= prob) ? true : false;
-}
-
-bool always_migrate()
-{
-  return true;
-}
-
-vector <Page> migration_recommendation(vector <Page> *buffer)
-{
-  vector <Page> recommendation;
-  Page temp;
-  for (int i=0; i<buffer->size(); i++)
-  {
-    if(coin_migrator())
-    {
-      temp = buffer->operator[](i);
-      temp.m_type='P';
-      recommendation.push_back(temp);
-    }
-  }
-  return recommendation;
-}
-
-vector <Page> fuzzy_recommendation(vector <Page> *buffer)//TODO implementar
-{
-  vector <Page> recommendation;
-  Page temp;
-  temp = buffer->operator[](0);
-  recommendation.push_back(temp);
-  return recommendation;
-}
-
-
-void migrate_mem(vector <Page> pages2migrate, Hybrid_Memory *mem)
-{
-  for (int i=0; i<pages2migrate.size(); i++)
-    mem->move(pages2migrate[i], pages2migrate[i].m_type);
-}
-
-void migrate_buffer(vector <Page> pages2migrate, vector <Page> *buffer)
-{
-  for (int i=0; i<pages2migrate.size(); i++)
-    for (int j=0; j<buffer->size(); j++)
-      if(buffer->operator[](j).addr==pages2migrate[i].addr)
-        buffer->operator[](j).m_type=pages2migrate[i].m_type;
-}
-
-
-
-
-
-
 //#################################################
 
 
@@ -272,6 +255,7 @@ int main(int argc, char *argv[])
   const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 0;//buffer tem limite? Por default, nao. 
   const int BUFFER = (argc>2) ? atoi(argv[2]): 0;//limite do buffer. Por default, ilimitado
   const int TIME_TO_MIGRATE = (argc>3) ? atoi(argv[3]): 5;
+  const bool DEBBUG = 0;
 
   FILE *arq;
   char Linha[16];
@@ -292,6 +276,7 @@ int main(int argc, char *argv[])
   Hybrid_Memory mem;
   Page page;
   vector <Page> buffer;
+  Migration m;
   
   unsigned long R_count=0;
   unsigned long W_count=0;
@@ -407,16 +392,19 @@ int main(int argc, char *argv[])
       //TODO
       if (memory_accesses==TIME_TO_MIGRATE)
       {
+        vector <Page> rec = m.migration_recommendation(&buffer);
         //DEBUGANDO ----------------------TODO
-        cout << "Buffer:\n";
-        print_buffer_v(&buffer);
-        vector <Page> rec = migration_recommendation(&buffer);
-        cout << "Recomenda migrar:\n";
-        print_buffer_v(&rec);
+        if(DEBBUG)
+        {
+          cout << "Buffer:\n";
+          print_buffer_v(&buffer);
+          cout << "Recomenda migrar:\n";
+          print_buffer_v(&rec);
+        }
         //--------------------------------
 
-        migrate_mem(rec, &mem);
-        migrate_buffer(rec, &buffer);
+        //m.migrate_mem(rec, &mem);
+        //m.migrate_buffer(rec, &buffer);
         memory_accesses=0;
       }
 
@@ -426,8 +414,8 @@ int main(int argc, char *argv[])
   fclose(arq);
 
   //-------------prints
-  mem.print();
-  //print_buffer_v(&buffer);
+  //mem.print();
+  print_buffer(&buffer);
   //print_diagnostico(buffer.size(), R_count, W_count, I_count, min_page, max_page, max_reads, max_writes);
 }
 
