@@ -14,7 +14,7 @@ static void get_sum_and_difference () {
 
     // Create an object to resprent the server, and make our call.
     XmlRpcClient server (SERVER_URL);
-    XmlRpcValue result = server.call("sample.sumAndDifference", param_array);
+    XmlRpcValue result = server.call("sample.metodo", param_array);
 
     // Extract the sum and difference from our struct.
     XmlRpcValue::int32 sum = result.structGetValue("sum").getInt();

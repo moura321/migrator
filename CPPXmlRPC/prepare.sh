@@ -1,2 +1,0 @@
-CLIENT_LIBS=-L/usr/lib/x86_64-linux-gnu   -lxmlrpc_client -lxmlrpc_client -lxmlrpc_server -lxmlrpc_server_abyss -lxmlrpc_cpp -lxmlrpc  -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_util -lcurl 
-CLIENT_CFLAGS=-I/usr/include 
