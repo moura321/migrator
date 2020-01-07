@@ -5,6 +5,12 @@
 #include <list>
 #include <set>
 
+#include <XmlRpcCpp.h>
+
+#define NAME       "XML-RPC getSumAndDifference C++ Client"
+#define VERSION    "0.1"
+#define SERVER_URL "http://localhost:8080"
+
 using namespace std;
 
 class Page
@@ -215,7 +221,30 @@ void print_buffer(vector <Page> *buffer)
   }
 }
 
+string buffer2string(vector <Page> *buffer)
+{
+  string result;
+  for (int i=0; i<buffer->size(); i++)
+  {
+    result+= to_string(i) + ";"
+    + to_string(buffer->operator[](i).addr) + ";"
+    + to_string(buffer->operator[](i).reads + buffer->operator[](i).ifetch) + ";"
+    + to_string(buffer->operator[](i).writes) + ";"
+    + buffer->operator[](i).m_type + "\n";
+  }
+  return result;
+}
 
+static void fuzzy_promote (vector <Page> *buffer) {
+    XmlRpcValue param_array = XmlRpcValue::makeArray();
+    param_array.arrayAppendItem(XmlRpcValue::makeString(buffer2string(buffer)));
+
+    XmlRpcClient server (SERVER_URL);
+    XmlRpcValue result = server.call("fhm.promote", param_array);
+
+    cout << result.structGetValue("addr").getInt() << endl;
+    cout << result.structGetValue("value").getDouble() << endl;
+}
 
 
 
@@ -290,6 +319,7 @@ int main(int argc, char *argv[])
 
 
   srand (time(NULL));
+  XmlRpcClient::Initialize(NAME, VERSION);
 
   // Abre um arquivo TEXTO para LEITURA
   arq = fopen(argv[1], "rt");
@@ -415,7 +445,10 @@ int main(int argc, char *argv[])
 
   //-------------prints
   //mem.print();
-  print_buffer(&buffer);
+  fuzzy_promote(&buffer);
+  //cout << buffer2string(&buffer);
+  //print_buffer(&buffer);
+
   //print_diagnostico(buffer.size(), R_count, W_count, I_count, min_page, max_page, max_reads, max_writes);
 }
 
