@@ -136,20 +136,15 @@ class Migration {
     return true;
   }
 
-  vector <Page> migration_recommendation(vector <Page> *buffer)
-  {
-    vector <Page> recommendation;
-    Page temp;
-    //fuzzy_promote(&buffer);
-    recommendation.push_back(temp);
-    return recommendation;
-  }
+  
 
-  vector <Page> fuzzy_recommendation(vector <Page> *buffer)//TODO implementar
+  vector <Page> fuzzy_recommendation(vector <Page> *buffer, int counters_size)//TODO implementar
   {
     vector <Page> recommendation;
     XmlRpcValue param_array = XmlRpcValue::makeArray();
     param_array.arrayAppendItem(XmlRpcValue::makeString(buffer2string(buffer)));
+    param_array.arrayAppendItem(XmlRpcValue::makeInt(counters_size));
+    param_array.arrayAppendItem(XmlRpcValue::makeInt(buffer->size()));
 
     XmlRpcClient server (SERVER_URL);
     XmlRpcValue result = server.call("fhm.promote", param_array);
@@ -168,7 +163,7 @@ class Migration {
   void migrate_mem(vector <Page> pages2migrate, Hybrid_Memory *mem)
   {
     for (int i=0; i<pages2migrate.size(); i++)
-      mem->move(pages2migrate[i], pages2migrate[i].m_type);
+      mem->move(pages2migrate[i], 'P');
   }
 
   void migrate_buffer(vector <Page> pages2migrate, vector <Page> *buffer)
@@ -176,7 +171,7 @@ class Migration {
     for (int i=0; i<pages2migrate.size(); i++)
       for (int j=0; j<buffer->size(); j++)
         if(buffer->operator[](j).addr==pages2migrate[i].addr)
-          buffer->operator[](j).m_type=pages2migrate[i].m_type;
+          buffer->operator[](j).m_type='P';
   }
 };
 
@@ -243,24 +238,27 @@ void print_buffer(vector <Page> *buffer)
 
 
 
-void fuzzy_promote (vector <Page> *buffer)
+void rotate_buffer (vector <Page> *buffer, char op)
 {
-    vector <Page> migrate;
-    XmlRpcValue param_array = XmlRpcValue::makeArray();
-    param_array.arrayAppendItem(XmlRpcValue::makeString(buffer2string(buffer)));
+  for (int i=0; i<buffer->size(); i++)
+  { 
+    switch (op)
+      {
+      case 'R':
+        buffer->operator[](i).reads/=2;
+        break;
 
-    XmlRpcClient server (SERVER_URL);
-    XmlRpcValue result = server.call("fhm.promote", param_array);
+      case 'I':
+        buffer->operator[](i).ifetch/=2;
+        break;
 
-    /*cout << result.structGetValue("addr").getInt() << endl;
-    cout << result.structGetValue("value").getDouble() << endl;*/
-    
-    for(int i=0; i<result.structSize();i+=2)
-    {
-      cout << result.structGetValue(to_string(i)).getDouble() << endl;//addres
-      cout << result.structGetValue(to_string(i+1)).getDouble() << endl;//value
-    }
-}
+      case 'W':
+        buffer->operator[](i).writes/=2;
+        break;
+      }  
+     
+  }
+}  
 
 
 
@@ -297,11 +295,11 @@ int main(int argc, char *argv[])
 {
   const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
   const int PROB = 50;//probabilidade de migrar TODO tirar
-  const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 0;//buffer tem limite? Por default, nao. 
-  const int BUFFER = (argc>2) ? atoi(argv[2]): 0;//limite do buffer. Por default, ilimitado
-  const int TIME_TO_MIGRATE = (argc>3) ? atoi(argv[3]): 5;
-  const bool DEBBUG = 0;
-
+  const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 1;//buffer tem limite? Por default, sim. 
+  const int BUFFER = (argc>2) ? atoi(argv[2]): 8;//limite do buffer. Por default, 8
+  const int TIME_TO_MIGRATE = (argc>3) ? atoi(argv[3]): 2;//migrar a cada quantas instrucoes? Por default, 4*buffer
+  const bool DEBBUG = 1;
+  const int COUNTERS_SIZE = 16;//contagem de reads e writes
   FILE *arq;
   char Linha[16];
   string l;
@@ -352,7 +350,7 @@ int main(int argc, char *argv[])
 
   page.set(getPage(address,DESLOC),0,0,0,'D');
   buffer.push_back(page);
-  //mem.insert_page(page);  
+  mem.insert_page(page);  
   
 
   while (!feof(arq))
@@ -396,16 +394,22 @@ int main(int argc, char *argv[])
       case 'R':
         buffer[i].reads++;
         R_count++;
+        if(buffer[i].reads>COUNTERS_SIZE)
+          rotate_buffer(&buffer, op);
         break;
 
       case 'I':
         buffer[i].ifetch++;
         I_count++;
+        if(buffer[i].ifetch>COUNTERS_SIZE)
+          rotate_buffer(&buffer, op);
         break;
 
       case 'W':
-        buffer[i].writes++;
+        buffer[i].writes+=10;
         W_count++;
+        if(buffer[i].writes>COUNTERS_SIZE)
+          rotate_buffer(&buffer, op);
         break;
 
       default:
@@ -438,8 +442,8 @@ int main(int argc, char *argv[])
       //TODO
       if (memory_accesses==TIME_TO_MIGRATE)
       {
-        vector <Page> rec = m.migration_recommendation(&buffer);
-        //DEBUGANDO ----------------------TODO
+        vector <Page> rec = m.fuzzy_recommendation(&buffer, COUNTERS_SIZE);
+                     //DEBUGANDO ----------------------TODO
         if(DEBBUG)
         {
           cout << "Buffer:\n";
@@ -447,7 +451,7 @@ int main(int argc, char *argv[])
           cout << "Recomenda migrar:\n";
           print_buffer_v(&rec);
         }
-        //--------------------------------
+                      //--------------------------------
 
         m.migrate_mem(rec, &mem);
         m.migrate_buffer(rec, &buffer);
@@ -464,8 +468,18 @@ int main(int argc, char *argv[])
   //cout << buffer2string(&buffer);
   //print_buffer(&buffer);
   //fuzzy_promote(&buffer);
-  vector <Page> rec = m.fuzzy_recommendation(&buffer);
-  print_buffer(&rec);
+  //vector <Page> rec = m.fuzzy_recommendation(&buffer);
+  //m.migrate_mem(rec, &mem);
+  
+  //mem.print();
+ // cout << "mem normal" << endl;
+ // mem.print();
+  //cout << "Recomenda migrar" << endl;
+ // cout << endl;
+  print_buffer(&buffer);
+  //m.migrate_buffer(rec, &buffer);
+ // cout <<"Migrado" << endl;
+  //mem.print();
 
   //print_diagnostico(buffer.size(), R_count, W_count, I_count, min_page, max_page, max_reads, max_writes);
 }
