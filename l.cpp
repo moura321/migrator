@@ -7,11 +7,12 @@
 
 #include <XmlRpcCpp.h>
 
-#define NAME       "XML-RPC getSumAndDifference C++ Client"
+#define NAME       "XML-RPC C++ Client"
 #define VERSION    "0.1"
 #define SERVER_URL "http://localhost:8080"
 
 using namespace std;
+
 
 class Page
  {
@@ -108,6 +109,21 @@ class Page
   
 };
 
+
+string buffer2string(vector <Page> *buffer)
+{
+  string result;
+  for (int i=0; i<buffer->size(); i++)
+  {
+    result+= to_string(i) + ";"
+    + to_string(buffer->operator[](i).addr) + ";"
+    + to_string(buffer->operator[](i).reads + buffer->operator[](i).ifetch) + ";"
+    + to_string(buffer->operator[](i).writes) + ";"
+    + buffer->operator[](i).m_type + "\n";
+  }
+  return result;
+}
+
 class Migration {
   public:
   bool coin_migrator(int prob=10)
@@ -124,24 +140,28 @@ class Migration {
   {
     vector <Page> recommendation;
     Page temp;
-    for (int i=0; i<buffer->size(); i++)
-    {
-      if(coin_migrator())
-      {
-        temp = buffer->operator[](i);
-        temp.m_type='P';
-        recommendation.push_back(temp);
-      }
-    }
+    //fuzzy_promote(&buffer);
+    recommendation.push_back(temp);
     return recommendation;
   }
 
   vector <Page> fuzzy_recommendation(vector <Page> *buffer)//TODO implementar
   {
     vector <Page> recommendation;
-    Page temp;
-    temp = buffer->operator[](0);
-    recommendation.push_back(temp);
+    XmlRpcValue param_array = XmlRpcValue::makeArray();
+    param_array.arrayAppendItem(XmlRpcValue::makeString(buffer2string(buffer)));
+
+    XmlRpcClient server (SERVER_URL);
+    XmlRpcValue result = server.call("fhm.promote", param_array);
+
+    /*cout << result.structGetValue("addr").getInt() << endl;
+    cout << result.structGetValue("value").getDouble() << endl;*/
+
+    for(int i=0; i<result.structSize();i+=2)
+      for(int j=0; j<buffer->size(); j++)
+        if(buffer->operator[](j).addr == result.structGetValue(to_string(i)).getInt())
+          recommendation.push_back(buffer->operator[](j));
+
     return recommendation;
   }
 
@@ -221,29 +241,25 @@ void print_buffer(vector <Page> *buffer)
   }
 }
 
-string buffer2string(vector <Page> *buffer)
-{
-  string result;
-  for (int i=0; i<buffer->size(); i++)
-  {
-    result+= to_string(i) + ";"
-    + to_string(buffer->operator[](i).addr) + ";"
-    + to_string(buffer->operator[](i).reads + buffer->operator[](i).ifetch) + ";"
-    + to_string(buffer->operator[](i).writes) + ";"
-    + buffer->operator[](i).m_type + "\n";
-  }
-  return result;
-}
 
-static void fuzzy_promote (vector <Page> *buffer) {
+
+void fuzzy_promote (vector <Page> *buffer)
+{
+    vector <Page> migrate;
     XmlRpcValue param_array = XmlRpcValue::makeArray();
     param_array.arrayAppendItem(XmlRpcValue::makeString(buffer2string(buffer)));
 
     XmlRpcClient server (SERVER_URL);
     XmlRpcValue result = server.call("fhm.promote", param_array);
 
-    cout << result.structGetValue("addr").getInt() << endl;
-    cout << result.structGetValue("value").getDouble() << endl;
+    /*cout << result.structGetValue("addr").getInt() << endl;
+    cout << result.structGetValue("value").getDouble() << endl;*/
+    
+    for(int i=0; i<result.structSize();i+=2)
+    {
+      cout << result.structGetValue(to_string(i)).getDouble() << endl;//addres
+      cout << result.structGetValue(to_string(i+1)).getDouble() << endl;//value
+    }
 }
 
 
@@ -433,8 +449,8 @@ int main(int argc, char *argv[])
         }
         //--------------------------------
 
-        //m.migrate_mem(rec, &mem);
-        //m.migrate_buffer(rec, &buffer);
+        m.migrate_mem(rec, &mem);
+        m.migrate_buffer(rec, &buffer);
         memory_accesses=0;
       }
 
@@ -445,9 +461,11 @@ int main(int argc, char *argv[])
 
   //-------------prints
   //mem.print();
-  fuzzy_promote(&buffer);
   //cout << buffer2string(&buffer);
   //print_buffer(&buffer);
+  //fuzzy_promote(&buffer);
+  vector <Page> rec = m.fuzzy_recommendation(&buffer);
+  print_buffer(&rec);
 
   //print_diagnostico(buffer.size(), R_count, W_count, I_count, min_page, max_page, max_reads, max_writes);
 }
