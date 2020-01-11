@@ -16,96 +16,121 @@ using namespace std;
 
 class Page
  {
-   public:  
-   unsigned long addr=0;
-   int reads=0;
-   int writes=0;
-   int ifetch=0;
-   char m_type;
+      public:  
+      unsigned long addr=0;
+      int reads=0;
+      int writes=0;
+      int ifetch=0;
+      char m_type;
 
-   bool operator <(const Page & PgObj) const
-    {return addr < PgObj.addr;}
+      bool operator <(const Page & PgObj) const
+        {return addr < PgObj.addr;}
 
-   void set(unsigned long a, int r, int w, int i, char t)
-   {
-     addr=a;
-     reads=r;
-     writes=w;
-     ifetch=i;
-     m_type=t;
-   } 
+      void set(unsigned long a, int r, int w, int i, char t)
+      {
+        addr=a;
+        reads=r;
+        writes=w;
+        ifetch=i;
+        m_type=t;
+      } 
  };
 
 
 
  class Hybrid_Memory
  {
-  public:
-  set <Page> mm; //Main Memory
-  
-  char type[2]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
-  int size[2]={0,0}; //number of pages. Value 0 = unlimited
-  int used[2]={0,0}; //pages on each memory module
-
-  public:
-  void insert_page(Page page)
-  {
-    mm.insert(page);
-    for(int i=0; i < sizeof(type); i++)
-      if(page.m_type==type[i])
-      {
-        used[i]++;
-        break;
-      }
-  }
-
-  bool erase_page(Page page)
-  {
-    
-    for(int i=0; i < sizeof(type); i++)
-      if(page.m_type==type[i])
-      {
-        used[i]--;
-        break;
-      } 
-    return mm.erase(page);
-  }
-  
-  set<Page>::iterator search_page(Page page)
-    {
-      return mm.find(page);
-    }
-  
-  void move(Page page, char new_type)
-  {
-    Page temp_page;
-    set<Page>::iterator it;
-    
-    it = search_page(page);
-    temp_page = *it;
-    
-    temp_page.m_type = new_type;
-    
-    erase_page (*it);
-    insert_page(temp_page);
-    //cout << "\tmovi\n";//TODO retirar
-  }
-
-  void print()
-  {
-    set<Page>::iterator it;
-    it = mm.begin();
-    while(it != mm.end())
-    {
+      public:
+      set <Page> mm; //Main Memory
       
-      cout <<"addr:" << it->addr << "\t";
-      cout <<"R:" <<  it->reads + it->ifetch << "\t";
-      cout <<"W:" <<  it->writes << "\t";
-      cout <<"T:" <<  it->m_type << "\n";
-      it++;
-    }
-    std::cout << "\n";
-  }
+      char type[2]={'D','P'}; //D=DRAM  S=SRAM  P=PCM  T=STTRAM  R=RRAM
+      int size[2]={0,0}; //number of pages. Value 0 = unlimited
+      int used[2]={0,0}; //pages on each memory module
+      int promoted=0, demoted=0;
+
+      unsigned long int count_r_D=0, count_r_P=0, count_w_D=0, count_w_P=0;
+
+      public:
+      void insert_page(Page page)
+      {
+        //mm.insert(page);
+        pair<set<Page>::iterator, bool> p = mm.insert(page); 
+        if (p.second)
+          for(int i=0; i < sizeof(type); i++)
+            if(page.m_type==type[i])
+            {
+              used[i]++;
+              break;
+            }
+      }
+
+      bool erase_page(Page page)
+      {
+        
+        for(int i=0; i < sizeof(type); i++)
+          if(page.m_type==type[i])
+          {
+            used[i]--;
+            break;
+          } 
+        return mm.erase(page);
+      }
+      
+      set<Page>::iterator search_page(Page page)
+        {
+          return mm.find(page);
+        }
+      
+      void move(Page page, char new_type)
+      {
+        Page temp_page;
+        set<Page>::iterator it;
+        
+        it = search_page(page);
+        temp_page = *it;
+        
+        temp_page.m_type = new_type;
+        
+        erase_page (*it);
+        insert_page(temp_page);
+        for(int i=0; i < sizeof(type); i++)  // TODO: with more than 2 types we'll have a problem
+          if(new_type==type[i])
+            used[i]++;
+          else
+            used[i]--;
+
+        //cout << "\tmovi\n";
+      }
+
+      void print()
+      {
+        set<Page>::iterator it;
+        it = mm.begin();
+        while(it != mm.end())
+        {
+          
+          cout <<"addr:" << it->addr << "\t";
+          //cout <<"R:" <<  it->reads + it->ifetch << "\t";
+          //cout <<"W:" <<  it->writes << "\t";
+          cout <<"T:" <<  it->m_type << "\n";
+          it++;
+        }
+        cout <<"--\n";
+        cout <<"Promoted: " << promoted <<'\n';
+        cout <<"Demoted: " << demoted <<'\n';
+        cout <<"--\n";
+        cout <<"Writes on DRAM: " << count_w_D <<'\n';
+        cout <<"Writes on PCM: " << count_w_P <<'\n';
+        cout <<"Total writes: " << count_w_D + count_w_P <<'\n';
+        cout <<"--\n";
+        cout <<"Reads on DRAM: " << count_r_D <<'\n';
+        cout <<"Reads on PCM: " << count_r_P <<'\n';
+        cout <<"Total reads: " << count_r_D + count_r_P <<'\n';
+        cout <<"--\n";
+        cout <<"Pages on memory: " << mm.size() <<'\n';
+        
+        cout <<'\n';
+      }
   
 };
 
@@ -125,54 +150,82 @@ string buffer2string(vector <Page> *buffer)
 }
 
 class Migration {
-  public:
-  bool coin_migrator(int prob=10)
-  {
-      return (rand()%100 <= prob) ? true : false;
-  }
+      public:
+      const double PROMOTE_VALUE=1.7;// values gratter than that will recommend promotion
+      const double DEMOTE_VALUE=1.7;// values lower than that will recommend demotion
+      bool coin_migrator(int prob=10)
+      {
+          return (rand()%100 <= prob) ? true : false;
+      }
 
-  bool always_migrate()
-  {
-    return true;
-  }
+      bool always_migrate()
+      {
+        return true;
+      }
+   
+      vector <Page> fuzzy_recommendation(vector <Page> *buffer, int counters_size, int buffer_size)//TODO implementar
+      {
+        vector <Page> recommendation;
+        XmlRpcValue param_array = XmlRpcValue::makeArray();
+        param_array.arrayAppendItem(XmlRpcValue::makeString(buffer2string(buffer)));
+        param_array.arrayAppendItem(XmlRpcValue::makeInt(counters_size));
+        param_array.arrayAppendItem(XmlRpcValue::makeInt(buffer_size));
 
-  
+        XmlRpcClient server (SERVER_URL);
+        XmlRpcValue result = server.call("fhm.promote", param_array);
 
-  vector <Page> fuzzy_recommendation(vector <Page> *buffer, int counters_size)//TODO implementar
-  {
-    vector <Page> recommendation;
-    XmlRpcValue param_array = XmlRpcValue::makeArray();
-    param_array.arrayAppendItem(XmlRpcValue::makeString(buffer2string(buffer)));
-    param_array.arrayAppendItem(XmlRpcValue::makeInt(counters_size));
-    param_array.arrayAppendItem(XmlRpcValue::makeInt(buffer->size()));
+        /*cout << result.structGetValue("addr").getInt() << endl;
+        cout << result.structGetValue("value").getDouble() << endl;*/
+        int address;
+        double f_value;
+        for(int i=0; i<result.structSize();i+=2)
+        {
+          address = result.structGetValue(to_string(i)).getInt();
+          f_value = result.structGetValue(to_string(i+1)).getDouble();
 
-    XmlRpcClient server (SERVER_URL);
-    XmlRpcValue result = server.call("fhm.promote", param_array);
+          for(int j=0; j<buffer->size(); j++)
+            if(buffer->operator[](j).addr == address &&
+              (
+               buffer->operator[](j).m_type == 'P' &&
+               f_value > PROMOTE_VALUE
+               ||
+               buffer->operator[](j).m_type == 'D' &&
+               f_value < DEMOTE_VALUE
+              )
+               )
+            {
+              recommendation.push_back(buffer->operator[](j));
+            }        
+        }
+        return recommendation;
+      }
 
-    /*cout << result.structGetValue("addr").getInt() << endl;
-    cout << result.structGetValue("value").getDouble() << endl;*/
+      void migrate_mem(vector <Page> pages2migrate, Hybrid_Memory *mem)
+      {
+        for (int i=0; i<pages2migrate.size(); i++)
+          if(pages2migrate[i].m_type=='D')
+          {
+            mem->move(pages2migrate[i], 'P');
+            mem->demoted++;
+          }
+          else
+          {
+            mem->move(pages2migrate[i], 'D');
+            mem->promoted++;
+          }
+      }
 
-    for(int i=0; i<result.structSize();i+=2)
-      for(int j=0; j<buffer->size(); j++)
-        if(buffer->operator[](j).addr == result.structGetValue(to_string(i)).getInt())
-          recommendation.push_back(buffer->operator[](j));
-
-    return recommendation;
-  }
-
-  void migrate_mem(vector <Page> pages2migrate, Hybrid_Memory *mem)
-  {
-    for (int i=0; i<pages2migrate.size(); i++)
-      mem->move(pages2migrate[i], 'P');
-  }
-
-  void migrate_buffer(vector <Page> pages2migrate, vector <Page> *buffer)
-  {
-    for (int i=0; i<pages2migrate.size(); i++)
-      for (int j=0; j<buffer->size(); j++)
-        if(buffer->operator[](j).addr==pages2migrate[i].addr)
-          buffer->operator[](j).m_type='P';
-  }
+      void migrate_buffer(vector <Page> pages2migrate, vector <Page> *buffer)
+      {
+        for (int i=0; i<pages2migrate.size(); i++)
+          for (int j=0; j<buffer->size(); j++)
+            if(buffer->operator[](j).addr==pages2migrate[i].addr)
+              if(buffer->operator[](j).m_type=='P')
+                buffer->operator[](j).m_type='D';
+              else
+                buffer->operator[](j).m_type='P';
+              ;
+      }
 };
 
 
@@ -236,8 +289,6 @@ void print_buffer(vector <Page> *buffer)
   }
 }
 
-
-
 void rotate_buffer (vector <Page> *buffer, char op)
 {
   for (int i=0; i<buffer->size(); i++)
@@ -263,27 +314,28 @@ void rotate_buffer (vector <Page> *buffer, char op)
 
 
 
-/*  int main()
+ /* int main()
  {
    Page page;
    Hybrid_Memory mm;
 
-   page.set(2000, 8, 1, 2, 'V');
+   page.set(2000, 8, 1, 2, 'D');
    mm.insert_page(page);
 
    page.set(2000, 1, 1, 2, 'D');
    mm.insert_page(page);
 
-page.set(2000, 0, 1, 2, 'D');
+   page.set(2000, 0, 1, 2, 'D');
    mm.insert_page(page);
 
+   mm.print();
    //cout << (*mm.search_page(page)).m_type << '\n';
    //mm.move(page, 'D');
    //cout << (*mm.search_page(page)).m_type << '\n';
    //cout << (mm.used[0]) << '\n';
-   cout << mm.mm.size() << '\n';
+   cout <<  mm.mm.size() << '\n';
 
-   cout  << "show\n";
+   //cout  << "show\n";
  } */
 
 
@@ -296,10 +348,10 @@ int main(int argc, char *argv[])
   const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
   const int PROB = 50;//probabilidade de migrar TODO tirar
   const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 1;//buffer tem limite? Por default, sim. 
-  const int BUFFER = (argc>2) ? atoi(argv[2]): 8;//limite do buffer. Por default, 8
-  const int TIME_TO_MIGRATE = (argc>3) ? atoi(argv[3]): 2;//migrar a cada quantas instrucoes? Por default, 4*buffer
-  const bool DEBBUG = 1;
-  const int COUNTERS_SIZE = 16;//contagem de reads e writes
+  const int BUFFER_SIZE = (argc>2) ? atoi(argv[2]): 16;//limite do buffer. Por default, 8
+  const int TIME_TO_MIGRATE = (argc>3) ? atoi(argv[3]): 64;//migrar a cada quantas instrucoes? Por default, 4*buffer
+  const bool DEBBUG = 0;
+  const int COUNTERS_SIZE = 32;//contagem de reads e writes
   FILE *arq;
   char Linha[16];
   string l;
@@ -370,7 +422,7 @@ int main(int argc, char *argv[])
       {
         buffer.push_back(page);
         if(LIMITED)
-          if(buffer.size()>BUFFER)
+          if(buffer.size()>BUFFER_SIZE)
             buffer.erase(buffer.begin());
       }
       else
@@ -394,6 +446,12 @@ int main(int argc, char *argv[])
       case 'R':
         buffer[i].reads++;
         R_count++;
+
+        if(buffer[i].m_type=='D')
+          mem.count_r_D++;
+        else
+          mem.count_r_P++;
+        
         if(buffer[i].reads>COUNTERS_SIZE)
           rotate_buffer(&buffer, op);
         break;
@@ -401,13 +459,25 @@ int main(int argc, char *argv[])
       case 'I':
         buffer[i].ifetch++;
         I_count++;
+
+        if(buffer[i].m_type=='D')
+          mem.count_r_D++;
+        else
+          mem.count_r_P++;
+        
         if(buffer[i].ifetch>COUNTERS_SIZE)
           rotate_buffer(&buffer, op);
         break;
 
       case 'W':
-        buffer[i].writes+=10;
+        buffer[i].writes++;
         W_count++;
+
+        if(buffer[i].m_type=='D')
+          mem.count_w_D++;
+        else
+          mem.count_w_P++;
+        
         if(buffer[i].writes>COUNTERS_SIZE)
           rotate_buffer(&buffer, op);
         break;
@@ -442,14 +512,17 @@ int main(int argc, char *argv[])
       //TODO
       if (memory_accesses==TIME_TO_MIGRATE)
       {
-        vector <Page> rec = m.fuzzy_recommendation(&buffer, COUNTERS_SIZE);
+        vector <Page> rec = m.fuzzy_recommendation(&buffer, COUNTERS_SIZE, BUFFER_SIZE);
                      //DEBUGANDO ----------------------TODO
         if(DEBBUG)
         {
-          cout << "Buffer:\n";
-          print_buffer_v(&buffer);
+          //cout << "Buffer:\n";
+          //print_buffer_v(&buffer);
+          cout << "Mem:\n";
+          mem.print();
           cout << "Recomenda migrar:\n";
           print_buffer_v(&rec);
+
         }
                       //--------------------------------
 
@@ -473,10 +546,10 @@ int main(int argc, char *argv[])
   
   //mem.print();
  // cout << "mem normal" << endl;
- // mem.print();
+  mem.print();
   //cout << "Recomenda migrar" << endl;
  // cout << endl;
-  print_buffer(&buffer);
+ // print_buffer(&buffer);
   //m.migrate_buffer(rec, &buffer);
  // cout <<"Migrado" << endl;
   //mem.print();
