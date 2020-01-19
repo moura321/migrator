@@ -115,21 +115,37 @@ class Page
           cout <<"T:" <<  it->m_type << "\n";
           it++;
         }
+      }
+      void print_stats()
+      {
         cout <<"--\n";
-        cout <<"Promoted: " << promoted <<'\n';
-        cout <<"Demoted: " << demoted <<'\n';
+        cout <<"Promoted: \t" << promoted <<'\n';
+        cout <<"Demoted: \t" << demoted <<'\n';
         cout <<"--\n";
-        cout <<"Writes on DRAM: " << count_w_D <<'\n';
-        cout <<"Writes on PCM: " << count_w_P <<'\n';
-        cout <<"Total writes: " << count_w_D + count_w_P <<'\n';
+        cout <<"Writes DRAM: \t" << count_w_D <<'\n';
+        cout <<"Writes PCM: \t" << count_w_P <<'\n';
+        cout <<"Total writes: \t" << count_w_D + count_w_P <<'\n';
         cout <<"--\n";
-        cout <<"Reads on DRAM: " << count_r_D <<'\n';
-        cout <<"Reads on PCM: " << count_r_P <<'\n';
-        cout <<"Total reads: " << count_r_D + count_r_P <<'\n';
+        cout <<"Reads on DRAM: \t" << count_r_D <<'\n';
+        cout <<"Reads on PCM: \t" << count_r_P <<'\n';
+        cout <<"Total reads: \t" << count_r_D + count_r_P <<'\n';
         cout <<"--\n";
-        cout <<"Pages on memory: " << mm.size() <<'\n';
+        cout <<"Pages on memory: \t" << mm.size() <<'\n';
         
         cout <<'\n';
+      }
+      void print_stats_clean()
+      {
+
+        cout << promoted <<";";
+        cout << demoted <<";";
+        cout << count_w_D <<";";
+        cout << count_w_P <<";";
+        cout << count_w_D + count_w_P <<";";
+        cout << count_r_D <<";";
+        cout << count_r_P <<";";
+        cout << count_r_D + count_r_P <<";";
+        cout << mm.size() <<";";
       }
   
 };
@@ -151,8 +167,8 @@ string buffer2string(vector <Page> *buffer)
 
 class Migration {
       public:
-      const double PROMOTE_VALUE=1.7;// values gratter than that will recommend promotion
-      const double DEMOTE_VALUE=1.7;// values lower than that will recommend demotion
+      double promote_value;// values gratter than that will recommend promotion
+      double demote_value;// values lower than that will recommend demotion
       bool coin_migrator(int prob=10)
       {
           return (rand()%100 <= prob) ? true : false;
@@ -174,8 +190,7 @@ class Migration {
         XmlRpcClient server (SERVER_URL);
         XmlRpcValue result = server.call("fhm.promote", param_array);
 
-        /*cout << result.structGetValue("addr").getInt() << endl;
-        cout << result.structGetValue("value").getDouble() << endl;*/
+
         int address;
         double f_value;
         for(int i=0; i<result.structSize();i+=2)
@@ -184,18 +199,22 @@ class Migration {
           f_value = result.structGetValue(to_string(i+1)).getDouble();
 
           for(int j=0; j<buffer->size(); j++)
+          {
             if(buffer->operator[](j).addr == address &&
               (
                buffer->operator[](j).m_type == 'P' &&
-               f_value > PROMOTE_VALUE
+               f_value > promote_value
                ||
                buffer->operator[](j).m_type == 'D' &&
-               f_value < DEMOTE_VALUE
+               f_value < demote_value
               )
                )
             {
               recommendation.push_back(buffer->operator[](j));
-            }        
+            }
+//cout << "address: " <<  buffer->operator[](j).addr << " m_type: " <<  buffer->operator[](j).m_type << " recomend value: "<< f_value << " promo: " << promote_value << "demo: " << demote_value <<'\n';
+
+          }
         }
         return recommendation;
       }
@@ -234,12 +253,12 @@ class Migration {
 //-------------------------------------------------------------------
 unsigned long getAddress(string l)
 {
-  return (unsigned long)strtol(l.substr(3).c_str(), NULL, 16);
+  return (unsigned long)strtol(l.substr(2).c_str(), NULL, 16);
 }
 
 string getHexaAddress(string l)
 {
-  return l.substr(3);
+  return l.substr(2);
 }
 
 unsigned long getPage(unsigned long address, int DESLOC)
@@ -345,13 +364,19 @@ void rotate_buffer (vector <Page> *buffer, char op)
 
 int main(int argc, char *argv[])
 {
-  const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
+  // arq.tr limited? buffer_size time2migrate size promo demo
   const int PROB = 50;//probabilidade de migrar TODO tirar
-  const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 1;//buffer tem limite? Por default, sim. 
-  const int BUFFER_SIZE = (argc>2) ? atoi(argv[2]): 16;//limite do buffer. Por default, 8
-  const int TIME_TO_MIGRATE = (argc>3) ? atoi(argv[3]): 64;//migrar a cada quantas instrucoes? Por default, 4*buffer
+  const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 1;//buffer tem limite? Por default, sim.
   const bool DEBBUG = 0;
-  const int COUNTERS_SIZE = 32;//contagem de reads e writes
+
+  const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
+  const int BUFFER_SIZE = (argc>2) ? atoi(argv[2]): 32;//limite do buffer. ultimo valor é default
+  const int COUNTERS_SIZE = (argc>3) ? atoi(argv[3]): 8;//contagem de reads e writes. ultimo valor é default
+  const int TIME_TO_MIGRATE = (argc>4) ? atoi(argv[4]): 1024;//migrar a cada quantas instrucoes? ultimo valor é default
+  const double PROMOTE_VALUE=(argc>5) ? atof(argv[5]): 4;
+  const double DEMOTE_VALUE=(argc>6) ? atof(argv[6]): 2;
+  
+  
   FILE *arq;
   char Linha[16];
   string l;
@@ -383,6 +408,8 @@ int main(int argc, char *argv[])
   int error_count=0;
   bool error=0;
 
+  m.promote_value=PROMOTE_VALUE;
+  m.demote_value=DEMOTE_VALUE;
 
   srand (time(NULL));
   XmlRpcClient::Initialize(NAME, VERSION);
@@ -410,7 +437,7 @@ int main(int argc, char *argv[])
       l=Linha;
       
       address=getAddress(l); //endereço em (unsigned long)
-      op = Linha[0]; //operação: R, W, M ou I
+      op = Linha[0]; //operação: R, W
 
       page.set(getPage(address,DESLOC),0,0,0,'D'); //inicializa pagina temporaria
 
@@ -529,6 +556,7 @@ int main(int argc, char *argv[])
         m.migrate_mem(rec, &mem);
         m.migrate_buffer(rec, &buffer);
         memory_accesses=0;
+
       }
 
 
@@ -544,9 +572,25 @@ int main(int argc, char *argv[])
   //vector <Page> rec = m.fuzzy_recommendation(&buffer);
   //m.migrate_mem(rec, &mem);
   
-  //mem.print();
- // cout << "mem normal" << endl;
-  mem.print();
+
+ // mem.print_stats();
+ /* cout <<'\n';
+  cout << "DESLOC: "<< DESLOC <<';';
+  cout << "BUFFER_SIZE: " << BUFFER_SIZE  <<';';
+  cout << "TIME_TO_MIGRATE: "<< TIME_TO_MIGRATE  <<';';
+  cout << "COUNTERS_SIZE: "<<COUNTERS_SIZE  <<';';
+  cout << "PROMOTE_VALUE: "<<to_string(PROMOTE_VALUE)  <<';';
+  cout << "DEMOTE_VALUE: "<<to_string(DEMOTE_VALUE)  <<';';
+
+*/
+  mem.print_stats_clean();
+  cout << DESLOC <<';';
+  cout << BUFFER_SIZE  <<';';
+  cout << TIME_TO_MIGRATE  <<';';
+  cout << COUNTERS_SIZE  <<';';
+  cout << to_string(PROMOTE_VALUE)  <<';';
+  cout << to_string(DEMOTE_VALUE)  <<'\n';
+
   //cout << "Recomenda migrar" << endl;
  // cout << endl;
  // print_buffer(&buffer);
