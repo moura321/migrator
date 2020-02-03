@@ -1,7 +1,6 @@
 benchmarks=('basicmath2020-01-191653.nvt' 'dijkstra2020-01-191729.nvt' 'fft2020-01-191758.nvt' 'qsort2020-01-191912.nvt' 'typeset2020-01-191847.nvt')
 
-#allread tested:   buffer=('16' '32' '64' '128')
-buffer=('256')
+buffer=('16' '32' '64' '128' '256')
 
 counter=('4' '8' '16' '32' '64')
 
@@ -21,7 +20,7 @@ do
         do
             date
             let "j=j+1"
-            echo "$j/120"      
+#            echo "$j/120"      
             for t in "${ttm[@]}"
             do
                 for pro in "${promote[@]}"
