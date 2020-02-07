@@ -583,7 +583,7 @@ int main(int argc, char *argv[])
   cout << "DEMOTE_VALUE: "<<to_string(DEMOTE_VALUE)  <<';';
 
 */
-  mem.print_stats_clean();
+  mem.print_stats();
   cout << DESLOC <<';';
   cout << BUFFER_SIZE  <<';';
   cout << TIME_TO_MIGRATE  <<';';
