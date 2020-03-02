@@ -4,6 +4,7 @@
 #include <vector>
 #include <list>
 #include <set>
+#include <fstream>
 
 #include <XmlRpcCpp.h>
 
@@ -53,7 +54,6 @@ class Page
       public:
       void insert_page(Page page)
       {
-        //mm.insert(page);
         pair<set<Page>::iterator, bool> p = mm.insert(page); 
         if (p.second)
           for(int i=0; i < sizeof(type); i++)
@@ -66,7 +66,6 @@ class Page
 
       bool erase_page(Page page)
       {
-        
         for(int i=0; i < sizeof(type); i++)
           if(page.m_type==type[i])
           {
@@ -77,9 +76,9 @@ class Page
       }
       
       set<Page>::iterator search_page(Page page)
-        {
-          return mm.find(page);
-        }
+      {
+        return mm.find(page);
+      }
       
       void move(Page page, char new_type)
       {
@@ -88,18 +87,15 @@ class Page
         
         it = search_page(page);
         temp_page = *it;
-        
         temp_page.m_type = new_type;
-        
         erase_page (*it);
         insert_page(temp_page);
+
         for(int i=0; i < sizeof(type); i++)  // TODO: with more than 2 types we'll have a problem
           if(new_type==type[i])
             used[i]++;
           else
             used[i]--;
-
-        //cout << "\tmovi\n";
       }
 
       void print()
@@ -108,7 +104,6 @@ class Page
         it = mm.begin();
         while(it != mm.end())
         {
-          
           cout <<"addr:" << it->addr << "\t";
           //cout <<"R:" <<  it->reads + it->ifetch << "\t";
           //cout <<"W:" <<  it->writes << "\t";
@@ -116,6 +111,7 @@ class Page
           it++;
         }
       }
+
       void print_stats()
       {
         cout <<"--\n";
@@ -130,13 +126,12 @@ class Page
         cout <<"Reads on PCM: \t" << count_r_P <<'\n';
         cout <<"Total reads: \t" << count_r_D + count_r_P <<'\n';
         cout <<"--\n";
-        cout <<"Pages on memory: \t" << mm.size() <<'\n';
-        
+        cout <<"Pages on memory: \t" << mm.size() <<'\n';   
         cout <<'\n';
       }
+
       void print_stats_clean()
       {
-
         cout << promoted <<";";
         cout << demoted <<";";
         cout << count_w_D <<";";
@@ -146,8 +141,8 @@ class Page
         cout << count_r_P <<";";
         cout << count_r_D + count_r_P <<";";
         cout << mm.size() <<";";
+        //cout <<'\n';
       }
-  
 };
 
 
@@ -169,19 +164,26 @@ class Migration {
       public:
       double promote_value;// values gratter than that will recommend promotion
       double demote_value;// values lower than that will recommend demotion
-      bool coin_migrator(int prob=10)
+      
+      bool coin(int prob=10)
       {
           return (rand()%100 <= prob) ? true : false;
       }
 
-      bool always_migrate()
-      {
-        return true;
-      }
-   
-      vector <Page> fuzzy_recommendation(vector <Page> *buffer, int counters_size, int buffer_size)//TODO implementar
+      vector <Page> always_migrate(vector <Page> *buffer)
       {
         vector <Page> recommendation;
+        for(int i=0; i<buffer->size(); i++)
+          recommendation.push_back(buffer->operator[](i));
+        return recommendation;
+      }
+   
+      vector <Page> fuzzy_recommendation(vector <Page> *buffer, int counters_size, int buffer_size)
+      {
+        int address;
+        double f_value;
+        vector <Page> recommendation;
+
         XmlRpcValue param_array = XmlRpcValue::makeArray();
         param_array.arrayAppendItem(XmlRpcValue::makeString(buffer2string(buffer)));
         param_array.arrayAppendItem(XmlRpcValue::makeInt(counters_size));
@@ -190,32 +192,36 @@ class Migration {
         XmlRpcClient server (SERVER_URL);
         XmlRpcValue result = server.call("fhm.promote", param_array);
 
-
-        int address;
-        double f_value;
         for(int i=0; i<result.structSize();i+=2)
         {
           address = result.structGetValue(to_string(i)).getInt();
           f_value = result.structGetValue(to_string(i+1)).getDouble();
 
           for(int j=0; j<buffer->size(); j++)
-          {
             if(buffer->operator[](j).addr == address &&
               (
-               buffer->operator[](j).m_type == 'P' &&
-               f_value > promote_value
-               ||
-               buffer->operator[](j).m_type == 'D' &&
-               f_value < demote_value
+              buffer->operator[](j).m_type == 'P'  &&  f_value > promote_value
+              ||
+              buffer->operator[](j).m_type == 'D'  &&  f_value < demote_value
               )
-               )
-            {
-              recommendation.push_back(buffer->operator[](j));
-            }
-//cout << "address: " <<  buffer->operator[](j).addr << " m_type: " <<  buffer->operator[](j).m_type << " recomend value: "<< f_value << " promo: " << promote_value << "demo: " << demote_value <<'\n';
-
-          }
+              )
+                recommendation.push_back(buffer->operator[](j));
         }
+        return recommendation;
+      }
+
+      vector <Page> coin_recommendation(Page p, char op)
+      {
+        vector <Page> recommendation;
+        if(coin(20))
+          if(  (p.m_type=='D' && op =='R')  ||  (p.m_type=='P' && op =='W')  )
+            recommendation.push_back(p);
+        return recommendation;
+      }
+      
+      vector <Page> oracle_predictor()
+      {
+        vector <Page> recommendation;
         return recommendation;
       }
 
@@ -243,7 +249,6 @@ class Migration {
                 buffer->operator[](j).m_type='D';
               else
                 buffer->operator[](j).m_type='P';
-              ;
       }
 };
 
@@ -266,41 +271,39 @@ unsigned long getPage(unsigned long address, int DESLOC)
   return address >> DESLOC;
 }
 
-void print_diagnostico (int tamanho, unsigned long R_count, unsigned long W_count, unsigned long I_count, unsigned long min_page, unsigned long max_page, unsigned long max_read, unsigned long max_write)
+void print_diagnostico(int tamanho, unsigned long R_count, unsigned long W_count, unsigned long I_count, unsigned long min_page, unsigned long max_page, unsigned long max_read, unsigned long max_write)
 {
-  std::cout << "\n\nDIAGNOSTICO " << '\n';
-  std::cout << "Páginas:\t" << tamanho <<'\n';
-  std::cout << "Maior pagina:\t" << max_page << '\n';
-  std::cout << "Menor pagina:\t" << min_page  << '\n';
-  std::cout << "R_count:\t"  << R_count+I_count << '\n';
-  std::cout << "W_count:\t"  << W_count << '\n';
-  std::cout << "Max read:\t"  << max_read << '\n';
-  std::cout << "Max write:\t"  << max_write << '\n';
-
+  cout << "\n\nDIAGNOSTICO " << '\n';
+  cout << "Páginas:\t" << tamanho <<'\n';
+  cout << "Maior pagina:\t" << max_page << '\n';
+  cout << "Menor pagina:\t" << min_page  << '\n';
+  cout << "R_count:\t"  << R_count+I_count << '\n';
+  cout << "W_count:\t"  << W_count << '\n';
+  cout << "Max read:\t"  << max_read << '\n';
+  cout << "Max write:\t"  << max_write << '\n';
 }
 
-void print_buffer_v(vector <Page> *pages)//verbose
+void print_buffer_v(vector <Page> *pages) //verbose
 {
   int i;
-  //std::cout << "\n";
   for (i=0; i<pages->size(); i++)
   {
-    std::cout << "[" << i << "]"
+    cout << "[" << i << "]"
     <<"addr:" << pages->operator[](i).addr << "\t"
     <<"R:" <<  pages->operator[](i).reads + pages->operator[](i).ifetch << "\t"
     <<"W:" <<  pages->operator[](i).writes << "\t"
     <<"T:" <<  pages->operator[](i).m_type << "  ";
-    std::cout << "\n";
+    cout << "\n";
   }
-  std::cout << "\n";
+  cout << "\n";
 }
 
 void print_buffer(vector <Page> *buffer)
 {
-  std::cout << "PAGES\n";
+  cout << "PAGES\n";
   for (int i=0; i<buffer->size(); i++)
   {
-    std::cout  << i << ";"
+    cout  << i << ";"
     << buffer->operator[](i).addr << ";"
     << buffer->operator[](i).reads + buffer->operator[](i).ifetch << ";"
     << buffer->operator[](i).writes << ";"
@@ -311,70 +314,35 @@ void print_buffer(vector <Page> *buffer)
 void rotate_buffer (vector <Page> *buffer, char op)
 {
   for (int i=0; i<buffer->size(); i++)
-  { 
     switch (op)
       {
       case 'R':
         buffer->operator[](i).reads/=2;
         break;
-
       case 'I':
         buffer->operator[](i).ifetch/=2;
         break;
-
       case 'W':
         buffer->operator[](i).writes/=2;
         break;
-      }  
-     
-  }
+      }
 }  
-
-
-
-
- /* int main()
- {
-   Page page;
-   Hybrid_Memory mm;
-
-   page.set(2000, 8, 1, 2, 'D');
-   mm.insert_page(page);
-
-   page.set(2000, 1, 1, 2, 'D');
-   mm.insert_page(page);
-
-   page.set(2000, 0, 1, 2, 'D');
-   mm.insert_page(page);
-
-   mm.print();
-   //cout << (*mm.search_page(page)).m_type << '\n';
-   //mm.move(page, 'D');
-   //cout << (*mm.search_page(page)).m_type << '\n';
-   //cout << (mm.used[0]) << '\n';
-   cout <<  mm.mm.size() << '\n';
-
-   //cout  << "show\n";
- } */
-
-
-
-//#################################################
 
 
 int main(int argc, char *argv[])
 {
-  // arq.tr limited? buffer_size time2migrate size promo demo
-  const int PROB = 50;//probabilidade de migrar TODO tirar
-  const bool LIMITED = (argc>2) ? (bool)atoi(argv[2]) : 1;//buffer tem limite? Por default, sim.
+  // arq.tr buffer_size counter_size time2migrate promo demo
+  //coin: arq.tr 1 1 1
+  const char M_POLICY = (argc>2) ? *argv[2] : 'c';
+  const bool LIMITED = (argc>3) ? (bool)atoi(argv[3]) : 1;//buffer tem limite? Por default, sim.
   const bool DEBBUG = 0;
 
   const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
-  const int BUFFER_SIZE = (argc>2) ? atoi(argv[2]): 32;//limite do buffer. ultimo valor é default
-  const int COUNTERS_SIZE = (argc>3) ? atoi(argv[3]): 8;//contagem de reads e writes. ultimo valor é default
-  const int TIME_TO_MIGRATE = (argc>4) ? atoi(argv[4]): 1024;//migrar a cada quantas instrucoes? ultimo valor é default
-  const double PROMOTE_VALUE=(argc>5) ? atof(argv[5]): 4;
-  const double DEMOTE_VALUE=(argc>6) ? atof(argv[6]): 2;
+  const int BUFFER_SIZE = (argc>3) ? atoi(argv[3]): 32;//limite do buffer. ultimo valor é default
+  const int COUNTERS_SIZE = (argc>4) ? atoi(argv[4]): 8;//contagem de reads e writes. ultimo valor é default
+  const int TIME_TO_MIGRATE = (argc>5) ? atoi(argv[5]): 1024;//migrar a cada quantas instrucoes? ultimo valor é default
+  const double PROMOTE_VALUE=(argc>6) ? atof(argv[6]): 4;
+  const double DEMOTE_VALUE=(argc>7) ? atof(argv[7]): 2;
   
   
   FILE *arq;
@@ -395,7 +363,10 @@ int main(int argc, char *argv[])
   
   Hybrid_Memory mem;
   Page page;
+  Page empty;
   vector <Page> buffer;
+  vector <Page> rec;
+  vector <vector <Page>> predict;
   Migration m;
   
   unsigned long R_count=0;
@@ -414,7 +385,12 @@ int main(int argc, char *argv[])
   srand (time(NULL));
   XmlRpcClient::Initialize(NAME, VERSION);
 
-  // Abre um arquivo TEXTO para LEITURA
+  if(M_POLICY=='o')
+  {
+    //TODO le arquivo
+  }
+
+  // Abre arquivo trace
   arq = fopen(argv[1], "rt");
   if (arq == NULL)  // Se houve erro na abertura
      printf("Problemas na abertura do arquivo\n");
@@ -462,8 +438,6 @@ int main(int argc, char *argv[])
 
       mem.insert_page(buffer[i]);
       memory_accesses++;
-      //TODO colocar um pontteiro pro buffer
-
 
   //---------------------------------------------------
   //--------------- Contadores ------------------------
@@ -539,65 +513,70 @@ int main(int argc, char *argv[])
       //TODO
       if (memory_accesses==TIME_TO_MIGRATE)
       {
-        vector <Page> rec = m.fuzzy_recommendation(&buffer, COUNTERS_SIZE, BUFFER_SIZE);
-                     //DEBUGANDO ----------------------TODO
+        switch (M_POLICY)
+        {
+        case 'a':
+          rec = m.always_migrate(&buffer);
+          break;
+        case 'f'://
+          rec = m.fuzzy_recommendation(&buffer, COUNTERS_SIZE, BUFFER_SIZE);
+          break;
+        case 'c'://coin
+          rec = m.coin_recommendation(buffer[i], op);
+          break;
+        case 'e'://oracle's eye
+          predict.push_back(buffer);
+          //TODO limpar buffer
+          break;
+        case 'o'://oracle
+          rec = m.oracle_predictor();
+          break;
+        default:
+          break;
+        }
+        
         if(DEBBUG)
         {
-          //cout << "Buffer:\n";
-          //print_buffer_v(&buffer);
+          cout << "Buffer:\n";
+          print_buffer_v(&buffer);
           cout << "Mem:\n";
           mem.print();
-          cout << "Recomenda migrar:\n";
+          cout << "\nRecomenda migrar:";
           print_buffer_v(&rec);
-
         }
-                      //--------------------------------
 
         m.migrate_mem(rec, &mem);
         m.migrate_buffer(rec, &buffer);
         memory_accesses=0;
-
       }
-
-
   }
   
   fclose(arq);
 
-  //-------------prints
-  //mem.print();
-  //cout << buffer2string(&buffer);
-  //print_buffer(&buffer);
-  //fuzzy_promote(&buffer);
-  //vector <Page> rec = m.fuzzy_recommendation(&buffer);
-  //m.migrate_mem(rec, &mem);
-  
-
- // mem.print_stats();
- /* cout <<'\n';
-  cout << "DESLOC: "<< DESLOC <<';';
-  cout << "BUFFER_SIZE: " << BUFFER_SIZE  <<';';
-  cout << "TIME_TO_MIGRATE: "<< TIME_TO_MIGRATE  <<';';
-  cout << "COUNTERS_SIZE: "<<COUNTERS_SIZE  <<';';
-  cout << "PROMOTE_VALUE: "<<to_string(PROMOTE_VALUE)  <<';';
-  cout << "DEMOTE_VALUE: "<<to_string(DEMOTE_VALUE)  <<';';
-
-*/
-  mem.print_stats();
-  cout << DESLOC <<';';
-  cout << BUFFER_SIZE  <<';';
-  cout << TIME_TO_MIGRATE  <<';';
-  cout << COUNTERS_SIZE  <<';';
-  cout << to_string(PROMOTE_VALUE)  <<';';
-  cout << to_string(DEMOTE_VALUE)  <<'\n';
-
-  //cout << "Recomenda migrar" << endl;
- // cout << endl;
- // print_buffer(&buffer);
-  //m.migrate_buffer(rec, &buffer);
- // cout <<"Migrado" << endl;
-  //mem.print();
-
-  //print_diagnostico(buffer.size(), R_count, W_count, I_count, min_page, max_page, max_reads, max_writes);
+  if(M_POLICY=='e')//oracle's eye
+  {
+      Page max_read, max_write;
+      for(int i = 0 ; i<predict.size(); i++)
+      {
+        for (int j = 0; j < predict[i].size(); j++)
+        {
+          if(predict[i][j].reads > max_read.reads)
+          {
+              max_read.addr=predict[i][j].addr;
+              max_read.reads=predict[i][j].reads;
+          }
+          if(predict[i][j].writes > max_write.writes)
+          {
+              max_write.addr=predict[i][j].addr;
+              max_write.writes=predict[i][j].writes;
+          }
+        }
+        //TODO: escrever no arquivo o par de paginas
+        max_read.reads=0;
+        max_write.writes=0;
+      }
+  }
+  mem.print_stats_clean();
+  cout <<  BUFFER_SIZE  << ";" << TIME_TO_MIGRATE << ";" << COUNTERS_SIZE << ";" << PROMOTE_VALUE << ";" << DEMOTE_VALUE << '\n';
 }
 

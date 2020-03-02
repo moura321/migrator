@@ -1,32 +1,36 @@
-benchmarks=('dijkstra2020-01-191729.nvt')
-buffer=('16' '32' '64' '128')
+benchmarks=('basicmath2020-01-191653.nvt')
+#'dijkstra2020-01-191729.nvt'
+
+buffer=('16' '32' '64' '128' '256')
+
 counter=('4' '8' '16' '32' '64')
-ttm=('2048' '8192' '32768')
+
+ttm=('2048')
+# '8192' '32768')
+
 promote=('4' '5' '6' '7' '8' '9')
+
 demote=('6' '5' '4' '3' '2' '1')
 
-j=0
 
-for dem in "${demote[@]}"
+for bench in "${benchmarks[@]}"
 do
     for buff in "${buffer[@]}"
     do
         for c in "${counter[@]}"
-        do
-            date
-            let "j=j+1"
-            echo "$j/120"      
+        do      
             for t in "${ttm[@]}"
             do
                 for pro in "${promote[@]}"
                 do
-                    for bench in "${benchmarks[@]}"
+                    for dem in "${demote[@]}"
                     do
-                       ./l input/$bench $buff $c $t $pro $dem >> output/$bench.csv
+                       ./l input/$bench f $buff $c $t $pro $dem >> output/$bench.csv
                        #touch "output/$bench.csv"
                     done
                 done
-            done        
+                echo $bench $buff $c $t >> output/done.stat
+            done &         
         done
     done
 done

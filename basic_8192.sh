@@ -1,11 +1,12 @@
-benchmarks=('fft2020-01-191758.nvt')
+benchmarks=('basicmath2020-01-191653.nvt')
 #'dijkstra2020-01-191729.nvt'
 
 buffer=('16' '32' '64' '128' '256')
 
 counter=('4' '8' '16' '32' '64')
 
-ttm=('2048' '8192' '32768')
+ttm=('8192')
+# '32768')
 
 promote=('4' '5' '6' '7' '8' '9')
 
@@ -28,9 +29,9 @@ do
                        #touch "output/$bench.csv"
                     done
                 done
-            done
-            echo $bench $buff $c>> output/done.stat         
-        done &
+                echo $bench $buff $c $t >> output/done.stat
+            done &         
+        done
     done
 done
 
