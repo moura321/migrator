@@ -1,1 +1,0 @@
-g++ -I/usr/include  -o client client.cpp -L/usr/lib/x86_64-linux-gnu   -lxmlrpc_client -lxmlrpc_client -lxmlrpc_server -lxmlrpc_server_abyss -lxmlrpc_cpp -lxmlrpc  -lxmlrpc_xmlparse -lxmlrpc_xmltok -lxmlrpc_util -lcurl 

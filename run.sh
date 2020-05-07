@@ -1,1 +1,1 @@
-./l arq_s.tr
+./migrator input_test/arq_s.tr
