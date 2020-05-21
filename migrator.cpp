@@ -5,6 +5,8 @@
 #include <list>
 #include <set>
 #include <fstream>
+#include <string.h>
+
 
 #include <XmlRpcCpp.h>
 
@@ -52,7 +54,7 @@ class Page
       unsigned long int count_r_D=0, count_r_P=0, count_w_D=0, count_w_P=0;
 
       public:
-      void insert_page(Page page)
+      void insert_page(Page page, char op)
       {
         pair<set<Page>::iterator, bool> p = mm.insert(page); 
         if (p.second)
@@ -62,6 +64,14 @@ class Page
               used[i]++;
               break;
             }
+        if(op=='R' && page.m_type=='D')
+          count_r_D++;
+        if(op=='R' && page.m_type=='P')
+          count_r_P++;
+        if(op=='W' && page.m_type=='D')
+          count_w_D++;
+        if(op=='W' && page.m_type=='P')
+          count_w_P++;
       }
 
       bool erase_page(Page page)
@@ -72,6 +82,10 @@ class Page
             used[i]--;
             break;
           } 
+        if(page.m_type=='D')
+          count_r_D++;
+        if(page.m_type=='P')
+          count_r_P++;
         return mm.erase(page);
       }
       
@@ -89,7 +103,9 @@ class Page
         temp_page = *it;
         temp_page.m_type = new_type;
         erase_page (*it);
-        insert_page(temp_page);
+        insert_page(temp_page, 'W');
+
+        cout << "Page: " << page.addr << page.m_type << " newP>" << temp_page.addr << temp_page.m_type << endl;
 
         for(int i=0; i < sizeof(type); i++)  // TODO: with more than 2 types we'll have a problem
           if(new_type==type[i])
@@ -219,9 +235,50 @@ class Migration {
         return recommendation;
       }
       
-      vector <Page> oracle_predictor()
+      vector <Page> oracle_predictor(ifstream &memory, Hybrid_Memory *mem)
       {
         vector <Page> recommendation;
+        Page max_read, max_write;
+        string line;
+        char data[100];
+        char * ptr;
+
+        Page temp_page;
+        set<Page>::iterator it;
+
+   
+        if(getline (memory,line))
+        {
+          for (int g = 0; g <= line.size(); g++)
+            data[g] = line[g];
+          
+          
+          ptr = strtok (data,";");//read addr
+          max_read.addr = atoi(ptr);
+          ptr = strtok (NULL, ";");//read count
+          max_read.reads=atoi(ptr);
+          ptr = strtok (NULL, ";");//write addr
+          max_write.addr = atoi(ptr);
+          ptr = strtok (NULL, ";");//write count
+          max_write.writes=atoi(ptr);
+
+
+          if(max_read.reads > 10)
+          {
+            it = mem->search_page(max_read);
+            temp_page = *it;
+            if(temp_page.m_type=='D')
+              recommendation.push_back(temp_page);
+          }
+
+           if(max_write.writes > 10)
+          {
+            it = mem->search_page(max_write);
+            temp_page = *it;
+            if(temp_page.m_type=='P')
+              recommendation.push_back(temp_page);
+          } 
+        }
         return recommendation;
       }
 
@@ -333,13 +390,13 @@ int main(int argc, char *argv[])
 {
   // arq.tr buffer_size counter_size time2migrate promo demo
   //coin: arq.tr 1 1 1
-  const char M_POLICY = (argc>2) ? *argv[2] : 'c';
-  const bool LIMITED = (argc>3) ? (bool)atoi(argv[3]) : 1;//buffer tem limite? Por default, sim.
+  const char M_POLICY = (argc>2) ? *argv[2] : 'c';//a=always f=fuzzy c=coin o=oracle e=oracle eye
+  const bool LIMITED = (argc>3) ? (bool)atoi(argv[3]) : 0;//buffer tem limite? Por default, não.
   const bool DEBBUG = 0;
 
   const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
   const int BUFFER_SIZE = (argc>3) ? atoi(argv[3]): 32;//limite do buffer. ultimo valor é default
-  const int COUNTERS_SIZE = (argc>4) ? atoi(argv[4]): 8;//contagem de reads e writes. ultimo valor é default
+  const int COUNTERS_SIZE = (argc>4) ? atoi(argv[4]): 32;//contagem de reads e writes. ultimo valor é default
   const int TIME_TO_MIGRATE = (argc>5) ? atoi(argv[5]): 1024;//migrar a cada quantas instrucoes? ultimo valor é default
   const double PROMOTE_VALUE=(argc>6) ? atof(argv[6]): 4;
   const double DEMOTE_VALUE=(argc>7) ? atof(argv[7]): 2;
@@ -350,7 +407,7 @@ int main(int argc, char *argv[])
   string l;
   int memory_accesses=0;
 
-  unsigned long address;
+  unsigned long address;  
   char op;
   int i=0;
 
@@ -366,8 +423,9 @@ int main(int argc, char *argv[])
   Page empty;
   vector <Page> buffer;
   vector <Page> rec;
-  vector <vector <Page>> predict;
+  vector <vector <Page>> predict;//vector of buffers
   Migration m;
+
   
   unsigned long R_count=0;
   unsigned long W_count=0;
@@ -385,10 +443,14 @@ int main(int argc, char *argv[])
   srand (time(NULL));
   XmlRpcClient::Initialize(NAME, VERSION);
 
-  if(M_POLICY=='o')
-  {
-    //TODO le arquivo
-  }
+ ifstream oracle_memory_in;
+ oracle_memory_in.open("oracle_memory.dat");
+ if(M_POLICY=='o')//init oracle
+ {
+   string line;
+   getline (oracle_memory_in,line);
+ }
+  
 
   // Abre arquivo trace
   arq = fopen(argv[1], "rt");
@@ -402,16 +464,15 @@ int main(int argc, char *argv[])
   address = max_address = min_address = getAddress(l); 
   //max_hexa_address = min_hexa_address = getHexaAddress(l); //bom para debug
   min_page = max_page = getPage(address,DESLOC);
-
+  op = Linha[0];
   page.set(getPage(address,DESLOC),0,0,0,'D');
   buffer.push_back(page);
-  mem.insert_page(page);  
-  
+  mem.insert_page(page, op);  
+ 
 
   while (!feof(arq))
   {
       l=Linha;
-      
       address=getAddress(l); //endereço em (unsigned long)
       op = Linha[0]; //operação: R, W
 
@@ -436,7 +497,7 @@ int main(int argc, char *argv[])
       
       i=buffer.size()-1; //i = posicao da pagina no vector pages
 
-      mem.insert_page(buffer[i]);
+      mem.insert_page(buffer[i], op);
       memory_accesses++;
 
   //---------------------------------------------------
@@ -448,10 +509,10 @@ int main(int argc, char *argv[])
         buffer[i].reads++;
         R_count++;
 
-        if(buffer[i].m_type=='D')
+/*         if(buffer[i].m_type=='D')
           mem.count_r_D++;
         else
-          mem.count_r_P++;
+          mem.count_r_P++; */
         
         if(buffer[i].reads>COUNTERS_SIZE)
           rotate_buffer(&buffer, op);
@@ -461,10 +522,10 @@ int main(int argc, char *argv[])
         buffer[i].ifetch++;
         I_count++;
 
-        if(buffer[i].m_type=='D')
+/*         if(buffer[i].m_type=='D')
           mem.count_r_D++;
         else
-          mem.count_r_P++;
+          mem.count_r_P++; */
         
         if(buffer[i].ifetch>COUNTERS_SIZE)
           rotate_buffer(&buffer, op);
@@ -474,10 +535,10 @@ int main(int argc, char *argv[])
         buffer[i].writes++;
         W_count++;
 
-        if(buffer[i].m_type=='D')
+/*         if(buffer[i].m_type=='D')
           mem.count_w_D++;
         else
-          mem.count_w_P++;
+          mem.count_w_P++; */
         
         if(buffer[i].writes>COUNTERS_SIZE)
           rotate_buffer(&buffer, op);
@@ -510,15 +571,15 @@ int main(int argc, char *argv[])
       //Lê próxima linha (inclusive com o '\n')
       fgets(Linha, 16, arq);
 
-      //TODO
-      if (memory_accesses==TIME_TO_MIGRATE)
+
+      if (memory_accesses==TIME_TO_MIGRATE) //seleciona a politica e efetiva a migração
       {
         switch (M_POLICY)
         {
-        case 'a':
+        case 'a'://always
           rec = m.always_migrate(&buffer);
           break;
-        case 'f'://
+        case 'f'://fuzzy
           rec = m.fuzzy_recommendation(&buffer, COUNTERS_SIZE, BUFFER_SIZE);
           break;
         case 'c'://coin
@@ -526,10 +587,10 @@ int main(int argc, char *argv[])
           break;
         case 'e'://oracle's eye
           predict.push_back(buffer);
-          //TODO limpar buffer
+          buffer.clear();
           break;
         case 'o'://oracle
-          rec = m.oracle_predictor();
+          rec = m.oracle_predictor(oracle_memory_in,&mem);
           break;
         default:
           break;
@@ -545,8 +606,9 @@ int main(int argc, char *argv[])
           print_buffer_v(&rec);
         }
 
-        m.migrate_mem(rec, &mem);
-        m.migrate_buffer(rec, &buffer);
+        m.migrate_mem(rec, &mem); //faz a migração na memoria hibrida
+        //if(M_POLICY!='e' && M_POLICY!='o')
+          m.migrate_buffer(rec, &buffer); //atualiza a migração no buffer
         memory_accesses=0;
       }
   }
@@ -555,6 +617,7 @@ int main(int argc, char *argv[])
 
   if(M_POLICY=='e')//oracle's eye
   {
+      ofstream oracle_memory_out("oracle_memory.dat");
       Page max_read, max_write;
       for(int i = 0 ; i<predict.size(); i++)
       {
@@ -571,12 +634,15 @@ int main(int argc, char *argv[])
               max_write.writes=predict[i][j].writes;
           }
         }
-        //TODO: escrever no arquivo o par de paginas
+        oracle_memory_out << max_read.addr << ";" << max_read.reads << ";" << max_write.addr << ";" << max_write.writes <<"\n";
         max_read.reads=0;
         max_write.writes=0;
       }
+      oracle_memory_out.close();
   }
-  mem.print_stats_clean();
-  cout <<  BUFFER_SIZE  << ";" << TIME_TO_MIGRATE << ";" << COUNTERS_SIZE << ";" << PROMOTE_VALUE << ";" << DEMOTE_VALUE << '\n';
+  mem.print_stats();
+  //mem.print_stats_clean();
+  //imprime parametros da simulacao
+  //cout <<  BUFFER_SIZE  << ";" << TIME_TO_MIGRATE << ";" << COUNTERS_SIZE << ";" << PROMOTE_VALUE << ";" << DEMOTE_VALUE << '\n';
 }
 
