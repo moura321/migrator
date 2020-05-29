@@ -20,7 +20,7 @@ using namespace std;
 class Page
  {
       public:  
-      unsigned long addr=0;
+      long addr=0;
       int reads=0;
       int writes=0;
       int ifetch=0;
@@ -105,7 +105,7 @@ class Page
         erase_page (*it);
         insert_page(temp_page, 'W');
 
-        cout << "Page: " << page.addr << page.m_type << " newP>" << temp_page.addr << temp_page.m_type << endl;
+        //cout << "Page: " << page.addr << page.m_type << " newP>" << temp_page.addr << temp_page.m_type << endl;
 
         for(int i=0; i < sizeof(type); i++)  // TODO: with more than 2 types we'll have a problem
           if(new_type==type[i])
@@ -239,6 +239,7 @@ class Migration {
       {
         vector <Page> recommendation;
         Page max_read, max_write;
+        int diff_read, diff_write;
         string line;
         char data[100];
         char * ptr;
@@ -255,28 +256,39 @@ class Migration {
           
           ptr = strtok (data,";");//read addr
           max_read.addr = atoi(ptr);
+          //cout << max_read.addr << ";";
+
           ptr = strtok (NULL, ";");//read count
-          max_read.reads=atoi(ptr);
+          diff_read=atoi(ptr);
+          //cout << diff_read << ";";
+
           ptr = strtok (NULL, ";");//write addr
           max_write.addr = atoi(ptr);
+          //cout << max_write.addr << ";";
+
+
           ptr = strtok (NULL, ";");//write count
-          max_write.writes=atoi(ptr);
-
-
-          if(max_read.reads > 10)
+          diff_write=atoi(ptr);
+          //cout << diff_write << ";" << endl;
+          
+          //cout << "if:" << diff_read << " and " << max_read.addr <<endl;
+          if(diff_read > 0 && max_read.addr > -1)
           {
             it = mem->search_page(max_read);
             temp_page = *it;
-            if(temp_page.m_type=='D')
+            if(temp_page.addr == max_read.addr && temp_page.m_type=='D')
               recommendation.push_back(temp_page);
+            //cout << "Demoting: " << temp_page.addr << ";" << diff_read << ";" << temp_page.m_type << endl;
           }
 
-           if(max_write.writes > 10)
+          //cout << "if:" << diff_write << " and " << max_write.addr <<endl;
+          if(diff_write > 0 && max_write.addr > -1)
           {
             it = mem->search_page(max_write);
             temp_page = *it;
-            if(temp_page.m_type=='P')
+            if(temp_page.addr == max_write.addr && temp_page.m_type=='P')
               recommendation.push_back(temp_page);
+            //cout << "Promoting: " << temp_page.addr << ";" << diff_write << ";" << temp_page.m_type << endl;
           } 
         }
         return recommendation;
@@ -397,7 +409,7 @@ int main(int argc, char *argv[])
   const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
   const int BUFFER_SIZE = (argc>3) ? atoi(argv[3]): 32;//limite do buffer. ultimo valor é default
   const int COUNTERS_SIZE = (argc>4) ? atoi(argv[4]): 32;//contagem de reads e writes. ultimo valor é default
-  const int TIME_TO_MIGRATE = (argc>5) ? atoi(argv[5]): 1024;//migrar a cada quantas instrucoes? ultimo valor é default
+  const int TIME_TO_MIGRATE = (argc>5) ? atoi(argv[5]): 16;//migrar a cada quantas instrucoes? ultimo valor é default
   const double PROMOTE_VALUE=(argc>6) ? atof(argv[6]): 4;
   const double DEMOTE_VALUE=(argc>7) ? atof(argv[7]): 2;
   
@@ -619,30 +631,37 @@ int main(int argc, char *argv[])
   {
       ofstream oracle_memory_out("oracle_memory.dat");
       Page max_read, max_write;
+      int diff_read, diff_write;
+      diff_read=0;
+      diff_write=0;
+      max_read.addr=-1;
+      max_read.addr=-1;
       for(int i = 0 ; i<predict.size(); i++)
       {
         for (int j = 0; j < predict[i].size(); j++)
         {
-          if(predict[i][j].reads > max_read.reads)
+          if(predict[i][j].reads - predict[i][j].writes > diff_read)
           {
               max_read.addr=predict[i][j].addr;
-              max_read.reads=predict[i][j].reads;
+              diff_read = predict[i][j].reads - predict[i][j].writes;
           }
-          if(predict[i][j].writes > max_write.writes)
+          if(predict[i][j].writes - predict[i][j].reads > diff_write)
           {
               max_write.addr=predict[i][j].addr;
-              max_write.writes=predict[i][j].writes;
+              diff_write = predict[i][j].writes - predict[i][j].reads;
           }
         }
-        oracle_memory_out << max_read.addr << ";" << max_read.reads << ";" << max_write.addr << ";" << max_write.writes <<"\n";
-        max_read.reads=0;
-        max_write.writes=0;
+        oracle_memory_out << max_read.addr << ";" << diff_read << ";" << max_write.addr << ";" << diff_write <<"\n";
+        diff_read=0;
+        diff_write=0;
+        max_read.addr=-1;
+        max_read.addr=-1;
       }
       oracle_memory_out.close();
   }
-  mem.print_stats();
-  //mem.print_stats_clean();
+  //mem.print_stats();
+  mem.print_stats_clean();
   //imprime parametros da simulacao
-  //cout <<  BUFFER_SIZE  << ";" << TIME_TO_MIGRATE << ";" << COUNTERS_SIZE << ";" << PROMOTE_VALUE << ";" << DEMOTE_VALUE << '\n';
+  cout <<  BUFFER_SIZE  << ";" << TIME_TO_MIGRATE << ";" << COUNTERS_SIZE << ";" << PROMOTE_VALUE << ";" << DEMOTE_VALUE << '\n';
 }
 
