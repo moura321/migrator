@@ -114,6 +114,22 @@ class Page
             used[i]--;
       }
 
+
+      char getm_type (Page page)
+      {
+        Page temp_page;
+        set<Page>::iterator it;
+        
+        it = search_page(page);
+        if(it != mm.end())
+        {
+          temp_page = *it;
+          return temp_page.m_type;
+        }
+        else
+          return '\0';
+      }
+
       void print()
       {
         set<Page>::iterator it;
@@ -194,7 +210,7 @@ class Migration {
         return recommendation;
       }
    
-      vector <Page> fuzzy_recommendation(vector <Page> *buffer, int counters_size, int buffer_size)
+      vector <Page> fuzzy_recommendation(vector <Page> *buffer, int counters_size, int buffer_size, bool debbug)
       {
         int address;
         double f_value;
@@ -215,13 +231,18 @@ class Migration {
 
           for(int j=0; j<buffer->size(); j++)
             if(buffer->operator[](j).addr == address &&
-              (
-              buffer->operator[](j).m_type == 'P'  &&  f_value > promote_value
-              ||
-              buffer->operator[](j).m_type == 'D'  &&  f_value < demote_value
+                (
+                  (buffer->operator[](j).m_type == 'P'  &&  f_value > promote_value)
+                  ||
+                  (buffer->operator[](j).m_type == 'D'  &&  f_value < demote_value)
+                )
               )
-              )
+              {
                 recommendation.push_back(buffer->operator[](j));
+                if(debbug)
+                  cout << buffer->operator[](j).addr << " " << f_value << "\n";
+
+              }
         }
         return recommendation;
       }
@@ -243,6 +264,8 @@ class Migration {
         string line;
         char data[100];
         char * ptr;
+
+        int threshold = 0;
 
         Page temp_page;
         set<Page>::iterator it;
@@ -266,27 +289,26 @@ class Migration {
           max_write.addr = atoi(ptr);
           //cout << max_write.addr << ";";
 
-
           ptr = strtok (NULL, ";");//write count
           diff_write=atoi(ptr);
           //cout << diff_write << ";" << endl;
           
           //cout << "if:" << diff_read << " and " << max_read.addr <<endl;
-          if(diff_read > 0 && max_read.addr > -1)
+          if(diff_read > threshold && max_read.addr > -1)
           {
             it = mem->search_page(max_read);
             temp_page = *it;
-            if(temp_page.addr == max_read.addr && temp_page.m_type=='D')
+            if(it != mem->mm.end() && temp_page.addr == max_read.addr && temp_page.m_type=='D')
               recommendation.push_back(temp_page);
             //cout << "Demoting: " << temp_page.addr << ";" << diff_read << ";" << temp_page.m_type << endl;
           }
 
           //cout << "if:" << diff_write << " and " << max_write.addr <<endl;
-          if(diff_write > 0 && max_write.addr > -1)
+          if(diff_write > threshold && max_write.addr > -1)
           {
             it = mem->search_page(max_write);
             temp_page = *it;
-            if(temp_page.addr == max_write.addr && temp_page.m_type=='P')
+            if(it != mem->mm.end() && temp_page.addr == max_write.addr && temp_page.m_type=='P')
               recommendation.push_back(temp_page);
             //cout << "Promoting: " << temp_page.addr << ";" << diff_write << ";" << temp_page.m_type << endl;
           } 
@@ -422,6 +444,7 @@ int main(int argc, char *argv[])
   unsigned long address;  
   char op;
   int i=0;
+  char m_type;
 
   unsigned long max_address;
   unsigned long min_address;
@@ -432,7 +455,7 @@ int main(int argc, char *argv[])
   
   Hybrid_Memory mem;
   Page page;
-  Page empty;
+  Page temp_page;
   vector <Page> buffer;
   vector <Page> rec;
   vector <vector <Page>> predict;//vector of buffers
@@ -474,12 +497,13 @@ int main(int argc, char *argv[])
   l=Linha;
   
   address = max_address = min_address = getAddress(l); 
+
   //max_hexa_address = min_hexa_address = getHexaAddress(l); //bom para debug
   min_page = max_page = getPage(address,DESLOC);
-  op = Linha[0];
-  page.set(getPage(address,DESLOC),0,0,0,'D');
-  buffer.push_back(page);
-  mem.insert_page(page, op);  
+ // op = Linha[0];
+ // page.set(getPage(address,DESLOC),0,0,0,'D');
+ // buffer.push_back(page);
+ // mem.insert_page(page, op);  
  
 
   while (!feof(arq))
@@ -490,8 +514,12 @@ int main(int argc, char *argv[])
 
       page.set(getPage(address,DESLOC),0,0,0,'D'); //inicializa pagina temporaria
 
+      m_type = mem.getm_type(page);
+      if (m_type != '\0')
+        page.m_type = m_type;
+
       i=0;
-      while (buffer[i].addr != page.addr && i < buffer.size()) //procura pagina atual (page) no buffer (buffer)
+      while (i < buffer.size() && buffer[i].addr != page.addr) //procura pagina atual (page) no buffer (buffer)
         i++;
 
       if(i==buffer.size())//se nao encontrou a pagina no buffer
@@ -526,7 +554,7 @@ int main(int argc, char *argv[])
         else
           mem.count_r_P++; */
         
-        if(buffer[i].reads>COUNTERS_SIZE)
+        if(buffer[i].reads>=COUNTERS_SIZE)
           rotate_buffer(&buffer, op);
         break;
 
@@ -539,7 +567,7 @@ int main(int argc, char *argv[])
         else
           mem.count_r_P++; */
         
-        if(buffer[i].ifetch>COUNTERS_SIZE)
+        if(buffer[i].ifetch>=COUNTERS_SIZE)
           rotate_buffer(&buffer, op);
         break;
 
@@ -552,7 +580,7 @@ int main(int argc, char *argv[])
         else
           mem.count_w_P++; */
         
-        if(buffer[i].writes>COUNTERS_SIZE)
+        if(buffer[i].writes>=COUNTERS_SIZE)
           rotate_buffer(&buffer, op);
         break;
 
@@ -592,7 +620,7 @@ int main(int argc, char *argv[])
           rec = m.always_migrate(&buffer);
           break;
         case 'f'://fuzzy
-          rec = m.fuzzy_recommendation(&buffer, COUNTERS_SIZE, BUFFER_SIZE);
+          rec = m.fuzzy_recommendation(&buffer, COUNTERS_SIZE, BUFFER_SIZE, DEBBUG);
           break;
         case 'c'://coin
           rec = m.coin_recommendation(buffer[i], op);
@@ -610,19 +638,26 @@ int main(int argc, char *argv[])
         
         if(DEBBUG)
         {
-          cout << "Buffer:\n";
-          print_buffer_v(&buffer);
-          cout << "Mem:\n";
-          mem.print();
-          cout << "\nRecomenda migrar:";
+          cout << "\nRecomenda migrar:\n";
           print_buffer_v(&rec);
         }
 
         m.migrate_mem(rec, &mem); //faz a migração na memoria hibrida
         //if(M_POLICY!='e' && M_POLICY!='o')
-          m.migrate_buffer(rec, &buffer); //atualiza a migração no buffer
+        m.migrate_buffer(rec, &buffer); //atualiza a migração no buffer
         memory_accesses=0;
       }
+      if(DEBBUG)
+        {
+          cout<< "===========  " << op << " " << buffer[i].addr << "  ===========\n\n";
+          cout << "Buffer:\n";
+          print_buffer_v(&buffer);
+          cout << "Mem:\n";
+          mem.print();
+          mem.print_stats();
+          getchar();
+          system("clear");
+        }
   }
   
   fclose(arq);
@@ -662,6 +697,7 @@ int main(int argc, char *argv[])
   //mem.print_stats();
   mem.print_stats_clean();
   //imprime parametros da simulacao
+  //cout <<  "BUFFER_SIZE"  << ";" << "TIME_TO_MIGRATE" << ";" << "COUNTERS_SIZE" << ";" << "PROMOTE_VALUE" << ";" << "DEMOTE_VALUE" << '\n';
   cout <<  BUFFER_SIZE  << ";" << TIME_TO_MIGRATE << ";" << COUNTERS_SIZE << ";" << PROMOTE_VALUE << ";" << DEMOTE_VALUE << '\n';
 }
 
