@@ -240,7 +240,9 @@ class Migration {
               {
                 recommendation.push_back(buffer->operator[](j));
                 if(debbug)
-                  cout << buffer->operator[](j).addr << " " << f_value << "\n";
+                {
+                  //cout << buffer->operator[](j).addr << " " << f_value << "\n";
+                }
 
               }
         }
@@ -426,7 +428,7 @@ int main(int argc, char *argv[])
   //coin: arq.tr 1 1 1
   const char M_POLICY = (argc>2) ? *argv[2] : 'c';//a=always f=fuzzy c=coin o=oracle e=oracle eye
   const bool LIMITED = (argc>3) ? (bool)atoi(argv[3]) : 0;//buffer tem limite? Por default, não.
-  const bool DEBBUG = 0;
+  const bool DEBBUG = 1;
 
   const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
   const int BUFFER_SIZE = (argc>3) ? atoi(argv[3]): 32;//limite do buffer. ultimo valor é default
@@ -638,8 +640,12 @@ int main(int argc, char *argv[])
         
         if(DEBBUG)
         {
-          cout << "\nRecomenda migrar:\n";
-          print_buffer_v(&rec);
+          //cout << "\nRecomenda migrar:\n";
+          //print_buffer_v(&rec);
+          cout << "Buffer:\n";
+          print_buffer_v(&buffer);
+          getchar();
+
         }
 
         m.migrate_mem(rec, &mem); //faz a migração na memoria hibrida
@@ -649,14 +655,14 @@ int main(int argc, char *argv[])
       }
       if(DEBBUG)
         {
-          cout<< "===========  " << op << " " << buffer[i].addr << "  ===========\n\n";
-          cout << "Buffer:\n";
-          print_buffer_v(&buffer);
-          cout << "Mem:\n";
-          mem.print();
-          mem.print_stats();
-          getchar();
-          system("clear");
+          //cout<< "===========  " << op << " " << buffer[i].addr << "  ===========\n\n";
+          //cout << "Buffer:\n";
+          //print_buffer_v(&buffer);
+          //cout << "Mem:\n";
+          //mem.print();
+          //mem.print_stats();
+          //getchar();
+          //system("clear");
         }
   }
   
