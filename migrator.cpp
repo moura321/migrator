@@ -210,6 +210,34 @@ class Migration {
         return recommendation;
       }
    
+
+
+        vector <Page> fuzzy_AO(vector <Page> *buffer, int counters_size, int buffer_size, bool debbug)
+      {
+        int address;
+        double f_value;
+        vector <Page> recommendation;
+
+        XmlRpcValue param_array = XmlRpcValue::makeArray();
+        param_array.arrayAppendItem(XmlRpcValue::makeString(buffer2string(buffer)));
+        param_array.arrayAppendItem(XmlRpcValue::makeInt(counters_size));
+        param_array.arrayAppendItem(XmlRpcValue::makeInt(buffer_size));
+
+        XmlRpcClient server (SERVER_URL);
+        XmlRpcValue result = server.call("fhm.promote", param_array);
+
+        for(int i=0; i<result.structSize();i+=2)
+        {
+          address = result.structGetValue(to_string(i)).getInt();
+          f_value = result.structGetValue(to_string(i+1)).getDouble();
+        }
+        return recommendation;
+      }
+
+
+
+
+
       vector <Page> fuzzy_recommendation(vector <Page> *buffer, int counters_size, int buffer_size, bool debbug)
       {
         int address;
@@ -428,7 +456,7 @@ int main(int argc, char *argv[])
   //coin: arq.tr 1 1 1
   const char M_POLICY = (argc>2) ? *argv[2] : 'c';//a=always f=fuzzy c=coin o=oracle e=oracle eye
   const bool LIMITED = (argc>3) ? (bool)atoi(argv[3]) : 0;//buffer tem limite? Por default, não.
-  const bool DEBBUG = 1;
+  const bool DEBBUG = 0;
 
   const int DESLOC = 6;//6 bits para endereço, o resto para página TODO conferir esses valores
   const int BUFFER_SIZE = (argc>3) ? atoi(argv[3]): 32;//limite do buffer. ultimo valor é default
@@ -644,7 +672,7 @@ int main(int argc, char *argv[])
           //print_buffer_v(&rec);
           cout << "Buffer:\n";
           print_buffer_v(&buffer);
-          getchar();
+          //getchar();
 
         }
 
@@ -700,10 +728,10 @@ int main(int argc, char *argv[])
       }
       oracle_memory_out.close();
   }
-  //mem.print_stats();
-  mem.print_stats_clean();
+  mem.print_stats();
+  //mem.print_stats_clean();
   //imprime parametros da simulacao
-  //cout <<  "BUFFER_SIZE"  << ";" << "TIME_TO_MIGRATE" << ";" << "COUNTERS_SIZE" << ";" << "PROMOTE_VALUE" << ";" << "DEMOTE_VALUE" << '\n';
+  cout <<  "BUFFER_SIZE"  << ";" << "TIME_TO_MIGRATE" << ";" << "COUNTERS_SIZE" << ";" << "PROMOTE_VALUE" << ";" << "DEMOTE_VALUE" << '\n';
   cout <<  BUFFER_SIZE  << ";" << TIME_TO_MIGRATE << ";" << COUNTERS_SIZE << ";" << PROMOTE_VALUE << ";" << DEMOTE_VALUE << '\n';
 }
 

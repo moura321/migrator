@@ -1,3 +1,15 @@
-#./migrator input_file migration_policy buffer_size counters_size time_to_migrate promote demote 
+benchmark='qsort2020-01-191912.nvt'
+#('basicmath2020-03-0218:11.nvt' 'fft2020-01-191758.nvt' 'qsort2020-01-191912.nvt' 'typeset2020-01-191847.nvt')
 
-./migrator input_test/reads.tr f 16 8 8 6 4 
+buffer='256'
+
+counter='4'
+
+ttm='32768'
+
+promote='4'
+
+demote='2'
+
+
+./migrator input/$benchmark f $buffer $counter $ttm $promote $demote
